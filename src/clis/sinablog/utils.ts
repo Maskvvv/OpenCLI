@@ -14,7 +14,7 @@ export function buildSinaBlogUserUrl(uid: string): string {
 
 export async function loadSinaBlogArticle(page: IPage, url: string): Promise<any> {
   await page.goto(url);
-  await page.wait(3);
+  await page.wait({ selector: 'h1', timeout: 3 });
   return page.evaluate(`
     (async () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -52,7 +52,7 @@ export async function loadSinaBlogArticle(page: IPage, url: string): Promise<any
 export async function loadSinaBlogHot(page: IPage, limit: number): Promise<any[]> {
   const safeLimit = clampLimit(limit);
   await page.goto('https://blog.sina.com.cn/');
-  await page.wait(3);
+  await page.wait({ selector: 'h1', timeout: 3 });
   const data = await page.evaluate(`
     (async () => {
       await new Promise((resolve) => setTimeout(resolve, 1500));
@@ -122,7 +122,7 @@ export async function loadSinaBlogHot(page: IPage, limit: number): Promise<any[]
 export async function loadSinaBlogSearch(page: IPage, keyword: string, limit: number): Promise<any[]> {
   const safeLimit = clampLimit(limit);
   await page.goto(buildSinaBlogSearchUrl(keyword));
-  await page.wait(5);
+  await page.wait({ selector: '.result-item', timeout: 5 });
   const data = await page.evaluate(`
     (async () => {
       const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -159,7 +159,7 @@ export async function loadSinaBlogSearch(page: IPage, keyword: string, limit: nu
 export async function loadSinaBlogUser(page: IPage, uid: string, limit: number): Promise<any[]> {
   const safeLimit = clampLimit(limit);
   await page.goto(buildSinaBlogUserUrl(uid));
-  await page.wait(3);
+  await page.wait({ selector: 'h1', timeout: 3 });
   const data = await page.evaluate(`
     (async () => {
       await new Promise((resolve) => setTimeout(resolve, 1000));

@@ -22,6 +22,8 @@ import {
   typeTextJs,
   pressKeyJs,
   waitForTextJs,
+  waitForCaptureJs,
+  waitForSelectorJs,
   scrollJs,
   autoScrollJs,
   networkRequestsJs,
@@ -236,6 +238,12 @@ export class Page implements IPage {
       await new Promise(resolve => setTimeout(resolve, options.time! * 1000));
       return;
     }
+    if (options.selector) {
+      const timeout = (options.timeout ?? 10) * 1000;
+      const code = waitForSelectorJs(options.selector, timeout);
+      await sendCommand('exec', { code, ...this._cmdOpts() });
+      return;
+    }
     if (options.text) {
       const timeout = (options.timeout ?? 30) * 1000;
       const code = waitForTextJs(options.text, timeout);
@@ -329,6 +337,14 @@ export class Page implements IPage {
     // Same as installInterceptor: must go through evaluate() for IIFE wrapping
     const result = await this.evaluate(generateReadInterceptedJs('__opencli_xhr'));
     return Array.isArray(result) ? result : [];
+  }
+
+  async waitForCapture(timeout: number = 10): Promise<void> {
+    const maxMs = timeout * 1000;
+    await sendCommand('exec', {
+      code: waitForCaptureJs(maxMs),
+      ...this._cmdOpts(),
+    });
   }
 }
 
