@@ -19,6 +19,7 @@
 | `opencli xiaohongshu creator-notes-summary` | Combined note list + detail analytics summary |
 | `opencli xiaohongshu creator-profile` | Creator account info (followers, growth level) |
 | `opencli xiaohongshu creator-stats` | Creator data overview (views, likes, collects, trends) |
+| `opencli xiaohongshu pgyexcel` | Export interested Pugongying invite creators to an Excel-friendly CSV |
 
 ## Usage Examples
 
@@ -39,6 +40,9 @@ opencli xiaohongshu search 旅行 -f json
 opencli xiaohongshu feed
 opencli xiaohongshu notifications
 opencli xiaohongshu download <note-id or url>
+
+# Export Pugongying interested invite creators to CSV
+opencli xiaohongshu pgyexcel --start-page 1 --end-page 3 --output ./xiaohongshu-pgy-creators.csv
 ```
 
 ## Prerequisites

@@ -15281,6 +15281,61 @@
   },
   {
     "site": "xiaohongshu",
+    "name": "pgyexcel",
+    "description": "导出蒲公英感兴趣邀约博主资料为 Excel 可打开的 CSV",
+    "domain": "pgy.xiaohongshu.com",
+    "strategy": "cookie",
+    "browser": true,
+    "args": [
+      {
+        "name": "start-page",
+        "type": "int",
+        "default": 1,
+        "required": false,
+        "help": "起始页，默认 1"
+      },
+      {
+        "name": "end-page",
+        "type": "int",
+        "required": false,
+        "help": "结束页，默认等于起始页"
+      },
+      {
+        "name": "output",
+        "type": "str",
+        "default": "./xiaohongshu-pgy-creators.csv",
+        "required": false,
+        "help": "CSV 输出路径"
+      },
+      {
+        "name": "min-delay",
+        "type": "number",
+        "default": 1.2,
+        "required": false,
+        "help": "每步最小等待秒数"
+      },
+      {
+        "name": "max-delay",
+        "type": "number",
+        "default": 3.8,
+        "required": false,
+        "help": "每步最大等待秒数"
+      }
+    ],
+    "columns": [
+      "status",
+      "rows",
+      "output",
+      "pages"
+    ],
+    "timeout": 900,
+    "type": "js",
+    "modulePath": "xiaohongshu/pgyexcel.js",
+    "sourceFile": "xiaohongshu/pgyexcel.js",
+    "navigateBefore": false
+  },
+  {
+    "site": "xiaohongshu",
     "name": "publish",
     "description": "小红书发布图文笔记 (creator center UI automation)",
     "domain": "creator.xiaohongshu.com",
