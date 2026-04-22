@@ -1,50 +1,117 @@
 import { describe, expect, it } from 'vitest';
-import { isEmptyListsState, parseListCards } from './lists-parser.js';
+import { extractListEntry, parseListsManagement } from './lists.js';
 
 describe('twitter lists parser', () => {
-    it('parses english list cards without relying on page locale', () => {
-        const result = parseListCards([
-            {
-                href: '/i/lists/123',
-                text: `AI Researchers
-@jack
-124 Members 3.4K Followers
-Private`,
+    it('extracts a list entry with full metadata', () => {
+        const entry = {
+            content: {
+                itemContent: {
+                    list: {
+                        id_str: '1597593475389984769',
+                        name: 'Crypto',
+                        member_count: 44,
+                        subscriber_count: 8747,
+                        mode: 'Public',
+                    },
+                },
             },
-        ]);
-        expect(result).toEqual([
-            {
-                name: 'AI Researchers',
-                members: '124',
-                followers: '3.4K',
-                mode: 'private',
-            },
-        ]);
+        };
+        expect(extractListEntry(entry, new Set())).toEqual({
+            id: '1597593475389984769',
+            name: 'Crypto',
+            members: '44',
+            followers: '8747',
+            mode: 'public',
+        });
     });
 
-    it('parses chinese list cards without scanning document.body.innerText', () => {
-        const result = parseListCards([
-            {
-                href: '/i/lists/456',
-                text: `AI观察
-@jack
-321 位成员 8.8K 位关注者
-锁定列表`,
+    it('maps Private mode to private', () => {
+        const entry = {
+            content: {
+                itemContent: {
+                    list: {
+                        id_str: '2044679538156912976',
+                        name: 'AI & Agents',
+                        member_count: 15,
+                        subscriber_count: 0,
+                        mode: 'Private',
+                    },
+                },
             },
-        ]);
-        expect(result).toEqual([
-            {
-                name: 'AI观察',
-                members: '321',
-                followers: '8.8K',
-                mode: 'private',
-            },
-        ]);
+        };
+        expect(extractListEntry(entry, new Set())?.mode).toBe('private');
     });
 
-    it('detects empty state text in english and chinese', () => {
-        expect(isEmptyListsState(`@jack hasn't created any Lists yet`)).toBe(true);
-        expect(isEmptyListsState('这个账号还没有创建任何列表')).toBe(true);
-        expect(isEmptyListsState('AI Researchers 124 Members')).toBe(false);
+    it('deduplicates by list id', () => {
+        const entry = {
+            content: { itemContent: { list: { id_str: '1', name: 'X' } } },
+        };
+        const seen = new Set();
+        expect(extractListEntry(entry, seen)).not.toBeNull();
+        expect(extractListEntry(entry, seen)).toBeNull();
+    });
+
+    it('returns null when no list payload is present', () => {
+        expect(extractListEntry({}, new Set())).toBeNull();
+        expect(extractListEntry({ content: { itemContent: {} } }, new Set())).toBeNull();
+    });
+
+    it('parses ListsManagementPageTimeline payload instructions', () => {
+        const payload = {
+            data: {
+                viewer: {
+                    list_management_timeline: {
+                        timeline: {
+                            instructions: [
+                                {
+                                    entries: [
+                                        {
+                                            entryId: 'owned-list-1',
+                                            content: {
+                                                itemContent: {
+                                                    list: { id_str: '1', name: 'Crypto', member_count: 44, subscriber_count: 8747, mode: 'Public' },
+                                                },
+                                            },
+                                        },
+                                        {
+                                            entryId: 'subscribed-list-2',
+                                            content: {
+                                                itemContent: {
+                                                    list: { id_str: '2', name: 'AI', member_count: 15, subscriber_count: 0, mode: 'Private' },
+                                                },
+                                            },
+                                        },
+                                    ],
+                                },
+                            ],
+                        },
+                    },
+                },
+            },
+        };
+        const result = parseListsManagement(payload, new Set());
+        expect(result).toHaveLength(2);
+        expect(result[0]).toMatchObject({ id: '1', name: 'Crypto', mode: 'public' });
+        expect(result[1]).toMatchObject({ id: '2', name: 'AI', mode: 'private' });
+    });
+
+    it('returns empty list for malformed payload', () => {
+        expect(parseListsManagement({}, new Set())).toEqual([]);
+        expect(parseListsManagement({ data: {} }, new Set())).toEqual([]);
+    });
+
+    it('dedupes across repeated entries', () => {
+        const entryA = { content: { itemContent: { list: { id_str: '1', name: 'A' } } } };
+        const payload = {
+            data: {
+                viewer: {
+                    list_management_timeline: {
+                        timeline: { instructions: [{ entries: [entryA, entryA] }] },
+                    },
+                },
+            },
+        };
+        const result = parseListsManagement(payload, new Set());
+        expect(result).toHaveLength(1);
     });
 });

@@ -51,16 +51,16 @@ export interface IPage {
   evaluateWithArgs?(js: string, args: Record<string, unknown>): Promise<any>;
   getCookies(opts?: { domain?: string; url?: string }): Promise<BrowserCookie[]>;
   snapshot(opts?: SnapshotOptions): Promise<any>;
-  click(ref: string): Promise<void>;
-  typeText(ref: string, text: string): Promise<void>;
+  click(ref: string, opts?: { nth?: number; firstOnMulti?: boolean }): Promise<{ matches_n: number; match_level: 'exact' | 'stable' | 'reidentified' }>;
+  typeText(ref: string, text: string, opts?: { nth?: number; firstOnMulti?: boolean }): Promise<{ matches_n: number; match_level: 'exact' | 'stable' | 'reidentified' }>;
   pressKey(key: string): Promise<void>;
-  scrollTo(ref: string): Promise<any>;
+  scrollTo(ref: string, opts?: { nth?: number; firstOnMulti?: boolean }): Promise<any>;
   getFormState(): Promise<any>;
   wait(options: number | WaitOptions): Promise<void>;
   tabs(): Promise<any>;
-  closeTab?(index?: number): Promise<void>;
-  newTab?(): Promise<void>;
-  selectTab(index: number): Promise<void>;
+  closeTab?(target?: number | string): Promise<void>;
+  newTab?(url?: string): Promise<string | undefined>;
+  selectTab(target: number | string): Promise<void>;
   networkRequests(includeStatic?: boolean): Promise<any>;
   consoleMessages(level?: string): Promise<any>;
   scroll(direction?: string, amount?: number): Promise<void>;
@@ -69,7 +69,7 @@ export interface IPage {
   getInterceptedRequests(): Promise<any[]>;
   waitForCapture(timeout?: number): Promise<void>;
   screenshot(options?: ScreenshotOptions): Promise<string>;
-  startNetworkCapture?(pattern?: string): Promise<void>;
+  startNetworkCapture?(pattern?: string): Promise<boolean>;
   readNetworkCapture?(): Promise<unknown[]>;
   /**
    * Set local file paths on a file input element via CDP DOM.setFileInputFiles.
@@ -86,10 +86,14 @@ export interface IPage {
   getCurrentUrl?(): Promise<string | null>;
   /** Returns the active page identity (targetId), or undefined if not yet resolved. */
   getActivePage?(): string | undefined;
-  /** @deprecated Use getActivePage() instead */
-  getActiveTabId?(): number | undefined;
+  /** Bind the page object to a specific page identity (targetId). */
+  setActivePage?(page?: string): void;
   /** Send a raw CDP command via chrome.debugger passthrough. */
   cdp?(method: string, params?: Record<string, unknown>): Promise<unknown>;
+  /** List cross-origin iframe targets in snapshot order. */
+  frames?(): Promise<Array<{ index: number; frameId: string; url: string; name: string }>>;
+  /** Evaluate JavaScript inside a cross-origin iframe identified by its frame index. */
+  evaluateInFrame?(js: string, frameIndex: number): Promise<unknown>;
   /** Click at native coordinates via CDP Input.dispatchMouseEvent. */
   nativeClick?(x: number, y: number): Promise<void>;
   /** Type text via CDP Input.insertText. */

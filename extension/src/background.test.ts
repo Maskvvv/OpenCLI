@@ -154,6 +154,109 @@ describe('background tab isolation', () => {
     ]);
   });
 
+  it('lists cross-origin frames in the same order exposed by snapshot [F#] markers', async () => {
+    const { chrome } = createChromeMock();
+    chrome.debugger.sendCommand = vi.fn(async (_target: unknown, method: string) => {
+      if (method === 'Runtime.enable') return {};
+      if (method === 'Runtime.evaluate') return { result: { value: 1 } };
+      if (method === 'Page.getFrameTree') {
+        return {
+          frameTree: {
+            frame: { id: 'root', url: 'https://main.example/' },
+            childFrames: [
+              {
+                frame: { id: 'same-origin-parent', url: 'https://main.example/embed' },
+                childFrames: [
+                  {
+                    frame: { id: 'cross-origin-nested', url: 'https://x.example/widget', name: 'nested-x' },
+                    childFrames: [
+                      {
+                        frame: { id: 'hidden-descendant', url: 'https://x.example/inner' },
+                      },
+                    ],
+                  },
+                ],
+              },
+              {
+                frame: { id: 'cross-origin-sibling', url: 'https://y.example/iframe', name: 'sibling-y' },
+              },
+            ],
+          },
+        };
+      }
+      return {};
+    });
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:twitter', 1);
+
+    const result = await mod.__test__.handleCommand({ id: 'frames', action: 'frames', workspace: 'site:twitter' });
+
+    expect(result.ok).toBe(true);
+    expect(result.data).toEqual([
+      { index: 0, frameId: 'cross-origin-nested', url: 'https://x.example/widget', name: 'nested-x' },
+      { index: 1, frameId: 'cross-origin-sibling', url: 'https://y.example/iframe', name: 'sibling-y' },
+    ]);
+  });
+
+  it('routes exec frameIndex through the same cross-origin frame ordering as handleFrames', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    const evaluateInFrame = vi.fn(async () => 'frame-result');
+    vi.doMock('./cdp', () => ({
+      registerListeners: vi.fn(),
+      registerFrameTracking: vi.fn(),
+      hasActiveNetworkCapture: vi.fn(() => false),
+      detach: vi.fn(async () => {}),
+      evaluateAsync: vi.fn(async () => 'main-result'),
+      evaluateInFrame,
+      getFrameTree: vi.fn(async () => ({
+        frameTree: {
+          frame: { id: 'root', url: 'https://main.example/' },
+          childFrames: [
+            {
+              frame: { id: 'same-origin-parent', url: 'https://main.example/embed' },
+              childFrames: [
+                { frame: { id: 'cross-origin-nested', url: 'https://x.example/widget', name: 'nested-x' } },
+              ],
+            },
+            {
+              frame: { id: 'cross-origin-sibling', url: 'https://y.example/iframe', name: 'sibling-y' },
+            },
+          ],
+        },
+      })),
+      screenshot: vi.fn(),
+      setFileInputFiles: vi.fn(),
+      insertText: vi.fn(),
+      startNetworkCapture: vi.fn(),
+      readNetworkCapture: vi.fn(async () => []),
+      ensureAttached: vi.fn(),
+    }));
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:twitter', 1);
+
+    const listResult = await mod.__test__.handleCommand({ id: 'frames', action: 'frames', workspace: 'site:twitter' });
+    const execResult = await mod.__test__.handleCommand({
+      id: 'exec-in-frame',
+      action: 'exec',
+      code: 'document.title',
+      frameIndex: 0,
+      workspace: 'site:twitter',
+    });
+
+    expect(listResult.ok).toBe(true);
+    expect(listResult.data).toEqual([
+      { index: 0, frameId: 'cross-origin-nested', url: 'https://x.example/widget', name: 'nested-x' },
+      { index: 1, frameId: 'cross-origin-sibling', url: 'https://y.example/iframe', name: 'sibling-y' },
+    ]);
+    expect(execResult.ok).toBe(true);
+    expect(evaluateInFrame).toHaveBeenCalledWith(1, 'document.title', 'cross-origin-nested', false);
+  });
+
   it('creates new tabs inside the automation window', async () => {
     const { chrome, create } = createChromeMock();
     vi.stubGlobal('chrome', chrome);
@@ -165,6 +268,26 @@ describe('background tab isolation', () => {
 
     expect(result.ok).toBe(true);
     expect(create).toHaveBeenCalledWith({ windowId: 1, url: 'https://new.example', active: true });
+  });
+
+  it('closes a tab by page identity', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:twitter', 1);
+
+    const result = await mod.__test__.handleTabs(
+      { id: 'close-by-page', action: 'tabs', op: 'close', workspace: 'site:twitter', page: 'target-1' },
+      'site:twitter',
+    );
+
+    expect(result).toEqual({
+      id: 'close-by-page',
+      ok: true,
+      data: { closed: 'target-1' },
+    });
+    expect(chrome.tabs.remove).toHaveBeenCalledWith(1);
   });
 
   it('treats normalized same-url navigate as already complete', async () => {
@@ -195,6 +318,46 @@ describe('background tab isolation', () => {
     expect(update).not.toHaveBeenCalled();
   });
 
+  it('keeps the debugger attached during navigation when network capture is active', async () => {
+    const { chrome, tabs } = createChromeMock();
+    const onUpdatedListeners: Array<(id: number, info: chrome.tabs.TabChangeInfo, tab: chrome.tabs.Tab) => void> = [];
+    chrome.tabs.onUpdated.addListener = vi.fn((fn) => { onUpdatedListeners.push(fn); });
+    chrome.tabs.onUpdated.removeListener = vi.fn((fn) => {
+      const idx = onUpdatedListeners.indexOf(fn);
+      if (idx >= 0) onUpdatedListeners.splice(idx, 1);
+    });
+    chrome.tabs.update = vi.fn(async (tabId: number, updates: { active?: boolean; url?: string }) => {
+      const tab = tabs.find((entry) => entry.id === tabId);
+      if (!tab) throw new Error(`Unknown tab ${tabId}`);
+      if (updates.active !== undefined) tab.active = updates.active;
+      if (updates.url !== undefined) tab.url = updates.url;
+      tab.status = 'complete';
+      for (const listener of [...onUpdatedListeners]) {
+        listener(tabId, { status: 'complete', url: tab.url }, tab as chrome.tabs.Tab);
+      }
+      return tab;
+    });
+    vi.stubGlobal('chrome', chrome);
+
+    const detachMock = vi.fn(async () => {});
+    vi.doMock('./cdp', () => ({
+      registerListeners: vi.fn(),
+      hasActiveNetworkCapture: vi.fn(() => true),
+      detach: detachMock,
+    }));
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:eos', 1);
+
+    const result = await mod.__test__.handleNavigate(
+      { id: 'capture-nav', action: 'navigate', url: 'https://eos.douyin.com/livesite/live/current', workspace: 'site:eos' },
+      'site:eos',
+    );
+
+    expect(result.ok).toBe(true);
+    expect(detachMock).not.toHaveBeenCalled();
+  });
+
   it('keeps hash routes distinct when comparing target URLs', async () => {
     const { chrome } = createChromeMock();
     vi.stubGlobal('chrome', chrome);
@@ -220,6 +383,91 @@ describe('background tab isolation', () => {
       expect.objectContaining({ workspace: 'site:twitter', windowId: 1 }),
       expect.objectContaining({ workspace: 'site:zhihu', windowId: 2 }),
     ]));
+  });
+
+  it('can execute concurrently on two pages in the same workspace', async () => {
+    const { chrome, tabs } = createChromeMock();
+    tabs.push({
+      id: 4,
+      windowId: 1,
+      url: 'https://automation-2.example',
+      title: 'automation-2',
+      active: false,
+      status: 'complete',
+    });
+    vi.stubGlobal('chrome', chrome);
+
+    let inFlight = 0;
+    let maxInFlight = 0;
+    vi.doMock('./cdp', () => ({
+      registerListeners: vi.fn(),
+      evaluateAsync: vi.fn(async (tabId: number, code: string) => {
+        inFlight++;
+        maxInFlight = Math.max(maxInFlight, inFlight);
+        await new Promise(resolve => setTimeout(resolve, 30));
+        inFlight--;
+        return { tabId, code };
+      }),
+    }));
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:parallel', 1);
+
+    const [first, second] = await Promise.all([
+      mod.__test__.handleExec({ id: 'p1', action: 'exec', workspace: 'site:parallel', page: 'target-1', code: 'window.__task = 1' }, 'site:parallel'),
+      mod.__test__.handleExec({ id: 'p2', action: 'exec', workspace: 'site:parallel', page: 'target-4', code: 'window.__task = 2' }, 'site:parallel'),
+    ]);
+
+    expect(first).toEqual(expect.objectContaining({
+      ok: true,
+      page: 'target-1',
+      data: { tabId: 1, code: 'window.__task = 1' },
+    }));
+    expect(second).toEqual(expect.objectContaining({
+      ok: true,
+      page: 'target-4',
+      data: { tabId: 4, code: 'window.__task = 2' },
+    }));
+    expect(maxInFlight).toBe(2);
+  });
+
+  it('can execute concurrently across two workspaces/windows', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    let inFlight = 0;
+    let maxInFlight = 0;
+    vi.doMock('./cdp', () => ({
+      registerListeners: vi.fn(),
+      evaluateAsync: vi.fn(async (tabId: number, code: string) => {
+        inFlight++;
+        maxInFlight = Math.max(maxInFlight, inFlight);
+        await new Promise(resolve => setTimeout(resolve, 30));
+        inFlight--;
+        return { tabId, code };
+      }),
+    }));
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('site:twitter', 1);
+    mod.__test__.setAutomationWindowId('site:zhihu', 2);
+
+    const [first, second] = await Promise.all([
+      mod.__test__.handleExec({ id: 'w1', action: 'exec', workspace: 'site:twitter', code: 'window.__window = 1' }, 'site:twitter'),
+      mod.__test__.handleExec({ id: 'w2', action: 'exec', workspace: 'site:zhihu', code: 'window.__window = 2' }, 'site:zhihu'),
+    ]);
+
+    expect(first).toEqual(expect.objectContaining({
+      ok: true,
+      page: 'target-1',
+      data: { tabId: 1, code: 'window.__window = 1' },
+    }));
+    expect(second).toEqual(expect.objectContaining({
+      ok: true,
+      page: 'target-2',
+      data: { tabId: 2, code: 'window.__window = 2' },
+    }));
+    expect(maxInFlight).toBe(2);
   });
 
   it('keeps site:notebooklm inside its owned automation window instead of rebinding to a user tab', async () => {
@@ -291,5 +539,109 @@ describe('background tab isolation', () => {
 
     expect(chrome.windows.remove).toHaveBeenCalledWith(1);
     expect(mod.__test__.getSession('site:notebooklm')).toBeNull();
+  });
+
+  it('uses 10-minute timeout for browser:* workspaces', async () => {
+    const { chrome } = createChromeMock();
+    vi.useFakeTimers();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('browser:default', 1);
+
+    mod.__test__.resetWindowIdleTimer('browser:default');
+    // After 30s (adapter timeout), session should still be alive
+    await vi.advanceTimersByTimeAsync(30001);
+    expect(mod.__test__.getSession('browser:default')).not.toBeNull();
+
+    // After 10 min total, session should be cleaned up
+    await vi.advanceTimersByTimeAsync(600000 - 30001);
+    expect(chrome.windows.remove).toHaveBeenCalledWith(1);
+    expect(mod.__test__.getSession('browser:default')).toBeNull();
+  });
+
+  it('clears workspaceTimeoutOverrides on idle expiry', async () => {
+    const { chrome } = createChromeMock();
+    vi.useFakeTimers();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('browser:test', 1);
+
+    // Set a custom timeout override
+    mod.__test__.workspaceTimeoutOverrides.set('browser:test', 120_000);
+    expect(mod.__test__.getIdleTimeout('browser:test')).toBe(120_000);
+
+    // Trigger idle timer with the custom timeout
+    mod.__test__.resetWindowIdleTimer('browser:test');
+    await vi.advanceTimersByTimeAsync(120001);
+
+    // Override should be cleaned up
+    expect(mod.__test__.workspaceTimeoutOverrides.has('browser:test')).toBe(false);
+    expect(mod.__test__.getSession('browser:test')).toBeNull();
+    // Should fall back to default interactive timeout
+    expect(mod.__test__.getIdleTimeout('browser:test')).toBe(600_000);
+  });
+
+  it('clears workspaceTimeoutOverrides on explicit close', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('browser:close-test', 1);
+    mod.__test__.workspaceTimeoutOverrides.set('browser:close-test', 300_000);
+
+    const result = await mod.__test__.handleCommand({
+      id: 'close-1',
+      action: 'close-window',
+      workspace: 'browser:close-test',
+    });
+
+    expect(result.ok).toBe(true);
+    expect(mod.__test__.workspaceTimeoutOverrides.has('browser:close-test')).toBe(false);
+  });
+
+  it('applies idleTimeout from command to workspace override', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+    mod.__test__.setAutomationWindowId('browser:custom', 1);
+
+    // Default for browser:* is 10 min
+    expect(mod.__test__.getIdleTimeout('browser:custom')).toBe(600_000);
+
+    // Send a command with custom idleTimeout (in seconds)
+    await mod.__test__.handleCommand({
+      id: 'custom-1',
+      action: 'sessions',
+      workspace: 'browser:custom',
+      idleTimeout: 120,
+    });
+
+    // Override should now be 120s = 120000ms
+    expect(mod.__test__.getIdleTimeout('browser:custom')).toBe(120_000);
+  });
+
+  it('clears workspaceTimeoutOverrides when user manually closes automation window', async () => {
+    const { chrome } = createChromeMock();
+    vi.stubGlobal('chrome', chrome);
+
+    const mod = await import('./background');
+
+    // Set up a session with window ID 42 and a custom timeout override
+    mod.__test__.setAutomationWindowId('browser:manual', 42);
+    mod.__test__.workspaceTimeoutOverrides.set('browser:manual', 180_000);
+    expect(mod.__test__.getIdleTimeout('browser:manual')).toBe(180_000);
+
+    // Simulate user closing the window — invoke the onRemoved listener
+    const onRemovedListener = chrome.windows.onRemoved.addListener.mock.calls[0][0];
+    await onRemovedListener(42);
+
+    // Session and override should both be cleaned up
+    expect(mod.__test__.getSession('browser:manual')).toBeNull();
+    expect(mod.__test__.workspaceTimeoutOverrides.has('browser:manual')).toBe(false);
+    // Should fall back to default interactive timeout
+    expect(mod.__test__.getIdleTimeout('browser:manual')).toBe(600_000);
   });
 });

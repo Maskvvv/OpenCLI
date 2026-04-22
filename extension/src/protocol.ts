@@ -18,17 +18,16 @@ export type Action =
   | 'bind-current'
   | 'network-capture-start'
   | 'network-capture-read'
-  | 'cdp';
+  | 'cdp'
+  | 'frames';
 
 export interface Command {
   /** Unique request ID */
   id: string;
   /** Action type */
   action: Action;
-  /** Target page identity (targetId). Cross-layer contract — preferred over tabId. */
+  /** Target page identity (targetId). Cross-layer contract with the daemon. */
   page?: string;
-  /** @deprecated Legacy tab ID — use `page` (targetId) instead. Kept for backward compat. */
-  tabId?: number;
   /** JS code to evaluate in page context (exec action) */
   code?: string;
   /** Logical workspace for automation session reuse */
@@ -65,6 +64,10 @@ export interface Command {
   cdpParams?: Record<string, unknown>;
   /** When true, automation windows are created in the foreground (focused) */
   windowFocused?: boolean;
+  /** Custom idle timeout in seconds for this workspace session. Overrides the default. */
+  idleTimeout?: number;
+  /** Frame index for cross-frame operations (0-based, from 'frames' action) */
+  frameIndex?: number;
 }
 
 export interface Result {

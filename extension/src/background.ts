@@ -118,7 +118,9 @@ function scheduleReconnect(): void {
 // ─── Automation window isolation ─────────────────────────────────────
 // All opencli operations happen in a dedicated Chrome window so the
 // user's active browsing session is never touched.
-// The window auto-closes after 120s of idle (no commands).
+// The window auto-closes after a period of idle (no commands).
+// Interactive workspaces (browser:*, operate:*) get a longer timeout (10 min)
+// since users type commands manually; adapter workspaces keep a short 30s timeout.
 
 type AutomationSession = {
   windowId: number;
@@ -129,7 +131,21 @@ type AutomationSession = {
 };
 
 const automationSessions = new Map<string, AutomationSession>();
-const WINDOW_IDLE_TIMEOUT = 30000; // 30s — quick cleanup after command finishes
+const IDLE_TIMEOUT_DEFAULT = 30_000;      // 30s — adapter-driven automation
+const IDLE_TIMEOUT_INTERACTIVE = 600_000; // 10min — human-paced browser:* / operate:*
+
+/** Per-workspace custom timeout overrides set via command.idleTimeout */
+const workspaceTimeoutOverrides = new Map<string, number>();
+
+function getIdleTimeout(workspace: string): number {
+  const override = workspaceTimeoutOverrides.get(workspace);
+  if (override !== undefined) return override;
+  if (workspace.startsWith('browser:') || workspace.startsWith('operate:')) {
+    return IDLE_TIMEOUT_INTERACTIVE;
+  }
+  return IDLE_TIMEOUT_DEFAULT;
+}
+
 let windowFocused = false; // set per-command from daemon's OPENCLI_WINDOW_FOCUSED
 
 function getWorkspaceKey(workspace?: string): string {
@@ -140,23 +156,26 @@ function resetWindowIdleTimer(workspace: string): void {
   const session = automationSessions.get(workspace);
   if (!session) return;
   if (session.idleTimer) clearTimeout(session.idleTimer);
-  session.idleDeadlineAt = Date.now() + WINDOW_IDLE_TIMEOUT;
+  const timeout = getIdleTimeout(workspace);
+  session.idleDeadlineAt = Date.now() + timeout;
   session.idleTimer = setTimeout(async () => {
     const current = automationSessions.get(workspace);
     if (!current) return;
     if (!current.owned) {
       console.log(`[opencli] Borrowed workspace ${workspace} detached from window ${current.windowId} (idle timeout)`);
+      workspaceTimeoutOverrides.delete(workspace);
       automationSessions.delete(workspace);
       return;
     }
     try {
       await chrome.windows.remove(current.windowId);
-      console.log(`[opencli] Automation window ${current.windowId} (${workspace}) closed (idle timeout)`);
+      console.log(`[opencli] Automation window ${current.windowId} (${workspace}) closed (idle timeout, ${timeout / 1000}s)`);
     } catch {
       // Already gone
     }
+    workspaceTimeoutOverrides.delete(workspace);
     automationSessions.delete(workspace);
-  }, WINDOW_IDLE_TIMEOUT);
+  }, timeout);
 }
 
 /** Get or create the dedicated automation window.
@@ -191,7 +210,7 @@ async function getAutomationWindow(workspace: string, initialUrl?: string): Prom
   const session: AutomationSession = {
     windowId: win.id!,
     idleTimer: null,
-    idleDeadlineAt: Date.now() + WINDOW_IDLE_TIMEOUT,
+    idleDeadlineAt: Date.now() + getIdleTimeout(workspace),
     owned: true,
     preferredTabId: null,
   };
@@ -229,6 +248,7 @@ chrome.windows.onRemoved.addListener(async (windowId) => {
       console.log(`[opencli] Automation window closed (${workspace})`);
       if (session.idleTimer) clearTimeout(session.idleTimer);
       automationSessions.delete(workspace);
+      workspaceTimeoutOverrides.delete(workspace);
     }
   }
 });
@@ -247,6 +267,7 @@ function initialize(): void {
   initialized = true;
   chrome.alarms.create('keepalive', { periodInMinutes: 0.4 }); // ~24 seconds
   executor.registerListeners();
+  executor.registerFrameTracking();
   void connect();
   console.log('[opencli] OpenCLI extension initialized');
 }
@@ -280,6 +301,10 @@ chrome.runtime.onMessage.addListener((msg, _sender, sendResponse) => {
 async function handleCommand(cmd: Command): Promise<Result> {
   const workspace = getWorkspaceKey(cmd.workspace);
   windowFocused = cmd.windowFocused === true;
+  // Apply custom idle timeout if specified in the command
+  if (cmd.idleTimeout != null && cmd.idleTimeout > 0) {
+    workspaceTimeoutOverrides.set(workspace, cmd.idleTimeout * 1000);
+  }
   // Reset idle timer on every command (window stays alive while active)
   resetWindowIdleTimer(workspace);
   try {
@@ -310,6 +335,8 @@ async function handleCommand(cmd: Command): Promise<Result> {
         return await handleNetworkCaptureStart(cmd, workspace);
       case 'network-capture-read':
         return await handleNetworkCaptureRead(cmd, workspace);
+      case 'frames':
+        return await handleFrames(cmd, workspace);
       default:
         return { id: cmd.id, ok: false, error: `Unknown action: ${cmd.action}` };
     }
@@ -381,23 +408,64 @@ function matchesBindCriteria(tab: chrome.tabs.Tab, cmd: Command): boolean {
   return true;
 }
 
+function getUrlOrigin(url: string | undefined): string | null {
+  if (!url) return null;
+  try {
+    return new URL(url).origin;
+  } catch {
+    return null;
+  }
+}
+
+function enumerateCrossOriginFrames(tree: any): Array<{ index: number; frameId: string; url: string; name: string }> {
+  const frames: Array<{ index: number; frameId: string; url: string; name: string }> = [];
+
+  function collect(node: any, accessibleOrigin: string | null) {
+    for (const child of (node.childFrames || [])) {
+      const frame = child.frame;
+      const frameUrl = frame.url || frame.unreachableUrl || '';
+      const frameOrigin = getUrlOrigin(frameUrl);
+
+      // Mirror dom-snapshot's [F#] rules:
+      // - same-origin frames expand inline and do not get an [F#] slot
+      // - cross-origin / blocked frames get one slot and stop recursion there
+      if (accessibleOrigin && frameOrigin && frameOrigin === accessibleOrigin) {
+        collect(child, frameOrigin);
+        continue;
+      }
+
+      frames.push({
+        index: frames.length,
+        frameId: frame.id,
+        url: frameUrl,
+        name: frame.name || '',
+      });
+    }
+  }
+
+  const rootFrame = tree?.frameTree?.frame;
+  const rootUrl = rootFrame?.url || rootFrame?.unreachableUrl || '';
+  collect(tree.frameTree, getUrlOrigin(rootUrl));
+  return frames;
+}
+
 function setWorkspaceSession(workspace: string, session: Omit<AutomationSession, 'idleTimer' | 'idleDeadlineAt'>): void {
   const existing = automationSessions.get(workspace);
   if (existing?.idleTimer) clearTimeout(existing.idleTimer);
   automationSessions.set(workspace, {
     ...session,
     idleTimer: null,
-    idleDeadlineAt: Date.now() + WINDOW_IDLE_TIMEOUT,
+    idleDeadlineAt: Date.now() + getIdleTimeout(workspace),
   });
 }
 
 /**
- * Resolve tabId from command's page (targetId) or legacy tabId field.
- * page (targetId) takes precedence. Returns undefined if neither is provided.
+ * Resolve tabId from command's page (targetId).
+ * Returns undefined if no page identity is provided.
  */
 async function resolveCommandTabId(cmd: Command): Promise<number | undefined> {
   if (cmd.page) return identity.resolveTabId(cmd.page);
-  return cmd.tabId;
+  return undefined;
 }
 
 type ResolvedTab = { tabId: number; tab: chrome.tabs.Tab | null };
@@ -517,8 +585,28 @@ async function handleExec(cmd: Command, workspace: string): Promise<Result> {
   const tabId = await resolveTabId(cmdTabId, workspace);
   try {
     const aggressive = workspace.startsWith('browser:') || workspace.startsWith('operate:');
+    if (cmd.frameIndex != null) {
+      const tree = await executor.getFrameTree(tabId);
+      const frames = enumerateCrossOriginFrames(tree);
+      if (cmd.frameIndex < 0 || cmd.frameIndex >= frames.length) {
+        return { id: cmd.id, ok: false, error: `Frame index ${cmd.frameIndex} out of range (${frames.length} cross-origin frames available)` };
+      }
+      const data = await executor.evaluateInFrame(tabId, cmd.code, frames[cmd.frameIndex].frameId, aggressive);
+      return pageScopedResult(cmd.id, tabId, data);
+    }
     const data = await executor.evaluateAsync(tabId, cmd.code, aggressive);
     return pageScopedResult(cmd.id, tabId, data);
+  } catch (err) {
+    return { id: cmd.id, ok: false, error: err instanceof Error ? err.message : String(err) };
+  }
+}
+
+async function handleFrames(cmd: Command, workspace: string): Promise<Result> {
+  const cmdTabId = await resolveCommandTabId(cmd);
+  const tabId = await resolveTabId(cmdTabId, workspace);
+  try {
+    const tree = await executor.getFrameTree(tabId);
+    return { id: cmd.id, ok: true, data: enumerateCrossOriginFrames(tree) };
   } catch (err) {
     return { id: cmd.id, ok: false, error: err instanceof Error ? err.message : String(err) };
   }
@@ -543,13 +631,17 @@ async function handleNavigate(cmd: Command, workspace: string): Promise<Result> 
     return pageScopedResult(cmd.id, tabId, { title: beforeTab.title, url: beforeTab.url, timedOut: false });
   }
 
-  // Detach any existing debugger before top-level navigation.
+  // Detach any existing debugger before top-level navigation unless network
+  // capture is already armed on this tab. Otherwise we would clear the capture
+  // state right before the page load we are trying to observe.
   // Some sites (observed on creator.xiaohongshu.com flows) can invalidate the
   // current inspected target during navigation, which leaves a stale CDP attach
   // state and causes the next Runtime.evaluate to fail with
   // "Inspected target navigated or closed". Resetting here forces a clean
-  // re-attach after navigation.
-  await executor.detach(tabId);
+  // re-attach after navigation when capture is not active.
+  if (!executor.hasActiveNetworkCapture(tabId)) {
+    await executor.detach(tabId);
+  }
 
   await chrome.tabs.update(tabId, { url: targetUrl });
 
@@ -658,7 +750,7 @@ async function handleTabs(cmd: Command, workspace: string): Promise<Result> {
       return { id: cmd.id, ok: true, data: { closed: closedPage } };
     }
     case 'select': {
-      if (cmd.index === undefined && cmd.page === undefined && cmd.tabId === undefined)
+      if (cmd.index === undefined && cmd.page === undefined)
         return { id: cmd.id, ok: false, error: 'Missing index or page' };
       const cmdTabId = await resolveCommandTabId(cmd);
       if (cmdTabId !== undefined) {
@@ -738,6 +830,7 @@ const CDP_ALLOWLIST = new Set([
   // Page metrics & screenshots
   'Page.getLayoutMetrics',
   'Page.captureScreenshot',
+  'Page.getFrameTree',
   // Runtime.enable needed for CDP attach setup (Runtime.evaluate goes through 'exec' action)
   'Runtime.enable',
   // Emulation (used by screenshot full-page)
@@ -777,6 +870,7 @@ async function handleCloseWindow(cmd: Command, workspace: string): Promise<Resul
       }
     }
     if (session.idleTimer) clearTimeout(session.idleTimer);
+    workspaceTimeoutOverrides.delete(workspace);
     automationSessions.delete(workspace);
   }
   return { id: cmd.id, ok: true, data: { closed: true } };
@@ -875,6 +969,7 @@ async function handleBindCurrent(cmd: Command, workspace: string): Promise<Resul
 }
 
 export const __test__ = {
+  handleExec,
   handleNavigate,
   isTargetUrl,
   handleTabs,
@@ -882,6 +977,9 @@ export const __test__ = {
   handleBindCurrent,
   resolveTabId,
   resetWindowIdleTimer,
+  handleCommand,
+  getIdleTimeout,
+  workspaceTimeoutOverrides,
   getSession: (workspace: string = 'default') => automationSessions.get(workspace) ?? null,
   getAutomationWindowId: (workspace: string = 'default') => automationSessions.get(workspace)?.windowId ?? null,
   setAutomationWindowId: (workspace: string, windowId: number | null) => {

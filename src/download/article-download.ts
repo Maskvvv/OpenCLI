@@ -9,6 +9,7 @@
 import * as fs from 'node:fs';
 import * as path from 'node:path';
 import TurndownService from 'turndown';
+import { gfm } from 'turndown-plugin-gfm';
 import { httpDownload, sanitizeFilename } from './index.js';
 import { formatBytes } from './progress.js';
 
@@ -48,6 +49,12 @@ export interface ArticleDownloadOptions {
   detectImageExt?: (url: string) => string;
   /** Custom frontmatter labels (default: Chinese labels) */
   frontmatterLabels?: FrontmatterLabels;
+  /**
+   * Extra CSS selectors removed from the article before Turndown conversion.
+   * Use this to drop site-specific noise the adapter can't always trim upstream
+   * (e.g. zhihu 折叠卡, weixin 赞赏栏, wiki infobox).
+   */
+  cleanSelectors?: string[];
 }
 
 export interface ArticleDownloadResult {
@@ -56,6 +63,7 @@ export interface ArticleDownloadResult {
   publish_time: string;
   status: string;
   size: string;
+  saved: string;
 }
 
 const DEFAULT_LABELS: Required<FrontmatterLabels> = {
@@ -68,16 +76,79 @@ const DEFAULT_LABELS: Required<FrontmatterLabels> = {
 // Markdown Conversion
 // ============================================================
 
-function createTurndown(configure?: (td: TurndownService) => void): TurndownService {
+// Nodes that never carry article content. Turndown keeps them by default — if an
+// adapter's contentHtml extraction misses one, CSS / scripts / widget markup
+// ends up inline in the .md. Strip them unconditionally at the converter level.
+// `svg` is not in HTMLElementTagNameMap, so we type-narrow manually.
+// `header/footer/nav/aside` cover page chrome that adapters occasionally
+// forget to trim — the article's own title/author/publishTime are supplied
+// as separate fields on ArticleData, so duplicated nodes are redundant.
+const STRIPPED_TAGS: Array<keyof HTMLElementTagNameMap> = [
+  'script', 'style', 'noscript',
+  'iframe', 'canvas',
+  'form', 'button', 'dialog',
+  'header', 'footer', 'nav', 'aside',
+];
+
+function createTurndown(
+  configure?: (td: TurndownService) => void,
+  cleanSelectors?: string[],
+): TurndownService {
   const td = new TurndownService({
     headingStyle: 'atx',
     codeBlockStyle: 'fenced',
     bulletListMarker: '-',
   });
+  td.use(gfm);
+  td.remove(STRIPPED_TAGS);
+  // turndown-plugin-gfm@1.0.2 emits single-tilde strikethrough (`~x~`), which
+  // is not the canonical GFM form. Override it so exported markdown is
+  // portable across common renderers.
+  td.addRule('canonicalStrikethrough', {
+    filter: (node) => ['DEL', 'S', 'STRIKE'].includes(node.nodeName),
+    replacement: (content) => `~~${content}~~`,
+  });
+  // SVG isn't in the static HTML tag map; match by name with a custom filter.
+  td.addRule('stripSvg', {
+    filter: (node) => node.nodeName === 'svg' || node.nodeName === 'SVG',
+    replacement: () => '',
+  });
   td.addRule('linebreak', {
     filter: 'br',
     replacement: () => '\n',
   });
+  // Inline base64 images would land as huge `![](data:image/...;base64,...)`
+  // strings that the image downloader can't localize. Drop them.
+  td.addRule('ignoreBase64Images', {
+    filter: (node) => {
+      if (node.nodeName !== 'IMG') return false;
+      const src = (node as HTMLImageElement).getAttribute?.('src') ?? '';
+      return src.startsWith('data:');
+    },
+    replacement: () => '',
+  });
+  // Per-adapter dirty-node removal. Adapters know their site's specific noise
+  // (zhihu 折叠卡, weixin 赞赏栏, wiki 折叠 infobox …); we keep the default set
+  // empty so the generic converter stays untouched.
+  const selectorRules = (cleanSelectors ?? [])
+    .map(sel => sel.trim())
+    .filter(Boolean);
+  if (selectorRules.length > 0) {
+    td.addRule('cleanSelectors', {
+      filter: (node) => {
+        const match = (node as Element).matches;
+        if (typeof match !== 'function') return false;
+        return selectorRules.some((sel) => {
+          try {
+            return match.call(node, sel);
+          } catch {
+            return false;
+          }
+        });
+      },
+      replacement: () => '',
+    });
+  }
   if (configure) configure(td);
   return td;
 }
@@ -86,8 +157,9 @@ function convertToMarkdown(
   contentHtml: string,
   codeBlocks: Array<{ lang: string; code: string }>,
   configure?: (td: TurndownService) => void,
+  cleanSelectors?: string[],
 ): string {
-  const td = createTurndown(configure);
+  const td = createTurndown(configure, cleanSelectors);
   let md = td.turndown(contentHtml);
 
   // Restore code block placeholders
@@ -99,8 +171,12 @@ function convertToMarkdown(
 
   // Clean up
   md = md.replace(/\u00a0/g, ' ');
-  md = md.replace(/\n{4,}/g, '\n\n\n');
+  // Turndown leaves behind lone dashes / middle dots when list bullets or
+  // decorative separators lose their surrounding inline context.
+  md = md.replace(/^[ \t]*[-·][ \t]*$/gm, '');
+  md = md.replace(/^[ \t]+$/gm, '');
   md = md.replace(/[ \t]+$/gm, '');
+  md = md.replace(/\n{3,}/g, '\n\n');
 
   return md;
 }
@@ -201,6 +277,7 @@ export async function downloadArticle(
     configureTurndown,
     detectImageExt,
     frontmatterLabels,
+    cleanSelectors,
   } = options;
 
   const labels = { ...DEFAULT_LABELS, ...frontmatterLabels };
@@ -212,6 +289,7 @@ export async function downloadArticle(
       publish_time: '-',
       status: 'failed — no title',
       size: '-',
+      saved: '-',
     }];
   }
 
@@ -222,6 +300,7 @@ export async function downloadArticle(
       publish_time: data.publishTime || '-',
       status: 'failed — no content',
       size: '-',
+      saved: '-',
     }];
   }
 
@@ -230,6 +309,7 @@ export async function downloadArticle(
     data.contentHtml,
     data.codeBlocks || [],
     configureTurndown,
+    cleanSelectors,
   );
 
   // Prepare output directory
@@ -246,14 +326,15 @@ export async function downloadArticle(
     markdown = replaceImageUrls(markdown, urlMap);
   }
 
-  // Build frontmatter with customizable labels
-  const headerLines = [`# ${data.title}`, ''];
+  // Build frontmatter with customizable labels.
+  // Shape: `# Title\n[> meta\n...]\n---\n\n<markdown>` — exactly one blank
+  // line separates every section, so we never produce ≥3 consecutive newlines.
+  const headerLines = [`# ${data.title}`];
   if (data.author) headerLines.push(`> ${labels.author}: ${data.author}`);
   if (data.publishTime) headerLines.push(`> ${labels.publishTime}: ${data.publishTime}`);
   if (data.sourceUrl) headerLines.push(`> ${labels.sourceUrl}: ${data.sourceUrl}`);
-  headerLines.push('', '---', '');
-
-  const fullContent = headerLines.join('\n') + markdown;
+  const frontmatter = headerLines.join('\n') + '\n\n---\n\n';
+  const fullContent = frontmatter + markdown;
 
   // Write file
   const filename = `${safeTitle}.md`;
@@ -268,5 +349,6 @@ export async function downloadArticle(
     publish_time: data.publishTime || '-',
     status: 'success',
     size: formatBytes(size),
+    saved: filePath,
   }];
 }

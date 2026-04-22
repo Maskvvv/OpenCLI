@@ -9,9 +9,10 @@ import * as fs from 'node:fs';
 import type { IPage } from '../types.js';
 import type { IBrowserFactory } from '../runtime.js';
 import { Page } from './page.js';
-import { getDaemonHealth } from './daemon-client.js';
+import { getDaemonHealth, requestDaemonShutdown } from './daemon-client.js';
 import { DEFAULT_DAEMON_PORT } from '../constants.js';
 import { BrowserConnectError } from '../errors.js';
+import { PKG_VERSION } from '../version.js';
 
 const DAEMON_SPAWN_TIMEOUT = 10000; // 10s to wait for daemon + extension
 
@@ -29,7 +30,7 @@ export class BrowserBridge implements IBrowserFactory {
     return this._state;
   }
 
-  async connect(opts: { timeout?: number; workspace?: string } = {}): Promise<IPage> {
+  async connect(opts: { timeout?: number; workspace?: string; idleTimeout?: number } = {}): Promise<IPage> {
     if (this._state === 'connected' && this._page) return this._page;
     if (this._state === 'connecting') throw new Error('Already connecting');
     if (this._state === 'closing') throw new Error('Session is closing');
@@ -39,7 +40,7 @@ export class BrowserBridge implements IBrowserFactory {
 
     try {
       await this._ensureDaemon(opts.timeout);
-      this._page = new Page(opts.workspace);
+      this._page = new Page(opts.workspace, opts.idleTimeout);
       this._state = 'connected';
       return this._page;
     } catch (err) {
@@ -66,21 +67,50 @@ export class BrowserBridge implements IBrowserFactory {
     // Fast path: everything ready
     if (health.state === 'ready') return;
 
-    // Daemon running but no extension — wait for extension with progress
+    // Daemon running but no extension
     if (health.state === 'no-extension') {
-      if (process.env.OPENCLI_VERBOSE || process.stderr.isTTY) {
-        process.stderr.write('⏳ Waiting for Chrome/Chromium extension to connect...\n');
-        process.stderr.write('   Make sure Chrome or Chromium is open and the OpenCLI extension is enabled.\n');
+      // Detect stale daemon: version mismatch OR missing daemonVersion (pre-version daemon)
+      const daemonVersion = health.status?.daemonVersion;
+      const isStale = !daemonVersion || daemonVersion !== PKG_VERSION;
+
+      if (isStale) {
+        // Stale daemon — restart it so extension gets a fresh WebSocket endpoint
+        const reason = daemonVersion
+          ? `v${daemonVersion} ≠ v${PKG_VERSION}`
+          : `pre-version daemon, CLI is v${PKG_VERSION}`;
+        if (process.env.OPENCLI_VERBOSE || process.stderr.isTTY) {
+          process.stderr.write(`⚠️  Stale daemon detected (${reason}). Restarting...\n`);
+        }
+        const shutdownAccepted = await requestDaemonShutdown();
+        const portReleased = shutdownAccepted && await this._waitForDaemonStop(3000);
+
+        if (!portReleased) {
+          // Stale daemon replacement failed — don't blindly spawn on an occupied port
+          throw new BrowserConnectError(
+            'Stale daemon could not be replaced',
+            `A stale daemon (${reason}) is running but did not shut down.\n` +
+            '  Run manually: opencli daemon stop && opencli doctor',
+            'daemon-not-running',
+          );
+        }
+        // Port released — fall through to spawn a fresh daemon
+      } else {
+        // Same version — wait for extension to connect
+        if (process.env.OPENCLI_VERBOSE || process.stderr.isTTY) {
+          process.stderr.write('⏳ Waiting for Chrome/Chromium extension to connect...\n');
+          process.stderr.write('   Make sure Chrome or Chromium is open and the OpenCLI extension is enabled.\n');
+        }
+        if (await this._pollUntilReady(timeoutMs)) return;
+        throw new BrowserConnectError(
+          'Browser Bridge extension not connected',
+          'Make sure Chrome/Chromium is open and the extension is enabled.\n' +
+          'If the extension is installed, try: opencli daemon stop && opencli doctor\n' +
+          'If not installed:\n' +
+          '  1. Download: https://github.com/jackwener/opencli/releases\n' +
+          '  2. Open chrome://extensions → Developer Mode → Load unpacked',
+          'extension-not-connected',
+        );
       }
-      if (await this._pollUntilReady(timeoutMs)) return;
-      throw new BrowserConnectError(
-        'Browser Bridge extension not connected',
-        'Install the Browser Bridge:\n' +
-        '  1. Download: https://github.com/jackwener/opencli/releases\n' +
-        '  2. In Chrome or Chromium, open chrome://extensions → Developer Mode → Load unpacked\n' +
-        '  Then run: opencli doctor',
-        'extension-not-connected',
-      );
     }
 
     // No daemon — spawn one
@@ -113,10 +143,11 @@ export class BrowserBridge implements IBrowserFactory {
     if (finalHealth.state === 'no-extension') {
       throw new BrowserConnectError(
         'Browser Bridge extension not connected',
-        'Install the Browser Bridge:\n' +
+        'Make sure Chrome/Chromium is open and the extension is enabled.\n' +
+        'If the extension is installed, try: opencli daemon stop && opencli doctor\n' +
+        'If not installed:\n' +
         '  1. Download: https://github.com/jackwener/opencli/releases\n' +
-        '  2. In Chrome or Chromium, open chrome://extensions → Developer Mode → Load unpacked\n' +
-        '  Then run: opencli doctor',
+        '  2. Open chrome://extensions → Developer Mode → Load unpacked',
         'extension-not-connected',
       );
     }
@@ -126,6 +157,17 @@ export class BrowserBridge implements IBrowserFactory {
       `Try running manually:\n  node ${daemonPath}\nMake sure port ${DEFAULT_DAEMON_PORT} is available.`,
       'daemon-not-running',
     );
+  }
+
+  /** Poll until daemon is fully stopped (port released). */
+  private async _waitForDaemonStop(timeoutMs: number): Promise<boolean> {
+    const deadline = Date.now() + timeoutMs;
+    while (Date.now() < deadline) {
+      await new Promise(resolve => setTimeout(resolve, 200));
+      const h = await getDaemonHealth();
+      if (h.state === 'stopped') return true;
+    }
+    return false;
   }
 
   /** Poll getDaemonHealth() until state is 'ready' or deadline is reached. */

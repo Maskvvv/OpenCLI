@@ -19,6 +19,11 @@
 | `opencli twitter reply` | |
 | `opencli twitter delete` | |
 | `opencli twitter like` | |
+| `opencli twitter likes` | |
+| `opencli twitter lists` | |
+| `opencli twitter list-tweets` | |
+| `opencli twitter list-add` | |
+| `opencli twitter list-remove` | |
 | `opencli twitter article` | |
 | `opencli twitter follow` | |
 | `opencli twitter unfollow` | |

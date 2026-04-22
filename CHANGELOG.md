@@ -1,5 +1,77 @@
 # Changelog
 
+## [1.7.6](https://github.com/jackwener/opencli/compare/v1.7.5...v1.7.6) (2026-04-21)
+
+Extension bumped to 1.0.2 (body-truncation signal unified across raw / detail / fallback paths).
+
+### Features
+
+* **Window lifecycle flags** — `--live` (or `OPENCLI_LIVE=1`) keeps the automation window open after a command finishes; `--focus` (or `OPENCLI_WINDOW_FOCUSED=1`) brings the window to the foreground. Works on any subcommand. ([#1122](https://github.com/jackwener/opencli/issues/1122))
+* **Selector-first browser interactions** — `find` / `get` / `click` / `type` / `select` accept CSS selectors in addition to numeric refs; `--nth` disambiguates multiple matches. ([#1112](https://github.com/jackwener/opencli/issues/1112))
+* **Agent-native browser payload** — structured `network` bodies with truncation signal, `get html --as json` with `--depth` / `--children-max` / `--text-max` budgets, new `browser extract` command for long-form content with resume cursor. ([#1104](https://github.com/jackwener/opencli/issues/1104))
+* **`network --filter <fields>`** — filter captured requests by body-shape path segments for quick API discovery. ([#1103](https://github.com/jackwener/opencli/issues/1103))
+* **`get html --as json`** — structured HTML tree output; no more silent truncation on raw `--as html`. ([#1102](https://github.com/jackwener/opencli/issues/1102))
+* **`browser network` rewrite** — agent-native discovery with cache keys and shape preview. ([#1100](https://github.com/jackwener/opencli/issues/1100))
+* **Compound form fields** — date / select / file controls surface a `compound` envelope with format, options, `accept`. Cascading stale-ref recovery + bbox 0.99 dedup for tagged elements. ([#1116](https://github.com/jackwener/opencli/issues/1116))
+* **twitter `tweets`** — fetch a user's recent posts. ([#1098](https://github.com/jackwener/opencli/issues/1098))
+* **bilibili `video`** — new video command. ([#1110](https://github.com/jackwener/opencli/issues/1110))
+* **deepseek `--file`** — file upload support on `ask`. ([#1093](https://github.com/jackwener/opencli/issues/1093))
+
+### Bug Fixes
+
+* **twitter** — 5s timeout on `resolveTwitterQueryId` to prevent hang. ([#1106](https://github.com/jackwener/opencli/issues/1106))
+* **youtube** — fall back to Videos tab when Home has no videos. ([#1109](https://github.com/jackwener/opencli/issues/1109))
+* **jianyu** — keep accessible detail urls in search. ([#1099](https://github.com/jackwener/opencli/issues/1099))
+* **jianyu** — block inaccessible detail links and verification pages. ([#918](https://github.com/jackwener/opencli/issues/918))
+
+### Docs
+
+* **opencli-browser skill** — restored and upgraded for selector-first workflow. ([#1119](https://github.com/jackwener/opencli/issues/1119))
+* **Window lifecycle** — sync README + skill docs with `--live` / `--focus` behavior. ([#1125](https://github.com/jackwener/opencli/issues/1125))
+
+### Extension (1.0.2)
+
+* Unify body-truncation contract across raw / detail / fallback network paths; surface `body_truncated` / `body_full_size` / `body_truncation_reason`. ([#1104](https://github.com/jackwener/opencli/issues/1104))
+
+## [1.7.5](https://github.com/jackwener/opencli/compare/v1.7.4...v1.7.5) (2026-04-20)
+
+Extension bumped to 1.0.1 (multi-tab routing + cross-origin iframe).
+
+### Features
+
+* **DeepSeek adapter** — browser-based `ask` / `history` / `new` / `read` / `status` ([#1088](https://github.com/jackwener/opencli/issues/1088))
+* **Eastmoney adapters** — 13 finance adapters as Phase A oracle: `quote`, `rank`, `kline`, `sectors`, `etf`, `holders`, `money-flow`, `northbound`, `longhu`, `kuaixun`, `convertible`, `index-board`, `announcement` ([#1091](https://github.com/jackwener/opencli/issues/1091))
+* **Twitter GraphQL lists** — `list-tweets`, `list-add`, `list-remove` ([#1076](https://github.com/jackwener/opencli/issues/1076))
+* **nowcoder adapter** — 牛客网 with 16 commands ([#1036](https://github.com/jackwener/opencli/issues/1036))
+* **Chinese academic & policy adapters** — `baidu-scholar`, `google-scholar`, `wanfang`, `gov-law`, `gov-policy` ([#243](https://github.com/jackwener/opencli/issues/243))
+* **Download saved path** — `web read` and `weixin download` now show saved file location ([#1042](https://github.com/jackwener/opencli/issues/1042))
+* **Cross-origin iframe support** — CDP execution context for iframed content ([#1084](https://github.com/jackwener/opencli/issues/1084))
+
+### Improvements
+
+* **Multi-tab routing** — hardened target isolation and tab routing ([#1072](https://github.com/jackwener/opencli/issues/1072))
+* **Skill consolidation** — 6 skills merged into 3 (`opencli-adapter-author`, `opencli-autofix`, `smart-search`); removed mechanical commands `explore` / `synthesize` / `generate` / `cascade` / `record` ([#1094](https://github.com/jackwener/opencli/issues/1094))
+* **Browser docs rewrite** — docs reoriented for AI Agent use case ([#1080](https://github.com/jackwener/opencli/issues/1080))
+* **antigravity serve** — configurable timeout + auto-reconnect ([#859](https://github.com/jackwener/opencli/issues/859), [#1063](https://github.com/jackwener/opencli/issues/1063))
+* **Design debt cleanup** — deprecated APIs, arg validation, dead plugin code ([#1065](https://github.com/jackwener/opencli/issues/1065))
+
+### Bug Fixes
+
+* **xiaoyuzhou** — migrate from broken SSR to authenticated API ([#1059](https://github.com/jackwener/opencli/issues/1059)); accept `CONFIG_ERROR` in E2E guard ([#1066](https://github.com/jackwener/opencli/issues/1066))
+* **xiaohongshu** — detect draft save success ([#1060](https://github.com/jackwener/opencli/issues/1060)); verify title input sticks on publish ([#1050](https://github.com/jackwener/opencli/issues/1050))
+* **twitter** — repair lists scraping from detail pages ([#1053](https://github.com/jackwener/opencli/issues/1053))
+* **zsxq** — separate content from title, remove title truncation ([#1079](https://github.com/jackwener/opencli/issues/1079))
+* **extension** — per-workspace idle timeout for browser sessions ([#1064](https://github.com/jackwener/opencli/issues/1064))
+
+### Revert
+
+* Undo output renderer table-formatting patch ([#1085](https://github.com/jackwener/opencli/issues/1085), reverts [#1081](https://github.com/jackwener/opencli/issues/1081))
+
+### Extension (1.0.1)
+
+* Multi-tab routing support ([#1072](https://github.com/jackwener/opencli/issues/1072))
+* Cross-origin iframe CDP contexts ([#1084](https://github.com/jackwener/opencli/issues/1084))
+
 ## [1.7.0](https://github.com/jackwener/opencli/compare/v1.6.1...v1.7.0) (2026-04-11)
 
 This is a major release with significant internal architecture changes.
@@ -84,7 +156,7 @@ Adapter code, validation, and error handling have been modernized.
 1. **Update Node.js** to v21 or later (v22 LTS recommended).
 2. **Run `npm install -g @jackwener/opencli@latest`** — the preuninstall hook gracefully stops the old daemon; the first browser command after upgrade auto-restarts it.
 3. **If you have custom `.ts` adapters** in `~/.opencli/clis/`, rename or compile them to `.js`. A warning will be printed on startup if stale `.ts` files are detected.
-4. **If you have custom `.yaml` adapters**, convert them to JS using the `cli()` API (see `skills/opencli-explorer/references/adapter-templates.md`).
+4. **If you have custom `.yaml` adapters**, convert them to JS using the `cli()` API (see `skills/opencli-adapter-author/references/adapter-template.md`).
 5. **If you parse error output from stdout**, switch to stderr. Errors are now structured YAML envelopes with typed exit codes.
 
 

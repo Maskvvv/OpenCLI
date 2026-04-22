@@ -53,6 +53,19 @@ describe('cli() registration', () => {
     expect(cmd.strategy).toBe(Strategy.PUBLIC);
   });
 
+  it('preserves LOCAL strategy on registration', () => {
+    const cmd = cli({
+      site: 'test-registry',
+      name: 'local-strategy',
+      description: 'reads local credentials',
+      strategy: Strategy.LOCAL,
+      browser: false,
+    });
+
+    expect(cmd.strategy).toBe(Strategy.LOCAL);
+    expect(cmd.browser).toBe(false);
+  });
+
   it('overwrites existing command on re-registration', () => {
     cli({ site: 'test-registry', name: 'overwrite', description: 'v1' });
     cli({ site: 'test-registry', name: 'overwrite', description: 'v2' });
@@ -169,6 +182,18 @@ describe('normalizeCommand (via registerCommand)', () => {
       strategy: Strategy.PUBLIC,
     });
     const cmd = getRegistry().get('test-norm/public')!;
+    expect(cmd.browser).toBe(false);
+    expect(cmd.navigateBefore).toBeUndefined();
+  });
+
+  it('LOCAL → browser false, navigateBefore undefined', () => {
+    registerCommand({
+      site: 'test-norm', name: 'local', description: '', args: [],
+      strategy: Strategy.LOCAL,
+    });
+    const cmd = getRegistry().get('test-norm/local')!;
+    expect(cmd.strategy).toBe(Strategy.LOCAL);
+    expect(strategyLabel(cmd)).toBe('local');
     expect(cmd.browser).toBe(false);
     expect(cmd.navigateBefore).toBeUndefined();
   });

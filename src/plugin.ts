@@ -217,37 +217,11 @@ function moveDir(src: string, dest: string, fsOps: MoveDirFsOps = fs): void {
   }
 }
 
-type PromoteDirFsOps = MoveDirFsOps & Pick<typeof fs, 'existsSync' | 'mkdirSync'>;
+type ReplaceDirFsOps = MoveDirFsOps & Pick<typeof fs, 'existsSync' | 'mkdirSync'>;
 
 function createSiblingTempPath(dest: string, kind: 'tmp' | 'bak'): string {
   const suffix = `${process.pid}-${Date.now()}-${Math.random().toString(16).slice(2)}`;
   return path.join(path.dirname(dest), `.${path.basename(dest)}.${kind}-${suffix}`);
-}
-
-/**
- * Promote a prepared staging directory into its final location.
- * The final path is only exposed after the directory has been fully prepared.
- */
-function promoteDir(stagingDir: string, dest: string, fsOps: PromoteDirFsOps = fs): void {
-  if (fsOps.existsSync(dest)) {
-    throw new PluginError(`Destination already exists: ${dest}`);
-  }
-
-  fsOps.mkdirSync(path.dirname(dest), { recursive: true });
-  const tempDest = createSiblingTempPath(dest, 'tmp');
-
-  try {
-    moveDir(stagingDir, tempDest, fsOps);
-    fsOps.renameSync(tempDest, dest);
-  } catch (err) {
-    try { fsOps.rmSync(tempDest, { recursive: true, force: true }); } catch {}
-    throw err;
-  }
-}
-
-function replaceDir(stagingDir: string, dest: string, fsOps: PromoteDirFsOps = fs): void {
-  const replacement = beginReplaceDir(stagingDir, dest, fsOps);
-  replacement.finalize();
 }
 
 function cloneRepoToTemp(cloneUrl: string): string {
@@ -359,7 +333,7 @@ function runTransaction<T>(work: (tx: Transaction) => T): T {
 function beginReplaceDir(
   stagingDir: string,
   dest: string,
-  fsOps: PromoteDirFsOps = fs,
+  fsOps: ReplaceDirFsOps = fs,
 ): TransactionHandle {
   const destExisted = fsOps.existsSync(dest);
   fsOps.mkdirSync(path.dirname(dest), { recursive: true });
@@ -573,6 +547,18 @@ export function validatePluginStructure(pluginDir: string): ValidationResult {
   return { valid: errors.length === 0, errors };
 }
 
+/** Check whether a directory has its own production dependencies in package.json. */
+function hasOwnDependencies(dir: string): boolean {
+  const pkgPath = path.join(dir, 'package.json');
+  if (!fs.existsSync(pkgPath)) return false;
+  try {
+    const pkg = JSON.parse(fs.readFileSync(pkgPath, 'utf-8'));
+    return pkg.dependencies != null && Object.keys(pkg.dependencies).length > 0;
+  } catch {
+    return false;
+  }
+}
+
 function installDependencies(dir: string): void {
   const pkgJsonPath = path.join(dir, 'package.json');
   if (!fs.existsSync(pkgJsonPath)) return;
@@ -607,11 +593,20 @@ function postInstallLifecycle(pluginDir: string): void {
 }
 
 /**
- * Monorepo lifecycle: install shared deps once at repo root, then finalize each sub-plugin.
+ * Monorepo lifecycle: install shared deps at repo root, then install and finalize each sub-plugin.
+ *
+ * The root install covers monorepos that use npm workspaces to hoist dependencies.
+ * For monorepos that do NOT use workspaces, sub-plugins may declare their own
+ * production dependencies in their package.json.  We install those per sub-plugin
+ * so that runtime imports (e.g. `undici`) can be resolved from the sub-plugin
+ * directory.  When the root already satisfies all deps this is a fast no-op.
  */
 function postInstallMonorepoLifecycle(repoDir: string, pluginDirs: string[]): void {
   installDependencies(repoDir);
   for (const pluginDir of pluginDirs) {
+    if (pluginDir !== repoDir && hasOwnDependencies(pluginDir)) {
+      installDependencies(pluginDir);
+    }
     finalizePluginRuntime(pluginDir);
   }
 }
@@ -1569,8 +1564,6 @@ export {
   installLocalPlugin as _installLocalPlugin,
   isLocalPluginSource as _isLocalPluginSource,
   moveDir as _moveDir,
-  promoteDir as _promoteDir,
-  replaceDir as _replaceDir,
   resolvePluginSource as _resolvePluginSource,
   resolveStoredPluginSource as _resolveStoredPluginSource,
   toStoredPluginSource as _toStoredPluginSource,
