@@ -381,6 +381,14 @@ async function readInviteTableDebug(page) {
 async function gotoListPageNumber(page, pageNum, delayBounds) {
     if (pageNum <= 1)
         return;
+    await closeOpenSelectDropdowns(page);
+    const inputOk = await jumpListPageByInput(page, pageNum);
+    if (inputOk) {
+        await humanPause(page, delayBounds, 1.2);
+        const currentPage = await readCurrentListPageNumber(page);
+        if (!currentPage || currentPage === pageNum)
+            return;
+    }
     const clickedTargetPage = await clickVisibleListPageNumber(page, pageNum);
     if (clickedTargetPage) {
         await humanPause(page, delayBounds, 1.2);
@@ -399,14 +407,24 @@ async function gotoListPageNumber(page, pageNum, delayBounds) {
             break;
         await humanPause(page, delayBounds, 1.2);
     }
-    const inputOk = await jumpListPageByInput(page, pageNum);
-    if (inputOk) {
+    const retryInputOk = await jumpListPageByInput(page, pageNum);
+    if (retryInputOk) {
         await humanPause(page, delayBounds, 1.2);
         const currentPage = await readCurrentListPageNumber(page);
         if (!currentPage || currentPage === pageNum)
             return;
     }
     throw new EmptyResultError('xiaohongshu/pgycsv', `Could not navigate to page ${pageNum}`);
+}
+
+async function closeOpenSelectDropdowns(page) {
+    await page.evaluate(`
+    (() => {
+      document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape', code: 'Escape', bubbles: true }));
+      document.dispatchEvent(new KeyboardEvent('keyup', { key: 'Escape', code: 'Escape', bubbles: true }));
+      return true;
+    })()
+  `);
 }
 
 async function clickVisibleListPageNumber(page, pageNum) {
@@ -421,7 +439,11 @@ async function clickVisibleListPageNumber(page, pageNum) {
       };
       const clean = (value) => (value || '').replace(/\\s+/g, ' ').trim();
       const pageTextPattern = /共\\s*\\d+\\s*条[，,]?\\s*\\d+\\s*页|跳至\\s*\\d*\\s*页|条\\/页/;
-      const candidates = Array.from(document.querySelectorAll('span, div, button, a, [role="button"]'))
+      const roots = Array.from(document.querySelectorAll('[class*="pagination"], [class*="pager"], .ant-pagination, .d-pagination, .semi-page'))
+        .filter(visible)
+        .filter((el) => pageTextPattern.test(clean(el.innerText || el.textContent || '')) || el.querySelector('input'));
+      const searchRoots = roots.length ? roots : [document.body];
+      const candidates = searchRoots.flatMap((root) => Array.from(root.querySelectorAll('span, div, button, a, [role="button"]')))
         .filter(visible)
         .filter((el) => clean(el.innerText || el.textContent || '') === pageNum)
         .map((el) => {
@@ -433,14 +455,17 @@ async function clickVisibleListPageNumber(page, pageNum) {
             ancestor = ancestor.parentElement;
           }
           const rect = el.getBoundingClientRect();
+          const optionLike = Boolean(el.closest('[role="listbox"], [class*="select"], [class*="dropdown"], [class*="popover"]'))
+            && !pageTextPattern.test(context);
           return {
             el,
             hasPaginationContext: pageTextPattern.test(context),
+            optionLike,
             top: rect.top,
             left: rect.left,
           };
         })
-        .filter((item) => item.hasPaginationContext || item.top > window.innerHeight * 0.45)
+        .filter((item) => item.hasPaginationContext && !item.optionLike)
         .sort((a, b) => (Number(b.hasPaginationContext) - Number(a.hasPaginationContext)) || b.top - a.top || a.left - b.left);
       const item = candidates[0];
       if (!item) return { ok: false };
@@ -506,7 +531,10 @@ async function clickPaginationNext(page) {
         return node.disabled || node.getAttribute('aria-disabled') === 'true' || /disabled/.test(cls);
       };
       const clean = (value) => (value || '').replace(/\\s+/g, ' ').trim();
-      const containers = Array.from(document.querySelectorAll('[class*="pagination"], [class*="pager"], .ant-pagination, .d-pagination, .semi-page')).filter(visible);
+      const pageTextPattern = /共\\s*\\d+\\s*条[，,]?\\s*\\d+\\s*页|跳至\\s*\\d*\\s*页|条\\/页/;
+      const containers = Array.from(document.querySelectorAll('[class*="pagination"], [class*="pager"], .ant-pagination, .d-pagination, .semi-page'))
+        .filter(visible)
+        .filter((el) => pageTextPattern.test(clean(el.innerText || el.textContent || '')) || el.querySelector('input'));
       const roots = containers.length ? containers : [document.body];
       const candidates = [];
       for (const root of roots) {
@@ -524,6 +552,26 @@ async function clickPaginationNext(page) {
         const looksNext = /next|下一页|下页|后一页|right/i.test(attrs) || /^(>|›|»)$/.test(text) || /下一页|下页/.test(text);
         if (!looksNext) continue;
         const clickable = el.closest('button, a, li, [role="button"]') || el;
+        clickable.scrollIntoView({ block: 'center', inline: 'center' });
+        const rect = clickable.getBoundingClientRect();
+        return { ok: true, x: Math.round(rect.left + rect.width / 2), y: Math.round(rect.top + rect.height / 2) };
+      }
+      for (const root of roots) {
+        const numericItems = Array.from(root.querySelectorAll('button, li, a, [role="button"], div, span'))
+          .filter(visible)
+          .map((el) => ({ el, text: clean(el.innerText || el.textContent || ''), rect: el.getBoundingClientRect() }))
+          .filter((item) => /^\\d+$/.test(item.text))
+          .sort((a, b) => a.rect.left - b.rect.left);
+        const lastNumber = numericItems[numericItems.length - 1];
+        if (!lastNumber) continue;
+        const nextByPosition = Array.from(root.querySelectorAll('button, li, a, [role="button"], div'))
+          .filter(visible)
+          .filter((el) => !disabled(el))
+          .map((el) => ({ el, rect: el.getBoundingClientRect() }))
+          .filter((item) => item.rect.left > lastNumber.rect.right && item.rect.width <= 80 && item.rect.height <= 80)
+          .sort((a, b) => a.rect.left - b.rect.left)[0];
+        if (!nextByPosition) continue;
+        const clickable = nextByPosition.el.closest('button, a, li, [role="button"]') || nextByPosition.el;
         clickable.scrollIntoView({ block: 'center', inline: 'center' });
         const rect = clickable.getBoundingClientRect();
         return { ok: true, x: Math.round(rect.left + rect.width / 2), y: Math.round(rect.top + rect.height / 2) };
@@ -552,11 +600,26 @@ async function jumpListPageByInput(page, pageNum) {
         const style = getComputedStyle(el);
         return rect.width > 0 && rect.height > 0 && style.visibility !== 'hidden' && style.display !== 'none';
       };
-      const roots = Array.from(document.querySelectorAll('[class*="pagination"], [class*="pager"], .ant-pagination, .d-pagination, .semi-page')).filter(visible);
+      const clean = (value) => (value || '').replace(/\\s+/g, ' ').trim();
+      const pageTextPattern = /共\\s*\\d+\\s*条[，,]?\\s*\\d+\\s*页|跳至\\s*\\d*\\s*页|条\\/页/;
+      const roots = Array.from(document.querySelectorAll('[class*="pagination"], [class*="pager"], .ant-pagination, .d-pagination, .semi-page'))
+        .filter(visible)
+        .filter((el) => pageTextPattern.test(clean(el.innerText || el.textContent || '')) || el.querySelector('input'));
       const inputs = (roots.length ? roots : [document.body]).flatMap((root) => Array.from(root.querySelectorAll('input')));
-      const input = inputs.find((el) => visible(el) && (/页|page|jump|goto/i.test(el.placeholder || el.getAttribute('aria-label') || '') || el.type === 'number' || el.inputMode === 'numeric'));
+      const input = inputs.find((el) => {
+        if (!visible(el)) return false;
+        const meta = clean([el.placeholder, el.getAttribute('aria-label'), el.getAttribute('type'), el.inputMode].join(' '));
+        if (/页|page|jump|goto|number|numeric/i.test(meta)) return true;
+        let ancestor = el.parentElement;
+        for (let depth = 0; ancestor && depth < 6; depth++) {
+          if (/跳至\\s*\\d*\\s*页|共\\s*\\d+\\s*条/.test(clean(ancestor.innerText || ancestor.textContent || ''))) return true;
+          ancestor = ancestor.parentElement;
+        }
+        return false;
+      });
       if (!input) return false;
       input.focus();
+      input.select?.();
       input.value = String(pageNum);
       input.dispatchEvent(new Event('input', { bubbles: true }));
       input.dispatchEvent(new Event('change', { bubbles: true }));
