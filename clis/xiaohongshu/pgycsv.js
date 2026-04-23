@@ -24,7 +24,7 @@ function cleanText(value) {
 
 function clampDelayBounds(minDelay, maxDelay) {
     const min = Number(minDelay ?? 1.2);
-    const max = Number(maxDelay ?? 3.8);
+    const max = Number(maxDelay ?? 1.5);
     if (!Number.isFinite(min) || !Number.isFinite(max) || min < 0 || max < 0) {
         throw new ArgumentError('--min-delay and --max-delay must be non-negative numbers');
     }
@@ -1229,9 +1229,8 @@ export async function runPgyCsvExport(page, kwargs) {
                 debug: rows.length === 0 ? await readInviteTableDebug(page) : undefined,
             };
         }
-        const advanced = await goToNextPage(page, delayBounds);
-        if (!advanced)
-            break;
+        await gotoListPageNumber(page, currentPage + 1, delayBounds);
+        await waitForInviteTable(page);
     }
 
     return {
@@ -1257,7 +1256,7 @@ cli({
         { name: 'end-page', type: 'int', help: '结束页，默认等于起始页' },
         { name: 'output', default: './xiaohongshu-pgy-creators.csv', help: 'CSV 输出路径' },
         { name: 'min-delay', type: 'number', default: 1.2, help: '每步最小等待秒数' },
-        { name: 'max-delay', type: 'number', default: 3.8, help: '每步最大等待秒数' },
+        { name: 'max-delay', type: 'number', default: 1.5, help: '每步最大等待秒数' },
     ],
     columns: ['status', 'rows', 'output', 'pages'],
     validateArgs: (kwargs) => {

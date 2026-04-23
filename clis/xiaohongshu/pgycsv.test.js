@@ -28,6 +28,7 @@ describe('xiaohongshu pgycsv', () => {
             'min-delay',
             'max-delay',
         ]);
+        expect(cmd.args.find((arg) => arg.name === 'max-delay')?.default).toBe(1.5);
     });
 
     it('normalizes and validates page ranges', () => {

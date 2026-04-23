@@ -18280,7 +18280,7 @@
       {
         "name": "max-delay",
         "type": "number",
-        "default": 3.8,
+        "default": 1.5,
         "required": false,
         "help": "每步最大等待秒数"
       }

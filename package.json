@@ -43,6 +43,7 @@
     "dev:bun": "bun src/main.ts",
     "build": "npm run clean-dist && tsc && npm run copy-yaml && npm run build-manifest",
     "build-manifest": "node dist/src/build-manifest.js",
+    "package:pgycsv-win": "node scripts/package-pgycsv-windows.cjs",
     "clean-dist": "node scripts/clean-dist.cjs",
     "copy-yaml": "node scripts/copy-yaml.cjs",
     "start": "node dist/src/main.js",
