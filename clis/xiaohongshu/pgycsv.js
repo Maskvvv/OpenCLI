@@ -1250,7 +1250,7 @@ cli({
     strategy: Strategy.COOKIE,
     browser: true,
     navigateBefore: false,
-    timeoutSeconds: 900,
+    timeoutSeconds: 3600,
     args: [
         { name: 'start-page', type: 'int', default: 1, help: '起始页，默认 1' },
         { name: 'end-page', type: 'int', help: '结束页，默认等于起始页' },

@@ -18291,7 +18291,7 @@
       "output",
       "pages"
     ],
-    "timeout": 900,
+    "timeout": 3600,
     "type": "js",
     "modulePath": "xiaohongshu/pgycsv.js",
     "sourceFile": "xiaohongshu\\pgycsv.js",
