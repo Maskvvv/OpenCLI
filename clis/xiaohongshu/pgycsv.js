@@ -83,6 +83,11 @@ export function writeCsv(outputPath, rows) {
     return resolved;
 }
 
+function logCreatorRow(row, pageNum, rowIndex) {
+    const data = Object.fromEntries(CSV_COLUMNS.map((column) => [column, row[column] ?? '']));
+    console.log(`[pgycsv] page=${pageNum} row=${rowIndex + 1} ${JSON.stringify(data)}`);
+}
+
 export function parseCreatorProfileFromDomData(data) {
     const text = cleanText(data?.noteHomeText || data?.bodyText || '');
     const labels = Array.isArray(data?.labels)
@@ -1187,6 +1192,7 @@ async function collectCurrentPage(page, delayBounds, pageNum) {
         });
         if (creatorRow['达人昵称'] || creatorRow['达人ID'] || creatorRow['蒲公英连接']) {
             results.push(creatorRow);
+            logCreatorRow(creatorRow, pageNum, i);
         }
         await goBackToList(page, delayBounds);
         await applyInterestedInviteFilter(page, delayBounds);
