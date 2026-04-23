@@ -25,7 +25,7 @@
     ],
     "type": "js",
     "modulePath": "1688/assets.js",
-    "sourceFile": "1688/assets.js",
+    "sourceFile": "1688\\assets.js",
     "navigateBefore": "https://www.1688.com"
   },
   {
@@ -59,7 +59,7 @@
     ],
     "type": "js",
     "modulePath": "1688/download.js",
-    "sourceFile": "1688/download.js",
+    "sourceFile": "1688\\download.js",
     "navigateBefore": "https://www.1688.com"
   },
   {
@@ -88,7 +88,7 @@
     ],
     "type": "js",
     "modulePath": "1688/item.js",
-    "sourceFile": "1688/item.js",
+    "sourceFile": "1688\\item.js",
     "navigateBefore": false
   },
   {
@@ -124,7 +124,7 @@
     ],
     "type": "js",
     "modulePath": "1688/search.js",
-    "sourceFile": "1688/search.js",
+    "sourceFile": "1688\\search.js",
     "navigateBefore": false
   },
   {
@@ -151,7 +151,7 @@
     ],
     "type": "js",
     "modulePath": "1688/store.js",
-    "sourceFile": "1688/store.js",
+    "sourceFile": "1688\\store.js",
     "navigateBefore": false
   },
   {
@@ -176,7 +176,7 @@
     ],
     "type": "js",
     "modulePath": "36kr/article.js",
-    "sourceFile": "36kr/article.js",
+    "sourceFile": "36kr\\article.js",
     "navigateBefore": true
   },
   {
@@ -209,7 +209,7 @@
     ],
     "type": "js",
     "modulePath": "36kr/hot.js",
-    "sourceFile": "36kr/hot.js"
+    "sourceFile": "36kr\\hot.js"
   },
   {
     "site": "36kr",
@@ -236,7 +236,7 @@
     ],
     "type": "js",
     "modulePath": "36kr/news.js",
-    "sourceFile": "36kr/news.js"
+    "sourceFile": "36kr\\news.js"
   },
   {
     "site": "36kr",
@@ -269,7 +269,7 @@
     ],
     "type": "js",
     "modulePath": "36kr/search.js",
-    "sourceFile": "36kr/search.js"
+    "sourceFile": "36kr\\search.js"
   },
   {
     "site": "51job",
@@ -314,7 +314,7 @@
     ],
     "type": "js",
     "modulePath": "51job/company.js",
-    "sourceFile": "51job/company.js",
+    "sourceFile": "51job\\company.js",
     "navigateBefore": false
   },
   {
@@ -354,7 +354,7 @@
     ],
     "type": "js",
     "modulePath": "51job/detail.js",
-    "sourceFile": "51job/detail.js",
+    "sourceFile": "51job\\detail.js",
     "navigateBefore": false
   },
   {
@@ -419,7 +419,7 @@
     ],
     "type": "js",
     "modulePath": "51job/hot.js",
-    "sourceFile": "51job/hot.js",
+    "sourceFile": "51job\\hot.js",
     "navigateBefore": false
   },
   {
@@ -526,7 +526,7 @@
     ],
     "type": "js",
     "modulePath": "51job/search.js",
-    "sourceFile": "51job/search.js",
+    "sourceFile": "51job\\search.js",
     "navigateBefore": false
   },
   {
@@ -563,7 +563,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/bestsellers.js",
-    "sourceFile": "amazon/bestsellers.js",
+    "sourceFile": "amazon\\bestsellers.js",
     "navigateBefore": false
   },
   {
@@ -596,7 +596,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/discussion.js",
-    "sourceFile": "amazon/discussion.js",
+    "sourceFile": "amazon\\discussion.js",
     "navigateBefore": false
   },
   {
@@ -633,7 +633,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/movers-shakers.js",
-    "sourceFile": "amazon/movers-shakers.js",
+    "sourceFile": "amazon\\movers-shakers.js",
     "navigateBefore": false
   },
   {
@@ -670,7 +670,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/new-releases.js",
-    "sourceFile": "amazon/new-releases.js",
+    "sourceFile": "amazon\\new-releases.js",
     "navigateBefore": false
   },
   {
@@ -699,7 +699,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/offer.js",
-    "sourceFile": "amazon/offer.js",
+    "sourceFile": "amazon\\offer.js",
     "navigateBefore": false
   },
   {
@@ -727,7 +727,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/product.js",
-    "sourceFile": "amazon/product.js",
+    "sourceFile": "amazon\\product.js",
     "navigateBefore": false
   },
   {
@@ -763,7 +763,7 @@
     ],
     "type": "js",
     "modulePath": "amazon/search.js",
-    "sourceFile": "amazon/search.js",
+    "sourceFile": "amazon\\search.js",
     "navigateBefore": false
   },
   {
@@ -780,7 +780,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/dump.js",
-    "sourceFile": "antigravity/dump.js",
+    "sourceFile": "antigravity\\dump.js",
     "navigateBefore": true
   },
   {
@@ -796,7 +796,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/extract-code.js",
-    "sourceFile": "antigravity/extract-code.js",
+    "sourceFile": "antigravity\\extract-code.js",
     "navigateBefore": true
   },
   {
@@ -820,7 +820,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/model.js",
-    "sourceFile": "antigravity/model.js",
+    "sourceFile": "antigravity\\model.js",
     "navigateBefore": true
   },
   {
@@ -836,7 +836,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/new.js",
-    "sourceFile": "antigravity/new.js",
+    "sourceFile": "antigravity\\new.js",
     "navigateBefore": true
   },
   {
@@ -860,7 +860,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/read.js",
-    "sourceFile": "antigravity/read.js",
+    "sourceFile": "antigravity\\read.js",
     "navigateBefore": true
   },
   {
@@ -885,7 +885,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/send.js",
-    "sourceFile": "antigravity/send.js",
+    "sourceFile": "antigravity\\send.js",
     "navigateBefore": true
   },
   {
@@ -903,7 +903,7 @@
     ],
     "type": "js",
     "modulePath": "antigravity/status.js",
-    "sourceFile": "antigravity/status.js",
+    "sourceFile": "antigravity\\status.js",
     "navigateBefore": true
   },
   {
@@ -918,7 +918,7 @@
     "timeout": 86400,
     "type": "js",
     "modulePath": "antigravity/watch.js",
-    "sourceFile": "antigravity/watch.js",
+    "sourceFile": "antigravity\\watch.js",
     "navigateBefore": true
   },
   {
@@ -950,7 +950,7 @@
     ],
     "type": "js",
     "modulePath": "apple-podcasts/episodes.js",
-    "sourceFile": "apple-podcasts/episodes.js"
+    "sourceFile": "apple-podcasts\\episodes.js"
   },
   {
     "site": "apple-podcasts",
@@ -984,7 +984,7 @@
     ],
     "type": "js",
     "modulePath": "apple-podcasts/search.js",
-    "sourceFile": "apple-podcasts/search.js"
+    "sourceFile": "apple-podcasts\\search.js"
   },
   {
     "site": "apple-podcasts",
@@ -1016,7 +1016,7 @@
     ],
     "type": "js",
     "modulePath": "apple-podcasts/top.js",
-    "sourceFile": "apple-podcasts/top.js"
+    "sourceFile": "apple-podcasts\\top.js"
   },
   {
     "site": "arxiv",
@@ -1043,7 +1043,7 @@
     ],
     "type": "js",
     "modulePath": "arxiv/paper.js",
-    "sourceFile": "arxiv/paper.js"
+    "sourceFile": "arxiv\\paper.js"
   },
   {
     "site": "arxiv",
@@ -1076,7 +1076,7 @@
     ],
     "type": "js",
     "modulePath": "arxiv/search.js",
-    "sourceFile": "arxiv/search.js"
+    "sourceFile": "arxiv\\search.js"
   },
   {
     "site": "baidu-scholar",
@@ -1112,7 +1112,7 @@
     ],
     "type": "js",
     "modulePath": "baidu-scholar/search.js",
-    "sourceFile": "baidu-scholar/search.js",
+    "sourceFile": "baidu-scholar\\search.js",
     "navigateBefore": false
   },
   {
@@ -1130,7 +1130,7 @@
     ],
     "type": "js",
     "modulePath": "band/bands.js",
-    "sourceFile": "band/bands.js",
+    "sourceFile": "band\\bands.js",
     "navigateBefore": "https://www.band.us"
   },
   {
@@ -1179,7 +1179,7 @@
     ],
     "type": "js",
     "modulePath": "band/mentions.js",
-    "sourceFile": "band/mentions.js",
+    "sourceFile": "band\\mentions.js",
     "navigateBefore": true
   },
   {
@@ -1227,7 +1227,7 @@
     ],
     "type": "js",
     "modulePath": "band/post.js",
-    "sourceFile": "band/post.js",
+    "sourceFile": "band\\post.js",
     "navigateBefore": false
   },
   {
@@ -1262,7 +1262,7 @@
     ],
     "type": "js",
     "modulePath": "band/posts.js",
-    "sourceFile": "band/posts.js",
+    "sourceFile": "band\\posts.js",
     "navigateBefore": false
   },
   {
@@ -1306,7 +1306,7 @@
     ],
     "type": "js",
     "modulePath": "barchart/flow.js",
-    "sourceFile": "barchart/flow.js",
+    "sourceFile": "barchart\\flow.js",
     "navigateBefore": "https://www.barchart.com"
   },
   {
@@ -1354,7 +1354,7 @@
     ],
     "type": "js",
     "modulePath": "barchart/greeks.js",
-    "sourceFile": "barchart/greeks.js",
+    "sourceFile": "barchart\\greeks.js",
     "navigateBefore": "https://www.barchart.com"
   },
   {
@@ -1408,7 +1408,7 @@
     ],
     "type": "js",
     "modulePath": "barchart/options.js",
-    "sourceFile": "barchart/options.js",
+    "sourceFile": "barchart\\options.js",
     "navigateBefore": "https://www.barchart.com"
   },
   {
@@ -1445,7 +1445,7 @@
     ],
     "type": "js",
     "modulePath": "barchart/quote.js",
-    "sourceFile": "barchart/quote.js",
+    "sourceFile": "barchart\\quote.js",
     "navigateBefore": "https://www.barchart.com"
   },
   {
@@ -1472,7 +1472,7 @@
     ],
     "type": "js",
     "modulePath": "bbc/news.js",
-    "sourceFile": "bbc/news.js"
+    "sourceFile": "bbc\\news.js"
   },
   {
     "site": "bilibili",
@@ -1507,7 +1507,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/comments.js",
-    "sourceFile": "bilibili/comments.js",
+    "sourceFile": "bilibili\\comments.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1548,7 +1548,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/download.js",
-    "sourceFile": "bilibili/download.js",
+    "sourceFile": "bilibili\\download.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1576,7 +1576,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/dynamic.js",
-    "sourceFile": "bilibili/dynamic.js",
+    "sourceFile": "bilibili\\dynamic.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1617,7 +1617,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/favorite.js",
-    "sourceFile": "bilibili/favorite.js",
+    "sourceFile": "bilibili\\favorite.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1668,7 +1668,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/feed.js",
-    "sourceFile": "bilibili/feed.js",
+    "sourceFile": "bilibili\\feed.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1693,7 +1693,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/feed.js",
-    "sourceFile": "bilibili/feed.js",
+    "sourceFile": "bilibili\\feed.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1735,7 +1735,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/following.js",
-    "sourceFile": "bilibili/following.js",
+    "sourceFile": "bilibili\\following.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1763,7 +1763,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/history.js",
-    "sourceFile": "bilibili/history.js",
+    "sourceFile": "bilibili\\history.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1791,7 +1791,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/hot.js",
-    "sourceFile": "bilibili/hot.js",
+    "sourceFile": "bilibili\\hot.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1812,7 +1812,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/me.js",
-    "sourceFile": "bilibili/me.js",
+    "sourceFile": "bilibili\\me.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1840,7 +1840,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/ranking.js",
-    "sourceFile": "bilibili/ranking.js",
+    "sourceFile": "bilibili\\ranking.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1889,7 +1889,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/search.js",
-    "sourceFile": "bilibili/search.js",
+    "sourceFile": "bilibili\\search.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1921,7 +1921,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/subtitle.js",
-    "sourceFile": "bilibili/subtitle.js",
+    "sourceFile": "bilibili\\subtitle.js",
     "navigateBefore": true
   },
   {
@@ -1971,7 +1971,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/user-videos.js",
-    "sourceFile": "bilibili/user-videos.js",
+    "sourceFile": "bilibili\\user-videos.js",
     "navigateBefore": "https://www.bilibili.com"
   },
   {
@@ -1995,7 +1995,7 @@
     ],
     "type": "js",
     "modulePath": "bilibili/video.js",
-    "sourceFile": "bilibili/video.js",
+    "sourceFile": "bilibili\\video.js",
     "navigateBefore": true
   },
   {
@@ -2028,7 +2028,7 @@
     ],
     "type": "js",
     "modulePath": "binance/asks.js",
-    "sourceFile": "binance/asks.js"
+    "sourceFile": "binance\\asks.js"
   },
   {
     "site": "binance",
@@ -2062,7 +2062,7 @@
     ],
     "type": "js",
     "modulePath": "binance/depth.js",
-    "sourceFile": "binance/depth.js"
+    "sourceFile": "binance\\depth.js"
   },
   {
     "site": "binance",
@@ -2089,7 +2089,7 @@
     ],
     "type": "js",
     "modulePath": "binance/gainers.js",
-    "sourceFile": "binance/gainers.js"
+    "sourceFile": "binance\\gainers.js"
   },
   {
     "site": "binance",
@@ -2130,7 +2130,7 @@
     ],
     "type": "js",
     "modulePath": "binance/klines.js",
-    "sourceFile": "binance/klines.js"
+    "sourceFile": "binance\\klines.js"
   },
   {
     "site": "binance",
@@ -2157,7 +2157,7 @@
     ],
     "type": "js",
     "modulePath": "binance/losers.js",
-    "sourceFile": "binance/losers.js"
+    "sourceFile": "binance\\losers.js"
   },
   {
     "site": "binance",
@@ -2183,7 +2183,7 @@
     ],
     "type": "js",
     "modulePath": "binance/pairs.js",
-    "sourceFile": "binance/pairs.js"
+    "sourceFile": "binance\\pairs.js"
   },
   {
     "site": "binance",
@@ -2214,7 +2214,7 @@
     ],
     "type": "js",
     "modulePath": "binance/price.js",
-    "sourceFile": "binance/price.js"
+    "sourceFile": "binance\\price.js"
   },
   {
     "site": "binance",
@@ -2239,7 +2239,7 @@
     ],
     "type": "js",
     "modulePath": "binance/prices.js",
-    "sourceFile": "binance/prices.js"
+    "sourceFile": "binance\\prices.js"
   },
   {
     "site": "binance",
@@ -2269,7 +2269,7 @@
     ],
     "type": "js",
     "modulePath": "binance/ticker.js",
-    "sourceFile": "binance/ticker.js"
+    "sourceFile": "binance\\ticker.js"
   },
   {
     "site": "binance",
@@ -2298,7 +2298,7 @@
     ],
     "type": "js",
     "modulePath": "binance/top.js",
-    "sourceFile": "binance/top.js"
+    "sourceFile": "binance\\top.js"
   },
   {
     "site": "binance",
@@ -2332,7 +2332,7 @@
     ],
     "type": "js",
     "modulePath": "binance/trades.js",
-    "sourceFile": "binance/trades.js"
+    "sourceFile": "binance\\trades.js"
   },
   {
     "site": "bloomberg",
@@ -2358,7 +2358,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/businessweek.js",
-    "sourceFile": "bloomberg/businessweek.js"
+    "sourceFile": "bloomberg\\businessweek.js"
   },
   {
     "site": "bloomberg",
@@ -2384,7 +2384,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/economics.js",
-    "sourceFile": "bloomberg/economics.js"
+    "sourceFile": "bloomberg\\economics.js"
   },
   {
     "site": "bloomberg",
@@ -2400,7 +2400,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/feeds.js",
-    "sourceFile": "bloomberg/feeds.js"
+    "sourceFile": "bloomberg\\feeds.js"
   },
   {
     "site": "bloomberg",
@@ -2426,7 +2426,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/industries.js",
-    "sourceFile": "bloomberg/industries.js"
+    "sourceFile": "bloomberg\\industries.js"
   },
   {
     "site": "bloomberg",
@@ -2452,7 +2452,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/main.js",
-    "sourceFile": "bloomberg/main.js"
+    "sourceFile": "bloomberg\\main.js"
   },
   {
     "site": "bloomberg",
@@ -2478,7 +2478,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/markets.js",
-    "sourceFile": "bloomberg/markets.js"
+    "sourceFile": "bloomberg\\markets.js"
   },
   {
     "site": "bloomberg",
@@ -2505,7 +2505,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/news.js",
-    "sourceFile": "bloomberg/news.js",
+    "sourceFile": "bloomberg\\news.js",
     "navigateBefore": "https://www.bloomberg.com"
   },
   {
@@ -2532,7 +2532,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/opinions.js",
-    "sourceFile": "bloomberg/opinions.js"
+    "sourceFile": "bloomberg\\opinions.js"
   },
   {
     "site": "bloomberg",
@@ -2558,7 +2558,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/politics.js",
-    "sourceFile": "bloomberg/politics.js"
+    "sourceFile": "bloomberg\\politics.js"
   },
   {
     "site": "bloomberg",
@@ -2584,7 +2584,7 @@
     ],
     "type": "js",
     "modulePath": "bloomberg/tech.js",
-    "sourceFile": "bloomberg/tech.js"
+    "sourceFile": "bloomberg\\tech.js"
   },
   {
     "site": "bluesky",
@@ -2611,7 +2611,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/feeds.js",
-    "sourceFile": "bluesky/feeds.js"
+    "sourceFile": "bluesky\\feeds.js"
   },
   {
     "site": "bluesky",
@@ -2644,7 +2644,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/followers.js",
-    "sourceFile": "bluesky/followers.js"
+    "sourceFile": "bluesky\\followers.js"
   },
   {
     "site": "bluesky",
@@ -2677,7 +2677,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/following.js",
-    "sourceFile": "bluesky/following.js"
+    "sourceFile": "bluesky\\following.js"
   },
   {
     "site": "bluesky",
@@ -2705,7 +2705,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/profile.js",
-    "sourceFile": "bluesky/profile.js"
+    "sourceFile": "bluesky\\profile.js"
   },
   {
     "site": "bluesky",
@@ -2739,7 +2739,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/search.js",
-    "sourceFile": "bluesky/search.js"
+    "sourceFile": "bluesky\\search.js"
   },
   {
     "site": "bluesky",
@@ -2773,7 +2773,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/starter-packs.js",
-    "sourceFile": "bluesky/starter-packs.js"
+    "sourceFile": "bluesky\\starter-packs.js"
   },
   {
     "site": "bluesky",
@@ -2807,7 +2807,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/thread.js",
-    "sourceFile": "bluesky/thread.js"
+    "sourceFile": "bluesky\\thread.js"
   },
   {
     "site": "bluesky",
@@ -2832,7 +2832,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/trending.js",
-    "sourceFile": "bluesky/trending.js"
+    "sourceFile": "bluesky\\trending.js"
   },
   {
     "site": "bluesky",
@@ -2866,7 +2866,7 @@
     ],
     "type": "js",
     "modulePath": "bluesky/user.js",
-    "sourceFile": "bluesky/user.js"
+    "sourceFile": "bluesky\\user.js"
   },
   {
     "site": "boss",
@@ -2905,7 +2905,7 @@
     ],
     "type": "js",
     "modulePath": "boss/batchgreet.js",
-    "sourceFile": "boss/batchgreet.js",
+    "sourceFile": "boss\\batchgreet.js",
     "navigateBefore": false
   },
   {
@@ -2948,7 +2948,7 @@
     ],
     "type": "js",
     "modulePath": "boss/chatlist.js",
-    "sourceFile": "boss/chatlist.js",
+    "sourceFile": "boss\\chatlist.js",
     "navigateBefore": false
   },
   {
@@ -2982,7 +2982,7 @@
     ],
     "type": "js",
     "modulePath": "boss/chatmsg.js",
-    "sourceFile": "boss/chatmsg.js",
+    "sourceFile": "boss\\chatmsg.js",
     "navigateBefore": false
   },
   {
@@ -3023,7 +3023,7 @@
     ],
     "type": "js",
     "modulePath": "boss/detail.js",
-    "sourceFile": "boss/detail.js",
+    "sourceFile": "boss\\detail.js",
     "navigateBefore": false
   },
   {
@@ -3059,7 +3059,7 @@
     ],
     "type": "js",
     "modulePath": "boss/exchange.js",
-    "sourceFile": "boss/exchange.js",
+    "sourceFile": "boss\\exchange.js",
     "navigateBefore": false
   },
   {
@@ -3103,7 +3103,7 @@
     ],
     "type": "js",
     "modulePath": "boss/greet.js",
-    "sourceFile": "boss/greet.js",
+    "sourceFile": "boss\\greet.js",
     "navigateBefore": false
   },
   {
@@ -3148,7 +3148,7 @@
     ],
     "type": "js",
     "modulePath": "boss/invite.js",
-    "sourceFile": "boss/invite.js",
+    "sourceFile": "boss\\invite.js",
     "navigateBefore": false
   },
   {
@@ -3168,7 +3168,7 @@
     ],
     "type": "js",
     "modulePath": "boss/joblist.js",
-    "sourceFile": "boss/joblist.js",
+    "sourceFile": "boss\\joblist.js",
     "navigateBefore": false
   },
   {
@@ -3206,7 +3206,7 @@
     ],
     "type": "js",
     "modulePath": "boss/mark.js",
-    "sourceFile": "boss/mark.js",
+    "sourceFile": "boss\\mark.js",
     "navigateBefore": false
   },
   {
@@ -3236,7 +3236,7 @@
     ],
     "type": "js",
     "modulePath": "boss/recommend.js",
-    "sourceFile": "boss/recommend.js",
+    "sourceFile": "boss\\recommend.js",
     "navigateBefore": false
   },
   {
@@ -3269,7 +3269,7 @@
     ],
     "type": "js",
     "modulePath": "boss/resume.js",
-    "sourceFile": "boss/resume.js",
+    "sourceFile": "boss\\resume.js",
     "navigateBefore": false
   },
   {
@@ -3351,7 +3351,7 @@
     ],
     "type": "js",
     "modulePath": "boss/search.js",
-    "sourceFile": "boss/search.js",
+    "sourceFile": "boss\\search.js",
     "navigateBefore": false
   },
   {
@@ -3383,7 +3383,7 @@
     ],
     "type": "js",
     "modulePath": "boss/send.js",
-    "sourceFile": "boss/send.js",
+    "sourceFile": "boss\\send.js",
     "navigateBefore": false
   },
   {
@@ -3412,7 +3412,7 @@
     ],
     "type": "js",
     "modulePath": "boss/stats.js",
-    "sourceFile": "boss/stats.js",
+    "sourceFile": "boss\\stats.js",
     "navigateBefore": false
   },
   {
@@ -3461,7 +3461,7 @@
     "timeout": 90,
     "type": "js",
     "modulePath": "chaoxing/assignments.js",
-    "sourceFile": "chaoxing/assignments.js",
+    "sourceFile": "chaoxing\\assignments.js",
     "navigateBefore": "https://mooc2-ans.chaoxing.com"
   },
   {
@@ -3511,7 +3511,7 @@
     "timeout": 90,
     "type": "js",
     "modulePath": "chaoxing/exams.js",
-    "sourceFile": "chaoxing/exams.js",
+    "sourceFile": "chaoxing\\exams.js",
     "navigateBefore": "https://mooc2-ans.chaoxing.com"
   },
   {
@@ -3552,7 +3552,7 @@
     "timeout": 240,
     "type": "js",
     "modulePath": "chatgpt/image.js",
-    "sourceFile": "chatgpt/image.js",
+    "sourceFile": "chatgpt\\image.js",
     "navigateBefore": false
   },
   {
@@ -3597,7 +3597,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/ask.js",
-    "sourceFile": "chatgpt-app/ask.js"
+    "sourceFile": "chatgpt-app\\ask.js"
   },
   {
     "site": "chatgpt-app",
@@ -3628,7 +3628,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/model.js",
-    "sourceFile": "chatgpt-app/model.js"
+    "sourceFile": "chatgpt-app\\model.js"
   },
   {
     "site": "chatgpt-app",
@@ -3643,7 +3643,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/new.js",
-    "sourceFile": "chatgpt-app/new.js"
+    "sourceFile": "chatgpt-app\\new.js"
   },
   {
     "site": "chatgpt-app",
@@ -3659,7 +3659,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/read.js",
-    "sourceFile": "chatgpt-app/read.js"
+    "sourceFile": "chatgpt-app\\read.js"
   },
   {
     "site": "chatgpt-app",
@@ -3695,7 +3695,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/send.js",
-    "sourceFile": "chatgpt-app/send.js"
+    "sourceFile": "chatgpt-app\\send.js"
   },
   {
     "site": "chatgpt-app",
@@ -3710,7 +3710,7 @@
     ],
     "type": "js",
     "modulePath": "chatgpt-app/status.js",
-    "sourceFile": "chatgpt-app/status.js"
+    "sourceFile": "chatgpt-app\\status.js"
   },
   {
     "site": "chatwise",
@@ -3741,7 +3741,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/ask.js",
-    "sourceFile": "chatwise/ask.js",
+    "sourceFile": "chatwise\\ask.js",
     "navigateBefore": true
   },
   {
@@ -3766,7 +3766,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/export.js",
-    "sourceFile": "chatwise/export.js",
+    "sourceFile": "chatwise\\export.js",
     "navigateBefore": true
   },
   {
@@ -3783,7 +3783,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/history.js",
-    "sourceFile": "chatwise/history.js",
+    "sourceFile": "chatwise\\history.js",
     "navigateBefore": true
   },
   {
@@ -3808,7 +3808,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/model.js",
-    "sourceFile": "chatwise/model.js",
+    "sourceFile": "chatwise\\model.js",
     "navigateBefore": true
   },
   {
@@ -3824,7 +3824,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/read.js",
-    "sourceFile": "chatwise/read.js",
+    "sourceFile": "chatwise\\read.js",
     "navigateBefore": true
   },
   {
@@ -3849,7 +3849,7 @@
     ],
     "type": "js",
     "modulePath": "chatwise/send.js",
-    "sourceFile": "chatwise/send.js",
+    "sourceFile": "chatwise\\send.js",
     "navigateBefore": true
   },
   {
@@ -3885,7 +3885,7 @@
     ],
     "type": "js",
     "modulePath": "cnki/search.js",
-    "sourceFile": "cnki/search.js",
+    "sourceFile": "cnki\\search.js",
     "navigateBefore": false
   },
   {
@@ -3917,7 +3917,7 @@
     ],
     "type": "js",
     "modulePath": "codex/ask.js",
-    "sourceFile": "codex/ask.js",
+    "sourceFile": "codex\\ask.js",
     "navigateBefore": true
   },
   {
@@ -3942,7 +3942,7 @@
     ],
     "type": "js",
     "modulePath": "codex/export.js",
-    "sourceFile": "codex/export.js",
+    "sourceFile": "codex\\export.js",
     "navigateBefore": true
   },
   {
@@ -3959,7 +3959,7 @@
     ],
     "type": "js",
     "modulePath": "codex/extract-diff.js",
-    "sourceFile": "codex/extract-diff.js",
+    "sourceFile": "codex\\extract-diff.js",
     "navigateBefore": true
   },
   {
@@ -3976,7 +3976,7 @@
     ],
     "type": "js",
     "modulePath": "codex/history.js",
-    "sourceFile": "codex/history.js",
+    "sourceFile": "codex\\history.js",
     "navigateBefore": true
   },
   {
@@ -4001,7 +4001,7 @@
     ],
     "type": "js",
     "modulePath": "codex/model.js",
-    "sourceFile": "codex/model.js",
+    "sourceFile": "codex\\model.js",
     "navigateBefore": true
   },
   {
@@ -4017,7 +4017,7 @@
     ],
     "type": "js",
     "modulePath": "codex/read.js",
-    "sourceFile": "codex/read.js",
+    "sourceFile": "codex\\read.js",
     "navigateBefore": true
   },
   {
@@ -4042,7 +4042,7 @@
     ],
     "type": "js",
     "modulePath": "codex/send.js",
-    "sourceFile": "codex/send.js",
+    "sourceFile": "codex\\send.js",
     "navigateBefore": true
   },
   {
@@ -4075,7 +4075,7 @@
     ],
     "type": "js",
     "modulePath": "coupang/add-to-cart.js",
-    "sourceFile": "coupang/add-to-cart.js",
+    "sourceFile": "coupang\\add-to-cart.js",
     "navigateBefore": "https://www.coupang.com"
   },
   {
@@ -4128,7 +4128,7 @@
     ],
     "type": "js",
     "modulePath": "coupang/search.js",
-    "sourceFile": "coupang/search.js",
+    "sourceFile": "coupang\\search.js",
     "navigateBefore": "https://www.coupang.com"
   },
   {
@@ -4163,7 +4163,7 @@
     ],
     "type": "js",
     "modulePath": "ctrip/search.js",
-    "sourceFile": "ctrip/search.js"
+    "sourceFile": "ctrip\\search.js"
   },
   {
     "site": "cursor",
@@ -4194,7 +4194,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/ask.js",
-    "sourceFile": "cursor/ask.js",
+    "sourceFile": "cursor\\ask.js",
     "navigateBefore": true
   },
   {
@@ -4219,7 +4219,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/composer.js",
-    "sourceFile": "cursor/composer.js",
+    "sourceFile": "cursor\\composer.js",
     "navigateBefore": true
   },
   {
@@ -4244,7 +4244,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/export.js",
-    "sourceFile": "cursor/export.js",
+    "sourceFile": "cursor\\export.js",
     "navigateBefore": true
   },
   {
@@ -4260,7 +4260,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/extract-code.js",
-    "sourceFile": "cursor/extract-code.js",
+    "sourceFile": "cursor\\extract-code.js",
     "navigateBefore": true
   },
   {
@@ -4277,7 +4277,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/history.js",
-    "sourceFile": "cursor/history.js",
+    "sourceFile": "cursor\\history.js",
     "navigateBefore": true
   },
   {
@@ -4302,7 +4302,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/model.js",
-    "sourceFile": "cursor/model.js",
+    "sourceFile": "cursor\\model.js",
     "navigateBefore": true
   },
   {
@@ -4319,7 +4319,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/read.js",
-    "sourceFile": "cursor/read.js",
+    "sourceFile": "cursor\\read.js",
     "navigateBefore": true
   },
   {
@@ -4344,7 +4344,7 @@
     ],
     "type": "js",
     "modulePath": "cursor/send.js",
-    "sourceFile": "cursor/send.js",
+    "sourceFile": "cursor\\send.js",
     "navigateBefore": true
   },
   {
@@ -4411,7 +4411,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "deepseek/ask.js",
-    "sourceFile": "deepseek/ask.js",
+    "sourceFile": "deepseek\\ask.js",
     "navigateBefore": false
   },
   {
@@ -4437,7 +4437,7 @@
     ],
     "type": "js",
     "modulePath": "deepseek/history.js",
-    "sourceFile": "deepseek/history.js",
+    "sourceFile": "deepseek\\history.js",
     "navigateBefore": false
   },
   {
@@ -4453,7 +4453,7 @@
     ],
     "type": "js",
     "modulePath": "deepseek/new.js",
-    "sourceFile": "deepseek/new.js",
+    "sourceFile": "deepseek\\new.js",
     "navigateBefore": false
   },
   {
@@ -4470,7 +4470,7 @@
     ],
     "type": "js",
     "modulePath": "deepseek/read.js",
-    "sourceFile": "deepseek/read.js",
+    "sourceFile": "deepseek\\read.js",
     "navigateBefore": false
   },
   {
@@ -4488,7 +4488,7 @@
     ],
     "type": "js",
     "modulePath": "deepseek/status.js",
-    "sourceFile": "deepseek/status.js",
+    "sourceFile": "deepseek\\status.js",
     "navigateBefore": false
   },
   {
@@ -4524,7 +4524,7 @@
     ],
     "type": "js",
     "modulePath": "devto/tag.js",
-    "sourceFile": "devto/tag.js"
+    "sourceFile": "devto\\tag.js"
   },
   {
     "site": "devto",
@@ -4552,7 +4552,7 @@
     ],
     "type": "js",
     "modulePath": "devto/top.js",
-    "sourceFile": "devto/top.js"
+    "sourceFile": "devto\\top.js"
   },
   {
     "site": "devto",
@@ -4586,7 +4586,7 @@
     ],
     "type": "js",
     "modulePath": "devto/user.js",
-    "sourceFile": "devto/user.js"
+    "sourceFile": "devto\\user.js"
   },
   {
     "site": "dictionary",
@@ -4610,7 +4610,7 @@
     ],
     "type": "js",
     "modulePath": "dictionary/examples.js",
-    "sourceFile": "dictionary/examples.js"
+    "sourceFile": "dictionary\\examples.js"
   },
   {
     "site": "dictionary",
@@ -4636,7 +4636,7 @@
     ],
     "type": "js",
     "modulePath": "dictionary/search.js",
-    "sourceFile": "dictionary/search.js"
+    "sourceFile": "dictionary\\search.js"
   },
   {
     "site": "dictionary",
@@ -4660,7 +4660,7 @@
     ],
     "type": "js",
     "modulePath": "dictionary/synonyms.js",
-    "sourceFile": "dictionary/synonyms.js"
+    "sourceFile": "dictionary\\synonyms.js"
   },
   {
     "site": "discord-app",
@@ -4677,7 +4677,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/channels.js",
-    "sourceFile": "discord-app/channels.js",
+    "sourceFile": "discord-app\\channels.js",
     "navigateBefore": true
   },
   {
@@ -4702,7 +4702,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/delete.js",
-    "sourceFile": "discord-app/delete.js",
+    "sourceFile": "discord-app\\delete.js",
     "navigateBefore": true
   },
   {
@@ -4720,7 +4720,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/members.js",
-    "sourceFile": "discord-app/members.js",
+    "sourceFile": "discord-app\\members.js",
     "navigateBefore": true
   },
   {
@@ -4746,7 +4746,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/read.js",
-    "sourceFile": "discord-app/read.js",
+    "sourceFile": "discord-app\\read.js",
     "navigateBefore": true
   },
   {
@@ -4772,7 +4772,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/search.js",
-    "sourceFile": "discord-app/search.js",
+    "sourceFile": "discord-app\\search.js",
     "navigateBefore": true
   },
   {
@@ -4796,7 +4796,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/send.js",
-    "sourceFile": "discord-app/send.js",
+    "sourceFile": "discord-app\\send.js",
     "navigateBefore": true
   },
   {
@@ -4813,7 +4813,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/servers.js",
-    "sourceFile": "discord-app/servers.js",
+    "sourceFile": "discord-app\\servers.js",
     "navigateBefore": true
   },
   {
@@ -4831,7 +4831,7 @@
     ],
     "type": "js",
     "modulePath": "discord-app/status.js",
-    "sourceFile": "discord-app/status.js",
+    "sourceFile": "discord-app\\status.js",
     "navigateBefore": true
   },
   {
@@ -4862,7 +4862,7 @@
     ],
     "type": "js",
     "modulePath": "douban/book-hot.js",
-    "sourceFile": "douban/book-hot.js",
+    "sourceFile": "douban\\book-hot.js",
     "navigateBefore": "https://book.douban.com"
   },
   {
@@ -4916,7 +4916,7 @@
     ],
     "type": "js",
     "modulePath": "douban/download.js",
-    "sourceFile": "douban/download.js",
+    "sourceFile": "douban\\download.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -4965,7 +4965,7 @@
     ],
     "type": "js",
     "modulePath": "douban/marks.js",
-    "sourceFile": "douban/marks.js",
+    "sourceFile": "douban\\marks.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -4996,7 +4996,7 @@
     ],
     "type": "js",
     "modulePath": "douban/movie-hot.js",
-    "sourceFile": "douban/movie-hot.js",
+    "sourceFile": "douban\\movie-hot.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -5037,7 +5037,7 @@
     ],
     "type": "js",
     "modulePath": "douban/photos.js",
-    "sourceFile": "douban/photos.js",
+    "sourceFile": "douban\\photos.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -5079,7 +5079,7 @@
     ],
     "type": "js",
     "modulePath": "douban/reviews.js",
-    "sourceFile": "douban/reviews.js",
+    "sourceFile": "douban\\reviews.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -5126,7 +5126,7 @@
     ],
     "type": "js",
     "modulePath": "douban/search.js",
-    "sourceFile": "douban/search.js",
+    "sourceFile": "douban\\search.js",
     "navigateBefore": false
   },
   {
@@ -5186,7 +5186,7 @@
     ],
     "type": "js",
     "modulePath": "douban/subject.js",
-    "sourceFile": "douban/subject.js",
+    "sourceFile": "douban\\subject.js",
     "navigateBefore": false
   },
   {
@@ -5214,7 +5214,7 @@
     ],
     "type": "js",
     "modulePath": "douban/top250.js",
-    "sourceFile": "douban/top250.js",
+    "sourceFile": "douban\\top250.js",
     "navigateBefore": "https://movie.douban.com"
   },
   {
@@ -5247,7 +5247,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "doubao/ask.js",
-    "sourceFile": "doubao/ask.js",
+    "sourceFile": "doubao\\ask.js",
     "navigateBefore": false
   },
   {
@@ -5272,7 +5272,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/detail.js",
-    "sourceFile": "doubao/detail.js",
+    "sourceFile": "doubao\\detail.js",
     "navigateBefore": false
   },
   {
@@ -5299,7 +5299,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/history.js",
-    "sourceFile": "doubao/history.js",
+    "sourceFile": "doubao\\history.js",
     "navigateBefore": false
   },
   {
@@ -5331,7 +5331,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/meeting-summary.js",
-    "sourceFile": "doubao/meeting-summary.js",
+    "sourceFile": "doubao\\meeting-summary.js",
     "navigateBefore": false
   },
   {
@@ -5363,7 +5363,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/meeting-transcript.js",
-    "sourceFile": "doubao/meeting-transcript.js",
+    "sourceFile": "doubao\\meeting-transcript.js",
     "navigateBefore": false
   },
   {
@@ -5380,7 +5380,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/new.js",
-    "sourceFile": "doubao/new.js",
+    "sourceFile": "doubao\\new.js",
     "navigateBefore": false
   },
   {
@@ -5397,7 +5397,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/read.js",
-    "sourceFile": "doubao/read.js",
+    "sourceFile": "doubao\\read.js",
     "navigateBefore": false
   },
   {
@@ -5423,7 +5423,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/send.js",
-    "sourceFile": "doubao/send.js",
+    "sourceFile": "doubao\\send.js",
     "navigateBefore": false
   },
   {
@@ -5442,7 +5442,7 @@
     ],
     "type": "js",
     "modulePath": "doubao/status.js",
-    "sourceFile": "doubao/status.js",
+    "sourceFile": "doubao\\status.js",
     "navigateBefore": false
   },
   {
@@ -5474,7 +5474,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/ask.js",
-    "sourceFile": "doubao-app/ask.js",
+    "sourceFile": "doubao-app\\ask.js",
     "navigateBefore": true
   },
   {
@@ -5491,7 +5491,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/dump.js",
-    "sourceFile": "doubao-app/dump.js",
+    "sourceFile": "doubao-app\\dump.js",
     "navigateBefore": true
   },
   {
@@ -5507,7 +5507,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/new.js",
-    "sourceFile": "doubao-app/new.js",
+    "sourceFile": "doubao-app\\new.js",
     "navigateBefore": true
   },
   {
@@ -5524,7 +5524,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/read.js",
-    "sourceFile": "doubao-app/read.js",
+    "sourceFile": "doubao-app\\read.js",
     "navigateBefore": true
   },
   {
@@ -5548,7 +5548,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/screenshot.js",
-    "sourceFile": "doubao-app/screenshot.js",
+    "sourceFile": "doubao-app\\screenshot.js",
     "navigateBefore": true
   },
   {
@@ -5573,7 +5573,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/send.js",
-    "sourceFile": "doubao-app/send.js",
+    "sourceFile": "doubao-app\\send.js",
     "navigateBefore": true
   },
   {
@@ -5591,7 +5591,7 @@
     ],
     "type": "js",
     "modulePath": "doubao-app/status.js",
-    "sourceFile": "doubao-app/status.js",
+    "sourceFile": "doubao-app\\status.js",
     "navigateBefore": true
   },
   {
@@ -5609,7 +5609,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/activities.js",
-    "sourceFile": "douyin/activities.js",
+    "sourceFile": "douyin\\activities.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5635,7 +5635,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/collections.js",
-    "sourceFile": "douyin/collections.js",
+    "sourceFile": "douyin\\collections.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5659,7 +5659,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/delete.js",
-    "sourceFile": "douyin/delete.js",
+    "sourceFile": "douyin\\delete.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5716,7 +5716,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/draft.js",
-    "sourceFile": "douyin/draft.js",
+    "sourceFile": "douyin\\draft.js",
     "navigateBefore": false
   },
   {
@@ -5742,7 +5742,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/drafts.js",
-    "sourceFile": "douyin/drafts.js",
+    "sourceFile": "douyin\\drafts.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5794,7 +5794,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/hashtag.js",
-    "sourceFile": "douyin/hashtag.js",
+    "sourceFile": "douyin\\hashtag.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5828,7 +5828,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/location.js",
-    "sourceFile": "douyin/location.js",
+    "sourceFile": "douyin\\location.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5848,7 +5848,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/profile.js",
-    "sourceFile": "douyin/profile.js",
+    "sourceFile": "douyin\\profile.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5969,7 +5969,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/publish.js",
-    "sourceFile": "douyin/publish.js",
+    "sourceFile": "douyin\\publish.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -5994,7 +5994,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/stats.js",
-    "sourceFile": "douyin/stats.js",
+    "sourceFile": "douyin\\stats.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -6032,7 +6032,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/update.js",
-    "sourceFile": "douyin/update.js",
+    "sourceFile": "douyin\\update.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -6083,7 +6083,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/user-videos.js",
-    "sourceFile": "douyin/user-videos.js",
+    "sourceFile": "douyin\\user-videos.js",
     "navigateBefore": "https://www.douyin.com"
   },
   {
@@ -6132,7 +6132,7 @@
     ],
     "type": "js",
     "modulePath": "douyin/videos.js",
-    "sourceFile": "douyin/videos.js",
+    "sourceFile": "douyin\\videos.js",
     "navigateBefore": "https://creator.douyin.com"
   },
   {
@@ -6168,7 +6168,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/announcement.js",
-    "sourceFile": "eastmoney/announcement.js"
+    "sourceFile": "eastmoney\\announcement.js"
   },
   {
     "site": "eastmoney",
@@ -6212,7 +6212,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/convertible.js",
-    "sourceFile": "eastmoney/convertible.js"
+    "sourceFile": "eastmoney\\convertible.js"
   },
   {
     "site": "eastmoney",
@@ -6250,7 +6250,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/etf.js",
-    "sourceFile": "eastmoney/etf.js"
+    "sourceFile": "eastmoney\\etf.js"
   },
   {
     "site": "eastmoney",
@@ -6285,7 +6285,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/holders.js",
-    "sourceFile": "eastmoney/holders.js"
+    "sourceFile": "eastmoney\\holders.js"
   },
   {
     "site": "eastmoney",
@@ -6314,7 +6314,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/hot-rank.js",
-    "sourceFile": "eastmoney/hot-rank.js",
+    "sourceFile": "eastmoney\\hot-rank.js",
     "navigateBefore": true
   },
   {
@@ -6346,7 +6346,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/index-board.js",
-    "sourceFile": "eastmoney/index-board.js"
+    "sourceFile": "eastmoney\\index-board.js"
   },
   {
     "site": "eastmoney",
@@ -6400,7 +6400,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/kline.js",
-    "sourceFile": "eastmoney/kline.js"
+    "sourceFile": "eastmoney\\kline.js"
   },
   {
     "site": "eastmoney",
@@ -6433,7 +6433,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/kuaixun.js",
-    "sourceFile": "eastmoney/kuaixun.js"
+    "sourceFile": "eastmoney\\kuaixun.js"
   },
   {
     "site": "eastmoney",
@@ -6475,7 +6475,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/longhu.js",
-    "sourceFile": "eastmoney/longhu.js"
+    "sourceFile": "eastmoney\\longhu.js"
   },
   {
     "site": "eastmoney",
@@ -6522,7 +6522,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/money-flow.js",
-    "sourceFile": "eastmoney/money-flow.js"
+    "sourceFile": "eastmoney\\money-flow.js"
   },
   {
     "site": "eastmoney",
@@ -6555,7 +6555,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/northbound.js",
-    "sourceFile": "eastmoney/northbound.js"
+    "sourceFile": "eastmoney\\northbound.js"
   },
   {
     "site": "eastmoney",
@@ -6595,7 +6595,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/quote.js",
-    "sourceFile": "eastmoney/quote.js"
+    "sourceFile": "eastmoney\\quote.js"
   },
   {
     "site": "eastmoney",
@@ -6642,7 +6642,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/rank.js",
-    "sourceFile": "eastmoney/rank.js"
+    "sourceFile": "eastmoney\\rank.js"
   },
   {
     "site": "eastmoney",
@@ -6688,7 +6688,7 @@
     ],
     "type": "js",
     "modulePath": "eastmoney/sectors.js",
-    "sourceFile": "eastmoney/sectors.js"
+    "sourceFile": "eastmoney\\sectors.js"
   },
   {
     "site": "facebook",
@@ -6712,7 +6712,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/add-friend.js",
-    "sourceFile": "facebook/add-friend.js",
+    "sourceFile": "facebook\\add-friend.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6737,7 +6737,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/events.js",
-    "sourceFile": "facebook/events.js",
+    "sourceFile": "facebook\\events.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6766,7 +6766,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/feed.js",
-    "sourceFile": "facebook/feed.js",
+    "sourceFile": "facebook\\feed.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6792,7 +6792,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/friends.js",
-    "sourceFile": "facebook/friends.js",
+    "sourceFile": "facebook\\friends.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6819,7 +6819,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/groups.js",
-    "sourceFile": "facebook/groups.js",
+    "sourceFile": "facebook\\groups.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6844,7 +6844,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/join-group.js",
-    "sourceFile": "facebook/join-group.js",
+    "sourceFile": "facebook\\join-group.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6871,7 +6871,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/memories.js",
-    "sourceFile": "facebook/memories.js",
+    "sourceFile": "facebook\\memories.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6897,7 +6897,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/notifications.js",
-    "sourceFile": "facebook/notifications.js",
+    "sourceFile": "facebook\\notifications.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6925,7 +6925,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/profile.js",
-    "sourceFile": "facebook/profile.js",
+    "sourceFile": "facebook\\profile.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6959,7 +6959,7 @@
     ],
     "type": "js",
     "modulePath": "facebook/search.js",
-    "sourceFile": "facebook/search.js",
+    "sourceFile": "facebook\\search.js",
     "navigateBefore": "https://www.facebook.com"
   },
   {
@@ -6998,7 +6998,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "gemini/ask.js",
-    "sourceFile": "gemini/ask.js",
+    "sourceFile": "gemini\\ask.js",
     "navigateBefore": false
   },
   {
@@ -7043,7 +7043,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "gemini/deep-research.js",
-    "sourceFile": "gemini/deep-research.js",
+    "sourceFile": "gemini\\deep-research.js",
     "navigateBefore": false
   },
   {
@@ -7085,7 +7085,7 @@
     ],
     "type": "js",
     "modulePath": "gemini/deep-research-result.js",
-    "sourceFile": "gemini/deep-research-result.js",
+    "sourceFile": "gemini\\deep-research-result.js",
     "navigateBefore": false
   },
   {
@@ -7140,7 +7140,7 @@
     "timeout": 240,
     "type": "js",
     "modulePath": "gemini/image.js",
-    "sourceFile": "gemini/image.js",
+    "sourceFile": "gemini\\image.js",
     "navigateBefore": false
   },
   {
@@ -7157,7 +7157,7 @@
     ],
     "type": "js",
     "modulePath": "gemini/new.js",
-    "sourceFile": "gemini/new.js",
+    "sourceFile": "gemini\\new.js",
     "navigateBefore": false
   },
   {
@@ -7193,7 +7193,7 @@
     ],
     "type": "js",
     "modulePath": "gitee/search.js",
-    "sourceFile": "gitee/search.js"
+    "sourceFile": "gitee\\search.js"
   },
   {
     "site": "gitee",
@@ -7219,7 +7219,7 @@
     ],
     "type": "js",
     "modulePath": "gitee/trending.js",
-    "sourceFile": "gitee/trending.js"
+    "sourceFile": "gitee\\trending.js"
   },
   {
     "site": "gitee",
@@ -7243,7 +7243,7 @@
     ],
     "type": "js",
     "modulePath": "gitee/user.js",
-    "sourceFile": "gitee/user.js"
+    "sourceFile": "gitee\\user.js"
   },
   {
     "site": "google",
@@ -7289,7 +7289,7 @@
     ],
     "type": "js",
     "modulePath": "google/news.js",
-    "sourceFile": "google/news.js"
+    "sourceFile": "google\\news.js"
   },
   {
     "site": "google",
@@ -7329,7 +7329,7 @@
     ],
     "type": "js",
     "modulePath": "google/search.js",
-    "sourceFile": "google/search.js"
+    "sourceFile": "google\\search.js"
   },
   {
     "site": "google",
@@ -7358,7 +7358,7 @@
     ],
     "type": "js",
     "modulePath": "google/suggest.js",
-    "sourceFile": "google/suggest.js"
+    "sourceFile": "google\\suggest.js"
   },
   {
     "site": "google",
@@ -7389,7 +7389,7 @@
     ],
     "type": "js",
     "modulePath": "google/trends.js",
-    "sourceFile": "google/trends.js"
+    "sourceFile": "google\\trends.js"
   },
   {
     "site": "google-scholar",
@@ -7425,7 +7425,7 @@
     ],
     "type": "js",
     "modulePath": "google-scholar/search.js",
-    "sourceFile": "google-scholar/search.js",
+    "sourceFile": "google-scholar\\search.js",
     "navigateBefore": false
   },
   {
@@ -7454,7 +7454,7 @@
     ],
     "type": "js",
     "modulePath": "gov-law/recent.js",
-    "sourceFile": "gov-law/recent.js",
+    "sourceFile": "gov-law\\recent.js",
     "navigateBefore": false
   },
   {
@@ -7490,7 +7490,7 @@
     ],
     "type": "js",
     "modulePath": "gov-law/search.js",
-    "sourceFile": "gov-law/search.js",
+    "sourceFile": "gov-law\\search.js",
     "navigateBefore": false
   },
   {
@@ -7518,7 +7518,7 @@
     ],
     "type": "js",
     "modulePath": "gov-policy/recent.js",
-    "sourceFile": "gov-policy/recent.js",
+    "sourceFile": "gov-policy\\recent.js",
     "navigateBefore": false
   },
   {
@@ -7553,7 +7553,7 @@
     ],
     "type": "js",
     "modulePath": "gov-policy/search.js",
-    "sourceFile": "gov-policy/search.js",
+    "sourceFile": "gov-policy\\search.js",
     "navigateBefore": false
   },
   {
@@ -7598,7 +7598,7 @@
     ],
     "type": "js",
     "modulePath": "grok/ask.js",
-    "sourceFile": "grok/ask.js",
+    "sourceFile": "grok\\ask.js",
     "navigateBefore": "https://grok.com"
   },
   {
@@ -7626,7 +7626,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/ask.js",
-    "sourceFile": "hackernews/ask.js"
+    "sourceFile": "hackernews\\ask.js"
   },
   {
     "site": "hackernews",
@@ -7653,7 +7653,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/best.js",
-    "sourceFile": "hackernews/best.js"
+    "sourceFile": "hackernews\\best.js"
   },
   {
     "site": "hackernews",
@@ -7679,7 +7679,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/jobs.js",
-    "sourceFile": "hackernews/jobs.js"
+    "sourceFile": "hackernews\\jobs.js"
   },
   {
     "site": "hackernews",
@@ -7706,7 +7706,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/new.js",
-    "sourceFile": "hackernews/new.js"
+    "sourceFile": "hackernews\\new.js"
   },
   {
     "site": "hackernews",
@@ -7752,7 +7752,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/search.js",
-    "sourceFile": "hackernews/search.js"
+    "sourceFile": "hackernews\\search.js"
   },
   {
     "site": "hackernews",
@@ -7779,7 +7779,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/show.js",
-    "sourceFile": "hackernews/show.js"
+    "sourceFile": "hackernews\\show.js"
   },
   {
     "site": "hackernews",
@@ -7806,7 +7806,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/top.js",
-    "sourceFile": "hackernews/top.js"
+    "sourceFile": "hackernews\\top.js"
   },
   {
     "site": "hackernews",
@@ -7832,7 +7832,7 @@
     ],
     "type": "js",
     "modulePath": "hackernews/user.js",
-    "sourceFile": "hackernews/user.js"
+    "sourceFile": "hackernews\\user.js"
   },
   {
     "site": "hf",
@@ -7877,7 +7877,7 @@
     ],
     "type": "js",
     "modulePath": "hf/top.js",
-    "sourceFile": "hf/top.js"
+    "sourceFile": "hf\\top.js"
   },
   {
     "site": "hupu",
@@ -7912,7 +7912,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/detail.js",
-    "sourceFile": "hupu/detail.js",
+    "sourceFile": "hupu\\detail.js",
     "navigateBefore": false
   },
   {
@@ -7938,7 +7938,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/hot.js",
-    "sourceFile": "hupu/hot.js",
+    "sourceFile": "hupu\\hot.js",
     "navigateBefore": "https://bbs.hupu.com"
   },
   {
@@ -7976,7 +7976,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/like.js",
-    "sourceFile": "hupu/like.js",
+    "sourceFile": "hupu\\like.js",
     "navigateBefore": false
   },
   {
@@ -8021,7 +8021,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/mentions.js",
-    "sourceFile": "hupu/mentions.js",
+    "sourceFile": "hupu\\mentions.js",
     "navigateBefore": false
   },
   {
@@ -8065,7 +8065,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/reply.js",
-    "sourceFile": "hupu/reply.js",
+    "sourceFile": "hupu\\reply.js",
     "navigateBefore": false
   },
   {
@@ -8122,7 +8122,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/search.js",
-    "sourceFile": "hupu/search.js",
+    "sourceFile": "hupu\\search.js",
     "navigateBefore": false
   },
   {
@@ -8160,7 +8160,7 @@
     ],
     "type": "js",
     "modulePath": "hupu/unlike.js",
-    "sourceFile": "hupu/unlike.js",
+    "sourceFile": "hupu\\unlike.js",
     "navigateBefore": false
   },
   {
@@ -8192,7 +8192,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/person.js",
-    "sourceFile": "imdb/person.js"
+    "sourceFile": "imdb\\person.js"
   },
   {
     "site": "imdb",
@@ -8227,7 +8227,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/reviews.js",
-    "sourceFile": "imdb/reviews.js"
+    "sourceFile": "imdb\\reviews.js"
   },
   {
     "site": "imdb",
@@ -8262,7 +8262,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/search.js",
-    "sourceFile": "imdb/search.js"
+    "sourceFile": "imdb\\search.js"
   },
   {
     "site": "imdb",
@@ -8286,7 +8286,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/title.js",
-    "sourceFile": "imdb/title.js"
+    "sourceFile": "imdb\\title.js"
   },
   {
     "site": "imdb",
@@ -8314,7 +8314,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/top.js",
-    "sourceFile": "imdb/top.js"
+    "sourceFile": "imdb\\top.js"
   },
   {
     "site": "imdb",
@@ -8341,7 +8341,7 @@
     ],
     "type": "js",
     "modulePath": "imdb/trending.js",
-    "sourceFile": "imdb/trending.js"
+    "sourceFile": "imdb\\trending.js"
   },
   {
     "site": "instagram",
@@ -8380,7 +8380,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/comment.js",
-    "sourceFile": "instagram/comment.js",
+    "sourceFile": "instagram\\comment.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8408,7 +8408,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/download.js",
-    "sourceFile": "instagram/download.js",
+    "sourceFile": "instagram\\download.js",
     "navigateBefore": false
   },
   {
@@ -8437,7 +8437,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/explore.js",
-    "sourceFile": "instagram/explore.js",
+    "sourceFile": "instagram\\explore.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8462,7 +8462,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/follow.js",
-    "sourceFile": "instagram/follow.js",
+    "sourceFile": "instagram\\follow.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8497,7 +8497,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/followers.js",
-    "sourceFile": "instagram/followers.js",
+    "sourceFile": "instagram\\followers.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8532,7 +8532,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/following.js",
-    "sourceFile": "instagram/following.js",
+    "sourceFile": "instagram\\following.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8565,7 +8565,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/like.js",
-    "sourceFile": "instagram/like.js",
+    "sourceFile": "instagram\\like.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8592,7 +8592,7 @@
     "timeout": 120,
     "type": "js",
     "modulePath": "instagram/note.js",
-    "sourceFile": "instagram/note.js",
+    "sourceFile": "instagram\\note.js",
     "navigateBefore": true
   },
   {
@@ -8626,7 +8626,7 @@
     "timeout": 300,
     "type": "js",
     "modulePath": "instagram/post.js",
-    "sourceFile": "instagram/post.js",
+    "sourceFile": "instagram\\post.js",
     "navigateBefore": true
   },
   {
@@ -8656,7 +8656,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/profile.js",
-    "sourceFile": "instagram/profile.js",
+    "sourceFile": "instagram\\profile.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8690,7 +8690,7 @@
     "timeout": 600,
     "type": "js",
     "modulePath": "instagram/reel.js",
-    "sourceFile": "instagram/reel.js",
+    "sourceFile": "instagram\\reel.js",
     "navigateBefore": true
   },
   {
@@ -8723,7 +8723,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/save.js",
-    "sourceFile": "instagram/save.js",
+    "sourceFile": "instagram\\save.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8752,7 +8752,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/saved.js",
-    "sourceFile": "instagram/saved.js",
+    "sourceFile": "instagram\\saved.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8788,7 +8788,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/search.js",
-    "sourceFile": "instagram/search.js",
+    "sourceFile": "instagram\\search.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8815,7 +8815,7 @@
     "timeout": 300,
     "type": "js",
     "modulePath": "instagram/story.js",
-    "sourceFile": "instagram/story.js",
+    "sourceFile": "instagram\\story.js",
     "navigateBefore": true
   },
   {
@@ -8840,7 +8840,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/unfollow.js",
-    "sourceFile": "instagram/unfollow.js",
+    "sourceFile": "instagram\\unfollow.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8873,7 +8873,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/unlike.js",
-    "sourceFile": "instagram/unlike.js",
+    "sourceFile": "instagram\\unlike.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8906,7 +8906,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/unsave.js",
-    "sourceFile": "instagram/unsave.js",
+    "sourceFile": "instagram\\unsave.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8942,7 +8942,7 @@
     ],
     "type": "js",
     "modulePath": "instagram/user.js",
-    "sourceFile": "instagram/user.js",
+    "sourceFile": "instagram\\user.js",
     "navigateBefore": "https://www.instagram.com"
   },
   {
@@ -8983,7 +8983,7 @@
     ],
     "type": "js",
     "modulePath": "jd/add-cart.js",
-    "sourceFile": "jd/add-cart.js",
+    "sourceFile": "jd\\add-cart.js",
     "navigateBefore": false
   },
   {
@@ -9003,7 +9003,7 @@
     ],
     "type": "js",
     "modulePath": "jd/cart.js",
-    "sourceFile": "jd/cart.js",
+    "sourceFile": "jd\\cart.js",
     "navigateBefore": false
   },
   {
@@ -9028,7 +9028,7 @@
     ],
     "type": "js",
     "modulePath": "jd/detail.js",
-    "sourceFile": "jd/detail.js",
+    "sourceFile": "jd\\detail.js",
     "navigateBefore": false
   },
   {
@@ -9063,7 +9063,7 @@
     ],
     "type": "js",
     "modulePath": "jd/item.js",
-    "sourceFile": "jd/item.js",
+    "sourceFile": "jd\\item.js",
     "navigateBefore": "https://item.jd.com"
   },
   {
@@ -9097,7 +9097,7 @@
     ],
     "type": "js",
     "modulePath": "jd/reviews.js",
-    "sourceFile": "jd/reviews.js",
+    "sourceFile": "jd\\reviews.js",
     "navigateBefore": false
   },
   {
@@ -9133,7 +9133,7 @@
     ],
     "type": "js",
     "modulePath": "jd/search.js",
-    "sourceFile": "jd/search.js",
+    "sourceFile": "jd\\search.js",
     "navigateBefore": false
   },
   {
@@ -9169,7 +9169,7 @@
     ],
     "type": "js",
     "modulePath": "jianyu/detail.js",
-    "sourceFile": "jianyu/detail.js",
+    "sourceFile": "jianyu\\detail.js",
     "navigateBefore": "https://www.jianyu360.cn"
   },
   {
@@ -9213,7 +9213,7 @@
     ],
     "type": "js",
     "modulePath": "jianyu/search.js",
-    "sourceFile": "jianyu/search.js",
+    "sourceFile": "jianyu\\search.js",
     "navigateBefore": "https://www.jianyu360.cn"
   },
   {
@@ -9245,7 +9245,7 @@
     ],
     "type": "js",
     "modulePath": "jike/comment.js",
-    "sourceFile": "jike/comment.js",
+    "sourceFile": "jike\\comment.js",
     "navigateBefore": true
   },
   {
@@ -9270,7 +9270,7 @@
     ],
     "type": "js",
     "modulePath": "jike/create.js",
-    "sourceFile": "jike/create.js",
+    "sourceFile": "jike\\create.js",
     "navigateBefore": true
   },
   {
@@ -9299,7 +9299,7 @@
     ],
     "type": "js",
     "modulePath": "jike/feed.js",
-    "sourceFile": "jike/feed.js",
+    "sourceFile": "jike\\feed.js",
     "navigateBefore": "https://web.okjike.com"
   },
   {
@@ -9324,7 +9324,7 @@
     ],
     "type": "js",
     "modulePath": "jike/like.js",
-    "sourceFile": "jike/like.js",
+    "sourceFile": "jike\\like.js",
     "navigateBefore": true
   },
   {
@@ -9351,7 +9351,7 @@
     ],
     "type": "js",
     "modulePath": "jike/notifications.js",
-    "sourceFile": "jike/notifications.js",
+    "sourceFile": "jike\\notifications.js",
     "navigateBefore": "https://web.okjike.com"
   },
   {
@@ -9379,7 +9379,7 @@
     ],
     "type": "js",
     "modulePath": "jike/post.js",
-    "sourceFile": "jike/post.js",
+    "sourceFile": "jike\\post.js",
     "navigateBefore": "https://m.okjike.com"
   },
   {
@@ -9411,7 +9411,7 @@
     ],
     "type": "js",
     "modulePath": "jike/repost.js",
-    "sourceFile": "jike/repost.js",
+    "sourceFile": "jike\\repost.js",
     "navigateBefore": true
   },
   {
@@ -9447,7 +9447,7 @@
     ],
     "type": "js",
     "modulePath": "jike/search.js",
-    "sourceFile": "jike/search.js",
+    "sourceFile": "jike\\search.js",
     "navigateBefore": "https://web.okjike.com"
   },
   {
@@ -9483,7 +9483,7 @@
     ],
     "type": "js",
     "modulePath": "jike/topic.js",
-    "sourceFile": "jike/topic.js",
+    "sourceFile": "jike\\topic.js",
     "navigateBefore": "https://m.okjike.com"
   },
   {
@@ -9519,7 +9519,7 @@
     ],
     "type": "js",
     "modulePath": "jike/user.js",
-    "sourceFile": "jike/user.js",
+    "sourceFile": "jike\\user.js",
     "navigateBefore": "https://m.okjike.com"
   },
   {
@@ -9560,7 +9560,7 @@
     ],
     "type": "js",
     "modulePath": "jimeng/generate.js",
-    "sourceFile": "jimeng/generate.js",
+    "sourceFile": "jimeng\\generate.js",
     "navigateBefore": "https://jimeng.jianying.com"
   },
   {
@@ -9588,7 +9588,7 @@
     ],
     "type": "js",
     "modulePath": "jimeng/history.js",
-    "sourceFile": "jimeng/history.js",
+    "sourceFile": "jimeng\\history.js",
     "navigateBefore": "https://jimeng.jianying.com"
   },
   {
@@ -9605,7 +9605,7 @@
     ],
     "type": "js",
     "modulePath": "jimeng/new.js",
-    "sourceFile": "jimeng/new.js",
+    "sourceFile": "jimeng\\new.js",
     "navigateBefore": "https://jimeng.jianying.com"
   },
   {
@@ -9624,7 +9624,7 @@
     ],
     "type": "js",
     "modulePath": "jimeng/workspaces.js",
-    "sourceFile": "jimeng/workspaces.js",
+    "sourceFile": "jimeng\\workspaces.js",
     "navigateBefore": "https://jimeng.jianying.com"
   },
   {
@@ -9667,7 +9667,7 @@
     ],
     "type": "js",
     "modulePath": "ke/chengjiao.js",
-    "sourceFile": "ke/chengjiao.js",
+    "sourceFile": "ke\\chengjiao.js",
     "navigateBefore": "https://ke.com"
   },
   {
@@ -9729,7 +9729,7 @@
     ],
     "type": "js",
     "modulePath": "ke/ershoufang.js",
-    "sourceFile": "ke/ershoufang.js",
+    "sourceFile": "ke\\ershoufang.js",
     "navigateBefore": "https://ke.com"
   },
   {
@@ -9770,7 +9770,7 @@
     ],
     "type": "js",
     "modulePath": "ke/xiaoqu.js",
-    "sourceFile": "ke/xiaoqu.js",
+    "sourceFile": "ke\\xiaoqu.js",
     "navigateBefore": "https://ke.com"
   },
   {
@@ -9824,7 +9824,7 @@
     ],
     "type": "js",
     "modulePath": "ke/zufang.js",
-    "sourceFile": "ke/zufang.js",
+    "sourceFile": "ke\\zufang.js",
     "navigateBefore": "https://ke.com"
   },
   {
@@ -9858,7 +9858,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/comments.js",
-    "sourceFile": "lesswrong/comments.js"
+    "sourceFile": "lesswrong\\comments.js"
   },
   {
     "site": "lesswrong",
@@ -9886,7 +9886,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/curated.js",
-    "sourceFile": "lesswrong/curated.js"
+    "sourceFile": "lesswrong\\curated.js"
   },
   {
     "site": "lesswrong",
@@ -9914,7 +9914,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/frontpage.js",
-    "sourceFile": "lesswrong/frontpage.js"
+    "sourceFile": "lesswrong\\frontpage.js"
   },
   {
     "site": "lesswrong",
@@ -9942,7 +9942,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/new.js",
-    "sourceFile": "lesswrong/new.js"
+    "sourceFile": "lesswrong\\new.js"
   },
   {
     "site": "lesswrong",
@@ -9971,7 +9971,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/read.js",
-    "sourceFile": "lesswrong/read.js"
+    "sourceFile": "lesswrong\\read.js"
   },
   {
     "site": "lesswrong",
@@ -9996,7 +9996,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/sequences.js",
-    "sourceFile": "lesswrong/sequences.js"
+    "sourceFile": "lesswrong\\sequences.js"
   },
   {
     "site": "lesswrong",
@@ -10024,7 +10024,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/shortform.js",
-    "sourceFile": "lesswrong/shortform.js"
+    "sourceFile": "lesswrong\\shortform.js"
   },
   {
     "site": "lesswrong",
@@ -10059,7 +10059,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/tag.js",
-    "sourceFile": "lesswrong/tag.js"
+    "sourceFile": "lesswrong\\tag.js"
   },
   {
     "site": "lesswrong",
@@ -10084,7 +10084,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/tags.js",
-    "sourceFile": "lesswrong/tags.js"
+    "sourceFile": "lesswrong\\tags.js"
   },
   {
     "site": "lesswrong",
@@ -10112,7 +10112,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/top.js",
-    "sourceFile": "lesswrong/top.js"
+    "sourceFile": "lesswrong\\top.js"
   },
   {
     "site": "lesswrong",
@@ -10140,7 +10140,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/top-month.js",
-    "sourceFile": "lesswrong/top-month.js"
+    "sourceFile": "lesswrong\\top-month.js"
   },
   {
     "site": "lesswrong",
@@ -10168,7 +10168,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/top-week.js",
-    "sourceFile": "lesswrong/top-week.js"
+    "sourceFile": "lesswrong\\top-week.js"
   },
   {
     "site": "lesswrong",
@@ -10196,7 +10196,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/top-year.js",
-    "sourceFile": "lesswrong/top-year.js"
+    "sourceFile": "lesswrong\\top-year.js"
   },
   {
     "site": "lesswrong",
@@ -10220,7 +10220,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/user.js",
-    "sourceFile": "lesswrong/user.js"
+    "sourceFile": "lesswrong\\user.js"
   },
   {
     "site": "lesswrong",
@@ -10255,7 +10255,7 @@
     ],
     "type": "js",
     "modulePath": "lesswrong/user-posts.js",
-    "sourceFile": "lesswrong/user-posts.js"
+    "sourceFile": "lesswrong\\user-posts.js"
   },
   {
     "site": "linkedin",
@@ -10341,7 +10341,7 @@
     ],
     "type": "js",
     "modulePath": "linkedin/search.js",
-    "sourceFile": "linkedin/search.js",
+    "sourceFile": "linkedin\\search.js",
     "navigateBefore": "https://www.linkedin.com"
   },
   {
@@ -10373,7 +10373,7 @@
     ],
     "type": "js",
     "modulePath": "linkedin/timeline.js",
-    "sourceFile": "linkedin/timeline.js",
+    "sourceFile": "linkedin\\timeline.js",
     "navigateBefore": "https://www.linkedin.com"
   },
   {
@@ -10408,7 +10408,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/categories.js",
-    "sourceFile": "linux-do/categories.js",
+    "sourceFile": "linux-do\\categories.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10453,7 +10453,7 @@
     "replacedBy": "opencli linux-do feed --category <id-or-name>",
     "type": "js",
     "modulePath": "linux-do/category.js",
-    "sourceFile": "linux-do/category.js",
+    "sourceFile": "linux-do\\category.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10545,7 +10545,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/categories.js",
-    "sourceFile": "linux-do/categories.js",
+    "sourceFile": "linux-do\\categories.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10591,7 +10591,7 @@
     "replacedBy": "opencli linux-do feed --view top --period <period>",
     "type": "js",
     "modulePath": "linux-do/hot.js",
-    "sourceFile": "linux-do/hot.js",
+    "sourceFile": "linux-do\\hot.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10622,7 +10622,7 @@
     "replacedBy": "opencli linux-do feed --view latest",
     "type": "js",
     "modulePath": "linux-do/latest.js",
-    "sourceFile": "linux-do/latest.js",
+    "sourceFile": "linux-do\\latest.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10658,7 +10658,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/search.js",
-    "sourceFile": "linux-do/search.js",
+    "sourceFile": "linux-do\\search.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10685,7 +10685,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/tags.js",
-    "sourceFile": "linux-do/tags.js",
+    "sourceFile": "linux-do\\tags.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10719,7 +10719,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/topic.js",
-    "sourceFile": "linux-do/topic.js",
+    "sourceFile": "linux-do\\topic.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10743,7 +10743,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/topic-content.js",
-    "sourceFile": "linux-do/topic-content.js",
+    "sourceFile": "linux-do\\topic-content.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10779,7 +10779,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/user-posts.js",
-    "sourceFile": "linux-do/user-posts.js",
+    "sourceFile": "linux-do\\user-posts.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10816,7 +10816,7 @@
     ],
     "type": "js",
     "modulePath": "linux-do/user-topics.js",
-    "sourceFile": "linux-do/user-topics.js",
+    "sourceFile": "linux-do\\user-topics.js",
     "navigateBefore": "https://linux.do"
   },
   {
@@ -10845,7 +10845,7 @@
     ],
     "type": "js",
     "modulePath": "lobsters/active.js",
-    "sourceFile": "lobsters/active.js"
+    "sourceFile": "lobsters\\active.js"
   },
   {
     "site": "lobsters",
@@ -10873,7 +10873,7 @@
     ],
     "type": "js",
     "modulePath": "lobsters/hot.js",
-    "sourceFile": "lobsters/hot.js"
+    "sourceFile": "lobsters\\hot.js"
   },
   {
     "site": "lobsters",
@@ -10901,7 +10901,7 @@
     ],
     "type": "js",
     "modulePath": "lobsters/newest.js",
-    "sourceFile": "lobsters/newest.js"
+    "sourceFile": "lobsters\\newest.js"
   },
   {
     "site": "lobsters",
@@ -10936,7 +10936,7 @@
     ],
     "type": "js",
     "modulePath": "lobsters/tag.js",
-    "sourceFile": "lobsters/tag.js"
+    "sourceFile": "lobsters\\tag.js"
   },
   {
     "site": "maimai",
@@ -11058,7 +11058,7 @@
     ],
     "type": "js",
     "modulePath": "maimai/search-talents.js",
-    "sourceFile": "maimai/search-talents.js",
+    "sourceFile": "maimai\\search-talents.js",
     "navigateBefore": "https://maimai.cn"
   },
   {
@@ -11094,7 +11094,7 @@
     ],
     "type": "js",
     "modulePath": "medium/feed.js",
-    "sourceFile": "medium/feed.js",
+    "sourceFile": "medium\\feed.js",
     "navigateBefore": "https://medium.com"
   },
   {
@@ -11131,7 +11131,7 @@
     ],
     "type": "js",
     "modulePath": "medium/search.js",
-    "sourceFile": "medium/search.js",
+    "sourceFile": "medium\\search.js",
     "navigateBefore": "https://medium.com"
   },
   {
@@ -11167,7 +11167,7 @@
     ],
     "type": "js",
     "modulePath": "medium/user.js",
-    "sourceFile": "medium/user.js",
+    "sourceFile": "medium\\user.js",
     "navigateBefore": "https://medium.com"
   },
   {
@@ -11198,7 +11198,7 @@
     ],
     "type": "js",
     "modulePath": "mubu/doc.js",
-    "sourceFile": "mubu/doc.js",
+    "sourceFile": "mubu\\doc.js",
     "navigateBefore": "https://mubu.com"
   },
   {
@@ -11240,7 +11240,7 @@
     ],
     "type": "js",
     "modulePath": "mubu/docs.js",
-    "sourceFile": "mubu/docs.js",
+    "sourceFile": "mubu\\docs.js",
     "navigateBefore": "https://mubu.com"
   },
   {
@@ -11302,7 +11302,7 @@
     ],
     "type": "js",
     "modulePath": "mubu/notes.js",
-    "sourceFile": "mubu/notes.js",
+    "sourceFile": "mubu\\notes.js",
     "navigateBefore": "https://mubu.com"
   },
   {
@@ -11328,7 +11328,7 @@
     ],
     "type": "js",
     "modulePath": "mubu/recent.js",
-    "sourceFile": "mubu/recent.js",
+    "sourceFile": "mubu\\recent.js",
     "navigateBefore": "https://mubu.com"
   },
   {
@@ -11364,7 +11364,7 @@
     ],
     "type": "js",
     "modulePath": "mubu/search.js",
-    "sourceFile": "mubu/search.js",
+    "sourceFile": "mubu\\search.js",
     "navigateBefore": "https://mubu.com"
   },
   {
@@ -11383,7 +11383,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/current.js",
-    "sourceFile": "notebooklm/current.js",
+    "sourceFile": "notebooklm\\current.js",
     "navigateBefore": false
   },
   {
@@ -11409,7 +11409,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/get.js",
-    "sourceFile": "notebooklm/get.js",
+    "sourceFile": "notebooklm\\get.js",
     "navigateBefore": false
   },
   {
@@ -11430,7 +11430,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/history.js",
-    "sourceFile": "notebooklm/history.js",
+    "sourceFile": "notebooklm\\history.js",
     "navigateBefore": false
   },
   {
@@ -11451,7 +11451,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/list.js",
-    "sourceFile": "notebooklm/list.js",
+    "sourceFile": "notebooklm\\list.js",
     "navigateBefore": false
   },
   {
@@ -11473,7 +11473,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/note-list.js",
-    "sourceFile": "notebooklm/note-list.js",
+    "sourceFile": "notebooklm\\note-list.js",
     "navigateBefore": false
   },
   {
@@ -11500,7 +11500,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/notes-get.js",
-    "sourceFile": "notebooklm/notes-get.js",
+    "sourceFile": "notebooklm\\notes-get.js",
     "navigateBefore": false
   },
   {
@@ -11530,7 +11530,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/open.js",
-    "sourceFile": "notebooklm/open.js",
+    "sourceFile": "notebooklm\\open.js",
     "navigateBefore": false
   },
   {
@@ -11558,7 +11558,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/source-fulltext.js",
-    "sourceFile": "notebooklm/source-fulltext.js",
+    "sourceFile": "notebooklm\\source-fulltext.js",
     "navigateBefore": false
   },
   {
@@ -11589,7 +11589,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/source-get.js",
-    "sourceFile": "notebooklm/source-get.js",
+    "sourceFile": "notebooklm\\source-get.js",
     "navigateBefore": false
   },
   {
@@ -11619,7 +11619,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/source-guide.js",
-    "sourceFile": "notebooklm/source-guide.js",
+    "sourceFile": "notebooklm\\source-guide.js",
     "navigateBefore": false
   },
   {
@@ -11642,7 +11642,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/source-list.js",
-    "sourceFile": "notebooklm/source-list.js",
+    "sourceFile": "notebooklm\\source-list.js",
     "navigateBefore": false
   },
   {
@@ -11663,7 +11663,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/status.js",
-    "sourceFile": "notebooklm/status.js",
+    "sourceFile": "notebooklm\\status.js",
     "navigateBefore": false
   },
   {
@@ -11682,7 +11682,7 @@
     ],
     "type": "js",
     "modulePath": "notebooklm/summary.js",
-    "sourceFile": "notebooklm/summary.js",
+    "sourceFile": "notebooklm\\summary.js",
     "navigateBefore": false
   },
   {
@@ -11706,7 +11706,7 @@
     ],
     "type": "js",
     "modulePath": "notion/export.js",
-    "sourceFile": "notion/export.js",
+    "sourceFile": "notion\\export.js",
     "navigateBefore": true
   },
   {
@@ -11724,7 +11724,7 @@
     ],
     "type": "js",
     "modulePath": "notion/favorites.js",
-    "sourceFile": "notion/favorites.js",
+    "sourceFile": "notion\\favorites.js",
     "navigateBefore": true
   },
   {
@@ -11748,7 +11748,7 @@
     ],
     "type": "js",
     "modulePath": "notion/new.js",
-    "sourceFile": "notion/new.js",
+    "sourceFile": "notion\\new.js",
     "navigateBefore": true
   },
   {
@@ -11765,7 +11765,7 @@
     ],
     "type": "js",
     "modulePath": "notion/read.js",
-    "sourceFile": "notion/read.js",
+    "sourceFile": "notion\\read.js",
     "navigateBefore": true
   },
   {
@@ -11790,7 +11790,7 @@
     ],
     "type": "js",
     "modulePath": "notion/search.js",
-    "sourceFile": "notion/search.js",
+    "sourceFile": "notion\\search.js",
     "navigateBefore": true
   },
   {
@@ -11807,7 +11807,7 @@
     ],
     "type": "js",
     "modulePath": "notion/sidebar.js",
-    "sourceFile": "notion/sidebar.js",
+    "sourceFile": "notion\\sidebar.js",
     "navigateBefore": true
   },
   {
@@ -11825,7 +11825,7 @@
     ],
     "type": "js",
     "modulePath": "notion/status.js",
-    "sourceFile": "notion/status.js",
+    "sourceFile": "notion\\status.js",
     "navigateBefore": true
   },
   {
@@ -11849,7 +11849,7 @@
     ],
     "type": "js",
     "modulePath": "notion/write.js",
-    "sourceFile": "notion/write.js",
+    "sourceFile": "notion\\write.js",
     "navigateBefore": true
   },
   {
@@ -11875,7 +11875,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/companies.js",
-    "sourceFile": "nowcoder/companies.js"
+    "sourceFile": "nowcoder\\companies.js"
   },
   {
     "site": "nowcoder",
@@ -11903,7 +11903,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/creators.js",
-    "sourceFile": "nowcoder/creators.js"
+    "sourceFile": "nowcoder\\creators.js"
   },
   {
     "site": "nowcoder",
@@ -11934,7 +11934,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/detail.js",
-    "sourceFile": "nowcoder/detail.js",
+    "sourceFile": "nowcoder\\detail.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -11972,7 +11972,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/experience.js",
-    "sourceFile": "nowcoder/experience.js",
+    "sourceFile": "nowcoder\\experience.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -11998,7 +11998,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/hot.js",
-    "sourceFile": "nowcoder/hot.js"
+    "sourceFile": "nowcoder\\hot.js"
   },
   {
     "site": "nowcoder",
@@ -12015,7 +12015,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/jobs.js",
-    "sourceFile": "nowcoder/jobs.js"
+    "sourceFile": "nowcoder\\jobs.js"
   },
   {
     "site": "nowcoder",
@@ -12031,7 +12031,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/notifications.js",
-    "sourceFile": "nowcoder/notifications.js",
+    "sourceFile": "nowcoder\\notifications.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12072,7 +12072,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/papers.js",
-    "sourceFile": "nowcoder/papers.js",
+    "sourceFile": "nowcoder\\papers.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12107,7 +12107,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/practice.js",
-    "sourceFile": "nowcoder/practice.js",
+    "sourceFile": "nowcoder\\practice.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12144,7 +12144,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/recommend.js",
-    "sourceFile": "nowcoder/recommend.js"
+    "sourceFile": "nowcoder\\recommend.js"
   },
   {
     "site": "nowcoder",
@@ -12181,7 +12181,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/referral.js",
-    "sourceFile": "nowcoder/referral.js",
+    "sourceFile": "nowcoder\\referral.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12219,7 +12219,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/salary.js",
-    "sourceFile": "nowcoder/salary.js",
+    "sourceFile": "nowcoder\\salary.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12262,7 +12262,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/search.js",
-    "sourceFile": "nowcoder/search.js",
+    "sourceFile": "nowcoder\\search.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12288,7 +12288,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/suggest.js",
-    "sourceFile": "nowcoder/suggest.js",
+    "sourceFile": "nowcoder\\suggest.js",
     "navigateBefore": "https://www.nowcoder.com"
   },
   {
@@ -12317,7 +12317,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/topics.js",
-    "sourceFile": "nowcoder/topics.js"
+    "sourceFile": "nowcoder\\topics.js"
   },
   {
     "site": "nowcoder",
@@ -12343,7 +12343,7 @@
     ],
     "type": "js",
     "modulePath": "nowcoder/trending.js",
-    "sourceFile": "nowcoder/trending.js"
+    "sourceFile": "nowcoder\\trending.js"
   },
   {
     "site": "ones",
@@ -12380,7 +12380,7 @@
     ],
     "type": "js",
     "modulePath": "ones/login.js",
-    "sourceFile": "ones/login.js",
+    "sourceFile": "ones\\login.js",
     "navigateBefore": false
   },
   {
@@ -12397,7 +12397,7 @@
     ],
     "type": "js",
     "modulePath": "ones/logout.js",
-    "sourceFile": "ones/logout.js",
+    "sourceFile": "ones\\logout.js",
     "navigateBefore": false
   },
   {
@@ -12417,7 +12417,7 @@
     ],
     "type": "js",
     "modulePath": "ones/me.js",
-    "sourceFile": "ones/me.js",
+    "sourceFile": "ones\\me.js",
     "navigateBefore": false
   },
   {
@@ -12466,7 +12466,7 @@
     ],
     "type": "js",
     "modulePath": "ones/my-tasks.js",
-    "sourceFile": "ones/my-tasks.js",
+    "sourceFile": "ones\\my-tasks.js",
     "navigateBefore": false
   },
   {
@@ -12503,7 +12503,7 @@
     ],
     "type": "js",
     "modulePath": "ones/task.js",
-    "sourceFile": "ones/task.js",
+    "sourceFile": "ones\\task.js",
     "navigateBefore": false
   },
   {
@@ -12551,7 +12551,7 @@
     ],
     "type": "js",
     "modulePath": "ones/tasks.js",
-    "sourceFile": "ones/tasks.js",
+    "sourceFile": "ones\\tasks.js",
     "navigateBefore": false
   },
   {
@@ -12571,7 +12571,7 @@
     ],
     "type": "js",
     "modulePath": "ones/token-info.js",
-    "sourceFile": "ones/token-info.js",
+    "sourceFile": "ones\\token-info.js",
     "navigateBefore": false
   },
   {
@@ -12630,7 +12630,7 @@
     ],
     "type": "js",
     "modulePath": "ones/worklog.js",
-    "sourceFile": "ones/worklog.js",
+    "sourceFile": "ones\\worklog.js",
     "navigateBefore": false
   },
   {
@@ -12692,7 +12692,7 @@
     "timeout": 30,
     "type": "js",
     "modulePath": "paperreview/feedback.js",
-    "sourceFile": "paperreview/feedback.js"
+    "sourceFile": "paperreview\\feedback.js"
   },
   {
     "site": "paperreview",
@@ -12721,7 +12721,7 @@
     "timeout": 30,
     "type": "js",
     "modulePath": "paperreview/review.js",
-    "sourceFile": "paperreview/review.js"
+    "sourceFile": "paperreview\\review.js"
   },
   {
     "site": "paperreview",
@@ -12777,7 +12777,7 @@
     "timeout": 120,
     "type": "js",
     "modulePath": "paperreview/submit.js",
-    "sourceFile": "paperreview/submit.js"
+    "sourceFile": "paperreview\\submit.js"
   },
   {
     "site": "pixiv",
@@ -12810,7 +12810,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/detail.js",
-    "sourceFile": "pixiv/detail.js",
+    "sourceFile": "pixiv\\detail.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -12844,7 +12844,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/download.js",
-    "sourceFile": "pixiv/download.js",
+    "sourceFile": "pixiv\\download.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -12881,7 +12881,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/illusts.js",
-    "sourceFile": "pixiv/illusts.js",
+    "sourceFile": "pixiv\\illusts.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -12935,7 +12935,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/ranking.js",
-    "sourceFile": "pixiv/ranking.js",
+    "sourceFile": "pixiv\\ranking.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -13005,7 +13005,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/search.js",
-    "sourceFile": "pixiv/search.js",
+    "sourceFile": "pixiv\\search.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -13036,7 +13036,7 @@
     ],
     "type": "js",
     "modulePath": "pixiv/user.js",
-    "sourceFile": "pixiv/user.js",
+    "sourceFile": "pixiv\\user.js",
     "navigateBefore": "https://www.pixiv.net"
   },
   {
@@ -13071,7 +13071,7 @@
     ],
     "type": "js",
     "modulePath": "producthunt/browse.js",
-    "sourceFile": "producthunt/browse.js",
+    "sourceFile": "producthunt\\browse.js",
     "navigateBefore": true
   },
   {
@@ -13098,7 +13098,7 @@
     ],
     "type": "js",
     "modulePath": "producthunt/hot.js",
-    "sourceFile": "producthunt/hot.js",
+    "sourceFile": "producthunt\\hot.js",
     "navigateBefore": true
   },
   {
@@ -13134,7 +13134,7 @@
     ],
     "type": "js",
     "modulePath": "producthunt/posts.js",
-    "sourceFile": "producthunt/posts.js"
+    "sourceFile": "producthunt\\posts.js"
   },
   {
     "site": "producthunt",
@@ -13161,7 +13161,7 @@
     ],
     "type": "js",
     "modulePath": "producthunt/today.js",
-    "sourceFile": "producthunt/today.js"
+    "sourceFile": "producthunt\\today.js"
   },
   {
     "site": "quark",
@@ -13203,7 +13203,7 @@
     ],
     "type": "js",
     "modulePath": "quark/ls.js",
-    "sourceFile": "quark/ls.js",
+    "sourceFile": "quark\\ls.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13236,7 +13236,7 @@
     ],
     "type": "js",
     "modulePath": "quark/mkdir.js",
-    "sourceFile": "quark/mkdir.js",
+    "sourceFile": "quark\\mkdir.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13272,7 +13272,7 @@
     "timeout": 120,
     "type": "js",
     "modulePath": "quark/mv.js",
-    "sourceFile": "quark/mv.js",
+    "sourceFile": "quark\\mv.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13299,7 +13299,7 @@
     ],
     "type": "js",
     "modulePath": "quark/rename.js",
-    "sourceFile": "quark/rename.js",
+    "sourceFile": "quark\\rename.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13320,7 +13320,7 @@
     ],
     "type": "js",
     "modulePath": "quark/rm.js",
-    "sourceFile": "quark/rm.js",
+    "sourceFile": "quark\\rm.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13377,7 +13377,7 @@
     "timeout": 120,
     "type": "js",
     "modulePath": "quark/save.js",
-    "sourceFile": "quark/save.js",
+    "sourceFile": "quark\\save.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13412,7 +13412,7 @@
     ],
     "type": "js",
     "modulePath": "quark/share-tree.js",
-    "sourceFile": "quark/share-tree.js",
+    "sourceFile": "quark\\share-tree.js",
     "navigateBefore": "https://pan.quark.cn"
   },
   {
@@ -13444,7 +13444,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/comment.js",
-    "sourceFile": "reddit/comment.js",
+    "sourceFile": "reddit\\comment.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13473,7 +13473,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/frontpage.js",
-    "sourceFile": "reddit/frontpage.js",
+    "sourceFile": "reddit\\frontpage.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13508,7 +13508,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/hot.js",
-    "sourceFile": "reddit/hot.js",
+    "sourceFile": "reddit\\hot.js",
     "navigateBefore": "https://www.reddit.com"
   },
   {
@@ -13537,7 +13537,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/popular.js",
-    "sourceFile": "reddit/popular.js",
+    "sourceFile": "reddit\\popular.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13599,7 +13599,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/read.js",
-    "sourceFile": "reddit/read.js",
+    "sourceFile": "reddit\\read.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13631,7 +13631,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/save.js",
-    "sourceFile": "reddit/save.js",
+    "sourceFile": "reddit\\save.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13659,7 +13659,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/saved.js",
-    "sourceFile": "reddit/saved.js",
+    "sourceFile": "reddit\\saved.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13716,7 +13716,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/search.js",
-    "sourceFile": "reddit/search.js",
+    "sourceFile": "reddit\\search.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13765,7 +13765,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/subreddit.js",
-    "sourceFile": "reddit/subreddit.js",
+    "sourceFile": "reddit\\subreddit.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13797,7 +13797,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/subscribe.js",
-    "sourceFile": "reddit/subscribe.js",
+    "sourceFile": "reddit\\subscribe.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13829,7 +13829,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/upvote.js",
-    "sourceFile": "reddit/upvote.js",
+    "sourceFile": "reddit\\upvote.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13857,7 +13857,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/upvoted.js",
-    "sourceFile": "reddit/upvoted.js",
+    "sourceFile": "reddit\\upvoted.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13882,7 +13882,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/user.js",
-    "sourceFile": "reddit/user.js",
+    "sourceFile": "reddit\\user.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13916,7 +13916,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/user-comments.js",
-    "sourceFile": "reddit/user-comments.js",
+    "sourceFile": "reddit\\user-comments.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13951,7 +13951,7 @@
     ],
     "type": "js",
     "modulePath": "reddit/user-posts.js",
-    "sourceFile": "reddit/user-posts.js",
+    "sourceFile": "reddit\\user-posts.js",
     "navigateBefore": "https://reddit.com"
   },
   {
@@ -13986,7 +13986,7 @@
     ],
     "type": "js",
     "modulePath": "reuters/search.js",
-    "sourceFile": "reuters/search.js",
+    "sourceFile": "reuters\\search.js",
     "navigateBefore": "https://www.reuters.com"
   },
   {
@@ -14015,7 +14015,7 @@
     ],
     "type": "js",
     "modulePath": "sinablog/article.js",
-    "sourceFile": "sinablog/article.js",
+    "sourceFile": "sinablog\\article.js",
     "navigateBefore": "https://blog.sina.com.cn"
   },
   {
@@ -14044,7 +14044,7 @@
     ],
     "type": "js",
     "modulePath": "sinablog/hot.js",
-    "sourceFile": "sinablog/hot.js",
+    "sourceFile": "sinablog\\hot.js",
     "navigateBefore": "https://blog.sina.com.cn"
   },
   {
@@ -14080,7 +14080,7 @@
     ],
     "type": "js",
     "modulePath": "sinablog/search.js",
-    "sourceFile": "sinablog/search.js"
+    "sourceFile": "sinablog\\search.js"
   },
   {
     "site": "sinablog",
@@ -14115,7 +14115,7 @@
     ],
     "type": "js",
     "modulePath": "sinablog/user.js",
-    "sourceFile": "sinablog/user.js",
+    "sourceFile": "sinablog\\user.js",
     "navigateBefore": "https://blog.sina.com.cn"
   },
   {
@@ -14149,7 +14149,7 @@
     ],
     "type": "js",
     "modulePath": "sinafinance/news.js",
-    "sourceFile": "sinafinance/news.js"
+    "sourceFile": "sinafinance\\news.js"
   },
   {
     "site": "sinafinance",
@@ -14167,7 +14167,7 @@
     ],
     "type": "js",
     "modulePath": "sinafinance/rolling-news.js",
-    "sourceFile": "sinafinance/rolling-news.js",
+    "sourceFile": "sinafinance\\rolling-news.js",
     "navigateBefore": "https://finance.sina.com.cn/roll"
   },
   {
@@ -14207,7 +14207,7 @@
     ],
     "type": "js",
     "modulePath": "sinafinance/stock.js",
-    "sourceFile": "sinafinance/stock.js"
+    "sourceFile": "sinafinance\\stock.js"
   },
   {
     "site": "sinafinance",
@@ -14243,7 +14243,7 @@
     ],
     "type": "js",
     "modulePath": "sinafinance/stock-rank.js",
-    "sourceFile": "sinafinance/stock-rank.js",
+    "sourceFile": "sinafinance\\stock-rank.js",
     "navigateBefore": false
   },
   {
@@ -14279,7 +14279,7 @@
     ],
     "type": "js",
     "modulePath": "smzdm/search.js",
-    "sourceFile": "smzdm/search.js",
+    "sourceFile": "smzdm\\search.js",
     "navigateBefore": "https://www.smzdm.com"
   },
   {
@@ -14294,7 +14294,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14308,7 +14308,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14322,7 +14322,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14347,7 +14347,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14361,7 +14361,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14385,7 +14385,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14413,7 +14413,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14445,7 +14445,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14472,7 +14472,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14490,7 +14490,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "spotify",
@@ -14513,7 +14513,7 @@
     ],
     "type": "js",
     "modulePath": "spotify/spotify.js",
-    "sourceFile": "spotify/spotify.js"
+    "sourceFile": "spotify\\spotify.js"
   },
   {
     "site": "stackoverflow",
@@ -14540,7 +14540,7 @@
     ],
     "type": "js",
     "modulePath": "stackoverflow/bounties.js",
-    "sourceFile": "stackoverflow/bounties.js"
+    "sourceFile": "stackoverflow\\bounties.js"
   },
   {
     "site": "stackoverflow",
@@ -14566,7 +14566,7 @@
     ],
     "type": "js",
     "modulePath": "stackoverflow/hot.js",
-    "sourceFile": "stackoverflow/hot.js"
+    "sourceFile": "stackoverflow\\hot.js"
   },
   {
     "site": "stackoverflow",
@@ -14599,7 +14599,7 @@
     ],
     "type": "js",
     "modulePath": "stackoverflow/search.js",
-    "sourceFile": "stackoverflow/search.js"
+    "sourceFile": "stackoverflow\\search.js"
   },
   {
     "site": "stackoverflow",
@@ -14625,7 +14625,7 @@
     ],
     "type": "js",
     "modulePath": "stackoverflow/unanswered.js",
-    "sourceFile": "stackoverflow/unanswered.js"
+    "sourceFile": "stackoverflow\\unanswered.js"
   },
   {
     "site": "steam",
@@ -14652,7 +14652,7 @@
     ],
     "type": "js",
     "modulePath": "steam/top-sellers.js",
-    "sourceFile": "steam/top-sellers.js"
+    "sourceFile": "steam\\top-sellers.js"
   },
   {
     "site": "substack",
@@ -14687,7 +14687,7 @@
     ],
     "type": "js",
     "modulePath": "substack/feed.js",
-    "sourceFile": "substack/feed.js",
+    "sourceFile": "substack\\feed.js",
     "navigateBefore": "https://substack.com"
   },
   {
@@ -14722,7 +14722,7 @@
     ],
     "type": "js",
     "modulePath": "substack/publication.js",
-    "sourceFile": "substack/publication.js",
+    "sourceFile": "substack\\publication.js",
     "navigateBefore": "https://substack.com"
   },
   {
@@ -14769,7 +14769,7 @@
     ],
     "type": "js",
     "modulePath": "substack/search.js",
-    "sourceFile": "substack/search.js"
+    "sourceFile": "substack\\search.js"
   },
   {
     "site": "taobao",
@@ -14809,7 +14809,7 @@
     ],
     "type": "js",
     "modulePath": "taobao/add-cart.js",
-    "sourceFile": "taobao/add-cart.js",
+    "sourceFile": "taobao\\add-cart.js",
     "navigateBefore": false
   },
   {
@@ -14837,7 +14837,7 @@
     ],
     "type": "js",
     "modulePath": "taobao/cart.js",
-    "sourceFile": "taobao/cart.js",
+    "sourceFile": "taobao\\cart.js",
     "navigateBefore": false
   },
   {
@@ -14862,7 +14862,7 @@
     ],
     "type": "js",
     "modulePath": "taobao/detail.js",
-    "sourceFile": "taobao/detail.js",
+    "sourceFile": "taobao\\detail.js",
     "navigateBefore": false
   },
   {
@@ -14897,7 +14897,7 @@
     ],
     "type": "js",
     "modulePath": "taobao/reviews.js",
-    "sourceFile": "taobao/reviews.js",
+    "sourceFile": "taobao\\reviews.js",
     "navigateBefore": false
   },
   {
@@ -14947,7 +14947,7 @@
     ],
     "type": "js",
     "modulePath": "taobao/search.js",
-    "sourceFile": "taobao/search.js",
+    "sourceFile": "taobao\\search.js",
     "navigateBefore": false
   },
   {
@@ -14976,7 +14976,7 @@
     ],
     "type": "js",
     "modulePath": "tdx/hot-rank.js",
-    "sourceFile": "tdx/hot-rank.js",
+    "sourceFile": "tdx\\hot-rank.js",
     "navigateBefore": true
   },
   {
@@ -15004,7 +15004,7 @@
     ],
     "type": "js",
     "modulePath": "ths/hot-rank.js",
-    "sourceFile": "ths/hot-rank.js",
+    "sourceFile": "ths\\hot-rank.js",
     "navigateBefore": true
   },
   {
@@ -15031,7 +15031,7 @@
     ],
     "type": "js",
     "modulePath": "tieba/hot.js",
-    "sourceFile": "tieba/hot.js",
+    "sourceFile": "tieba\\hot.js",
     "navigateBefore": false
   },
   {
@@ -15072,7 +15072,7 @@
     ],
     "type": "js",
     "modulePath": "tieba/posts.js",
-    "sourceFile": "tieba/posts.js",
+    "sourceFile": "tieba\\posts.js",
     "navigateBefore": false
   },
   {
@@ -15113,7 +15113,7 @@
     ],
     "type": "js",
     "modulePath": "tieba/read.js",
-    "sourceFile": "tieba/read.js",
+    "sourceFile": "tieba\\read.js",
     "navigateBefore": false
   },
   {
@@ -15158,7 +15158,7 @@
     ],
     "type": "js",
     "modulePath": "tieba/search.js",
-    "sourceFile": "tieba/search.js",
+    "sourceFile": "tieba\\search.js",
     "navigateBefore": false
   },
   {
@@ -15191,7 +15191,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/comment.js",
-    "sourceFile": "tiktok/comment.js",
+    "sourceFile": "tiktok\\comment.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15218,7 +15218,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/explore.js",
-    "sourceFile": "tiktok/explore.js",
+    "sourceFile": "tiktok\\explore.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15243,7 +15243,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/follow.js",
-    "sourceFile": "tiktok/follow.js",
+    "sourceFile": "tiktok\\follow.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15269,7 +15269,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/following.js",
-    "sourceFile": "tiktok/following.js",
+    "sourceFile": "tiktok\\following.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15295,7 +15295,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/friends.js",
-    "sourceFile": "tiktok/friends.js",
+    "sourceFile": "tiktok\\friends.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15321,7 +15321,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/like.js",
-    "sourceFile": "tiktok/like.js",
+    "sourceFile": "tiktok\\like.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15348,7 +15348,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/live.js",
-    "sourceFile": "tiktok/live.js",
+    "sourceFile": "tiktok\\live.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15387,7 +15387,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/notifications.js",
-    "sourceFile": "tiktok/notifications.js",
+    "sourceFile": "tiktok\\notifications.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15418,7 +15418,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/profile.js",
-    "sourceFile": "tiktok/profile.js",
+    "sourceFile": "tiktok\\profile.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15443,7 +15443,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/save.js",
-    "sourceFile": "tiktok/save.js",
+    "sourceFile": "tiktok\\save.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15481,7 +15481,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/search.js",
-    "sourceFile": "tiktok/search.js",
+    "sourceFile": "tiktok\\search.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15506,7 +15506,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/unfollow.js",
-    "sourceFile": "tiktok/unfollow.js",
+    "sourceFile": "tiktok\\unfollow.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15532,7 +15532,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/unlike.js",
-    "sourceFile": "tiktok/unlike.js",
+    "sourceFile": "tiktok\\unlike.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15557,7 +15557,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/unsave.js",
-    "sourceFile": "tiktok/unsave.js",
+    "sourceFile": "tiktok\\unsave.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15590,7 +15590,7 @@
     ],
     "type": "js",
     "modulePath": "tiktok/user.js",
-    "sourceFile": "tiktok/user.js",
+    "sourceFile": "tiktok\\user.js",
     "navigateBefore": "https://www.tiktok.com"
   },
   {
@@ -15625,7 +15625,7 @@
     "timeout": 600,
     "type": "js",
     "modulePath": "twitter/accept.js",
-    "sourceFile": "twitter/accept.js",
+    "sourceFile": "twitter\\accept.js",
     "navigateBefore": true
   },
   {
@@ -15652,7 +15652,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/article.js",
-    "sourceFile": "twitter/article.js",
+    "sourceFile": "twitter\\article.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -15677,7 +15677,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/block.js",
-    "sourceFile": "twitter/block.js",
+    "sourceFile": "twitter\\block.js",
     "navigateBefore": true
   },
   {
@@ -15702,7 +15702,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/bookmark.js",
-    "sourceFile": "twitter/bookmark.js",
+    "sourceFile": "twitter\\bookmark.js",
     "navigateBefore": true
   },
   {
@@ -15731,7 +15731,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/bookmarks.js",
-    "sourceFile": "twitter/bookmarks.js",
+    "sourceFile": "twitter\\bookmarks.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -15756,7 +15756,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/delete.js",
-    "sourceFile": "twitter/delete.js",
+    "sourceFile": "twitter\\delete.js",
     "navigateBefore": true
   },
   {
@@ -15803,7 +15803,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/download.js",
-    "sourceFile": "twitter/download.js",
+    "sourceFile": "twitter\\download.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -15828,7 +15828,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/follow.js",
-    "sourceFile": "twitter/follow.js",
+    "sourceFile": "twitter\\follow.js",
     "navigateBefore": true
   },
   {
@@ -15862,7 +15862,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/followers.js",
-    "sourceFile": "twitter/followers.js",
+    "sourceFile": "twitter\\followers.js",
     "navigateBefore": true
   },
   {
@@ -15896,7 +15896,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/following.js",
-    "sourceFile": "twitter/following.js",
+    "sourceFile": "twitter\\following.js",
     "navigateBefore": true
   },
   {
@@ -15921,7 +15921,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/hide-reply.js",
-    "sourceFile": "twitter/hide-reply.js",
+    "sourceFile": "twitter\\hide-reply.js",
     "navigateBefore": true
   },
   {
@@ -15946,7 +15946,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/like.js",
-    "sourceFile": "twitter/like.js",
+    "sourceFile": "twitter\\like.js",
     "navigateBefore": true
   },
   {
@@ -15983,7 +15983,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/likes.js",
-    "sourceFile": "twitter/likes.js",
+    "sourceFile": "twitter\\likes.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16018,7 +16018,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/list-add.js",
-    "sourceFile": "twitter/list-add.js",
+    "sourceFile": "twitter\\list-add.js",
     "navigateBefore": true
   },
   {
@@ -16053,7 +16053,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/list-remove.js",
-    "sourceFile": "twitter/list-remove.js",
+    "sourceFile": "twitter\\list-remove.js",
     "navigateBefore": true
   },
   {
@@ -16091,7 +16091,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/list-tweets.js",
-    "sourceFile": "twitter/list-tweets.js",
+    "sourceFile": "twitter\\list-tweets.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16119,7 +16119,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/lists.js",
-    "sourceFile": "twitter/lists.js",
+    "sourceFile": "twitter\\lists.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16147,7 +16147,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/notifications.js",
-    "sourceFile": "twitter/notifications.js",
+    "sourceFile": "twitter\\notifications.js",
     "navigateBefore": true
   },
   {
@@ -16179,7 +16179,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/post.js",
-    "sourceFile": "twitter/post.js",
+    "sourceFile": "twitter\\post.js",
     "navigateBefore": true
   },
   {
@@ -16213,7 +16213,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/profile.js",
-    "sourceFile": "twitter/profile.js",
+    "sourceFile": "twitter\\profile.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16258,7 +16258,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/reply.js",
-    "sourceFile": "twitter/reply.js",
+    "sourceFile": "twitter\\reply.js",
     "navigateBefore": true
   },
   {
@@ -16300,7 +16300,7 @@
     "timeout": 600,
     "type": "js",
     "modulePath": "twitter/reply-dm.js",
-    "sourceFile": "twitter/reply-dm.js",
+    "sourceFile": "twitter\\reply-dm.js",
     "navigateBefore": true
   },
   {
@@ -16350,7 +16350,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/search.js",
-    "sourceFile": "twitter/search.js",
+    "sourceFile": "twitter\\search.js",
     "navigateBefore": true
   },
   {
@@ -16388,7 +16388,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/thread.js",
-    "sourceFile": "twitter/thread.js",
+    "sourceFile": "twitter\\thread.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16433,7 +16433,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/timeline.js",
-    "sourceFile": "twitter/timeline.js",
+    "sourceFile": "twitter\\timeline.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16460,7 +16460,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/trending.js",
-    "sourceFile": "twitter/trending.js",
+    "sourceFile": "twitter\\trending.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16501,7 +16501,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/tweets.js",
-    "sourceFile": "twitter/tweets.js",
+    "sourceFile": "twitter\\tweets.js",
     "navigateBefore": "https://x.com"
   },
   {
@@ -16526,7 +16526,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/unblock.js",
-    "sourceFile": "twitter/unblock.js",
+    "sourceFile": "twitter\\unblock.js",
     "navigateBefore": true
   },
   {
@@ -16551,7 +16551,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/unbookmark.js",
-    "sourceFile": "twitter/unbookmark.js",
+    "sourceFile": "twitter\\unbookmark.js",
     "navigateBefore": true
   },
   {
@@ -16576,7 +16576,7 @@
     ],
     "type": "js",
     "modulePath": "twitter/unfollow.js",
-    "sourceFile": "twitter/unfollow.js",
+    "sourceFile": "twitter\\unfollow.js",
     "navigateBefore": true
   },
   {
@@ -16616,7 +16616,7 @@
     ],
     "type": "js",
     "modulePath": "uiverse/code.js",
-    "sourceFile": "uiverse/code.js"
+    "sourceFile": "uiverse\\code.js"
   },
   {
     "site": "uiverse",
@@ -16656,7 +16656,7 @@
     ],
     "type": "js",
     "modulePath": "uiverse/preview.js",
-    "sourceFile": "uiverse/preview.js"
+    "sourceFile": "uiverse\\preview.js"
   },
   {
     "site": "v2ex",
@@ -16672,7 +16672,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/daily.js",
-    "sourceFile": "v2ex/daily.js",
+    "sourceFile": "v2ex\\daily.js",
     "navigateBefore": "https://www.v2ex.com"
   },
   {
@@ -16701,7 +16701,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/hot.js",
-    "sourceFile": "v2ex/hot.js"
+    "sourceFile": "v2ex\\hot.js"
   },
   {
     "site": "v2ex",
@@ -16729,7 +16729,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/latest.js",
-    "sourceFile": "v2ex/latest.js"
+    "sourceFile": "v2ex\\latest.js"
   },
   {
     "site": "v2ex",
@@ -16747,7 +16747,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/me.js",
-    "sourceFile": "v2ex/me.js",
+    "sourceFile": "v2ex\\me.js",
     "navigateBefore": "https://www.v2ex.com"
   },
   {
@@ -16776,7 +16776,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/member.js",
-    "sourceFile": "v2ex/member.js"
+    "sourceFile": "v2ex\\member.js"
   },
   {
     "site": "v2ex",
@@ -16810,7 +16810,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/node.js",
-    "sourceFile": "v2ex/node.js"
+    "sourceFile": "v2ex\\node.js"
   },
   {
     "site": "v2ex",
@@ -16837,7 +16837,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/nodes.js",
-    "sourceFile": "v2ex/nodes.js"
+    "sourceFile": "v2ex\\nodes.js"
   },
   {
     "site": "v2ex",
@@ -16862,7 +16862,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/notifications.js",
-    "sourceFile": "v2ex/notifications.js",
+    "sourceFile": "v2ex\\notifications.js",
     "navigateBefore": "https://www.v2ex.com"
   },
   {
@@ -16895,7 +16895,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/replies.js",
-    "sourceFile": "v2ex/replies.js"
+    "sourceFile": "v2ex\\replies.js"
   },
   {
     "site": "v2ex",
@@ -16925,7 +16925,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/topic.js",
-    "sourceFile": "v2ex/topic.js"
+    "sourceFile": "v2ex\\topic.js"
   },
   {
     "site": "v2ex",
@@ -16959,7 +16959,7 @@
     ],
     "type": "js",
     "modulePath": "v2ex/user.js",
-    "sourceFile": "v2ex/user.js"
+    "sourceFile": "v2ex\\user.js"
   },
   {
     "site": "wanfang",
@@ -16996,7 +16996,7 @@
     ],
     "type": "js",
     "modulePath": "wanfang/search.js",
-    "sourceFile": "wanfang/search.js",
+    "sourceFile": "wanfang\\search.js",
     "navigateBefore": false
   },
   {
@@ -17044,7 +17044,7 @@
     ],
     "type": "js",
     "modulePath": "web/read.js",
-    "sourceFile": "web/read.js",
+    "sourceFile": "web\\read.js",
     "navigateBefore": false
   },
   {
@@ -17080,7 +17080,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/comments.js",
-    "sourceFile": "weibo/comments.js",
+    "sourceFile": "weibo\\comments.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17121,7 +17121,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/feed.js",
-    "sourceFile": "weibo/feed.js",
+    "sourceFile": "weibo\\feed.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17150,7 +17150,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/hot.js",
-    "sourceFile": "weibo/hot.js",
+    "sourceFile": "weibo\\hot.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17172,7 +17172,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/me.js",
-    "sourceFile": "weibo/me.js",
+    "sourceFile": "weibo\\me.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17197,7 +17197,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/post.js",
-    "sourceFile": "weibo/post.js",
+    "sourceFile": "weibo\\post.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17232,7 +17232,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/search.js",
-    "sourceFile": "weibo/search.js",
+    "sourceFile": "weibo\\search.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17264,7 +17264,7 @@
     ],
     "type": "js",
     "modulePath": "weibo/user.js",
-    "sourceFile": "weibo/user.js",
+    "sourceFile": "weibo\\user.js",
     "navigateBefore": "https://weibo.com"
   },
   {
@@ -17306,7 +17306,7 @@
     ],
     "type": "js",
     "modulePath": "weixin/download.js",
-    "sourceFile": "weixin/download.js",
+    "sourceFile": "weixin\\download.js",
     "navigateBefore": "https://mp.weixin.qq.com"
   },
   {
@@ -17348,7 +17348,7 @@
     ],
     "type": "js",
     "modulePath": "weread/ai-outline.js",
-    "sourceFile": "weread/ai-outline.js",
+    "sourceFile": "weread\\ai-outline.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17377,7 +17377,7 @@
     ],
     "type": "js",
     "modulePath": "weread/book.js",
-    "sourceFile": "weread/book.js",
+    "sourceFile": "weread\\book.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17410,7 +17410,7 @@
     ],
     "type": "js",
     "modulePath": "weread/highlights.js",
-    "sourceFile": "weread/highlights.js",
+    "sourceFile": "weread\\highlights.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17429,7 +17429,7 @@
     ],
     "type": "js",
     "modulePath": "weread/notebooks.js",
-    "sourceFile": "weread/notebooks.js",
+    "sourceFile": "weread\\notebooks.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17463,7 +17463,7 @@
     ],
     "type": "js",
     "modulePath": "weread/notes.js",
-    "sourceFile": "weread/notes.js",
+    "sourceFile": "weread\\notes.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17500,7 +17500,7 @@
     ],
     "type": "js",
     "modulePath": "weread/ranking.js",
-    "sourceFile": "weread/ranking.js"
+    "sourceFile": "weread\\ranking.js"
   },
   {
     "site": "weread",
@@ -17534,7 +17534,7 @@
     ],
     "type": "js",
     "modulePath": "weread/search.js",
-    "sourceFile": "weread/search.js"
+    "sourceFile": "weread\\search.js"
   },
   {
     "site": "weread",
@@ -17560,7 +17560,7 @@
     ],
     "type": "js",
     "modulePath": "weread/shelf.js",
-    "sourceFile": "weread/shelf.js",
+    "sourceFile": "weread\\shelf.js",
     "navigateBefore": "https://weread.qq.com"
   },
   {
@@ -17586,7 +17586,7 @@
     ],
     "type": "js",
     "modulePath": "wikipedia/random.js",
-    "sourceFile": "wikipedia/random.js"
+    "sourceFile": "wikipedia\\random.js"
   },
   {
     "site": "wikipedia",
@@ -17624,7 +17624,7 @@
     ],
     "type": "js",
     "modulePath": "wikipedia/search.js",
-    "sourceFile": "wikipedia/search.js"
+    "sourceFile": "wikipedia\\search.js"
   },
   {
     "site": "wikipedia",
@@ -17656,7 +17656,7 @@
     ],
     "type": "js",
     "modulePath": "wikipedia/summary.js",
-    "sourceFile": "wikipedia/summary.js"
+    "sourceFile": "wikipedia\\summary.js"
   },
   {
     "site": "wikipedia",
@@ -17688,7 +17688,7 @@
     ],
     "type": "js",
     "modulePath": "wikipedia/trending.js",
-    "sourceFile": "wikipedia/trending.js"
+    "sourceFile": "wikipedia\\trending.js"
   },
   {
     "site": "xianyu",
@@ -17729,7 +17729,7 @@
     ],
     "type": "js",
     "modulePath": "xianyu/chat.js",
-    "sourceFile": "xianyu/chat.js",
+    "sourceFile": "xianyu\\chat.js",
     "navigateBefore": false
   },
   {
@@ -17760,7 +17760,7 @@
     ],
     "type": "js",
     "modulePath": "xianyu/item.js",
-    "sourceFile": "xianyu/item.js",
+    "sourceFile": "xianyu\\item.js",
     "navigateBefore": false
   },
   {
@@ -17799,7 +17799,7 @@
     ],
     "type": "js",
     "modulePath": "xianyu/search.js",
-    "sourceFile": "xianyu/search.js",
+    "sourceFile": "xianyu\\search.js",
     "navigateBefore": false
   },
   {
@@ -17829,7 +17829,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoe/catalog.js",
-    "sourceFile": "xiaoe/catalog.js",
+    "sourceFile": "xiaoe\\catalog.js",
     "navigateBefore": "https://h5.xet.citv.cn"
   },
   {
@@ -17855,7 +17855,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoe/content.js",
-    "sourceFile": "xiaoe/content.js",
+    "sourceFile": "xiaoe\\content.js",
     "navigateBefore": "https://h5.xet.citv.cn"
   },
   {
@@ -17873,7 +17873,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoe/courses.js",
-    "sourceFile": "xiaoe/courses.js",
+    "sourceFile": "xiaoe\\courses.js",
     "navigateBefore": "https://study.xiaoe-tech.com"
   },
   {
@@ -17901,7 +17901,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoe/detail.js",
-    "sourceFile": "xiaoe/detail.js",
+    "sourceFile": "xiaoe\\detail.js",
     "navigateBefore": "https://h5.xet.citv.cn"
   },
   {
@@ -17929,7 +17929,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoe/play-url.js",
-    "sourceFile": "xiaoe/play-url.js",
+    "sourceFile": "xiaoe\\play-url.js",
     "navigateBefore": "https://h5.xet.citv.cn"
   },
   {
@@ -17973,7 +17973,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/comments.js",
-    "sourceFile": "xiaohongshu/comments.js",
+    "sourceFile": "xiaohongshu\\comments.js",
     "navigateBefore": false
   },
   {
@@ -18000,7 +18000,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/creator-note-detail.js",
-    "sourceFile": "xiaohongshu/creator-note-detail.js",
+    "sourceFile": "xiaohongshu\\creator-note-detail.js",
     "navigateBefore": false
   },
   {
@@ -18032,7 +18032,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/creator-notes-summary.js",
-    "sourceFile": "xiaohongshu/creator-notes-summary.js",
+    "sourceFile": "xiaohongshu\\creator-notes-summary.js",
     "navigateBefore": false
   },
   {
@@ -18069,7 +18069,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "xiaohongshu/creator-notes-summary.js",
-    "sourceFile": "xiaohongshu/creator-notes-summary.js",
+    "sourceFile": "xiaohongshu\\creator-notes-summary.js",
     "navigateBefore": false
   },
   {
@@ -18086,7 +18086,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/creator-profile.js",
-    "sourceFile": "xiaohongshu/creator-profile.js",
+    "sourceFile": "xiaohongshu\\creator-profile.js",
     "navigateBefore": false
   },
   {
@@ -18116,7 +18116,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/creator-stats.js",
-    "sourceFile": "xiaohongshu/creator-stats.js",
+    "sourceFile": "xiaohongshu\\creator-stats.js",
     "navigateBefore": false
   },
   {
@@ -18150,7 +18150,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/download.js",
-    "sourceFile": "xiaohongshu/download.js",
+    "sourceFile": "xiaohongshu\\download.js",
     "navigateBefore": false
   },
   {
@@ -18178,7 +18178,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/feed.js",
-    "sourceFile": "xiaohongshu/feed.js",
+    "sourceFile": "xiaohongshu\\feed.js",
     "navigateBefore": true
   },
   {
@@ -18203,7 +18203,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/note.js",
-    "sourceFile": "xiaohongshu/note.js",
+    "sourceFile": "xiaohongshu\\note.js",
     "navigateBefore": false
   },
   {
@@ -18239,7 +18239,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/notifications.js",
-    "sourceFile": "xiaohongshu/notifications.js",
+    "sourceFile": "xiaohongshu\\notifications.js",
     "navigateBefore": true
   },
   {
@@ -18294,7 +18294,7 @@
     "timeout": 900,
     "type": "js",
     "modulePath": "xiaohongshu/pgyexcel.js",
-    "sourceFile": "xiaohongshu/pgyexcel.js",
+    "sourceFile": "xiaohongshu\\pgyexcel.js",
     "navigateBefore": false
   },
   {
@@ -18344,7 +18344,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/publish.js",
-    "sourceFile": "xiaohongshu/publish.js",
+    "sourceFile": "xiaohongshu\\publish.js",
     "navigateBefore": false
   },
   {
@@ -18380,7 +18380,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/search.js",
-    "sourceFile": "xiaohongshu/search.js",
+    "sourceFile": "xiaohongshu\\search.js",
     "navigateBefore": false
   },
   {
@@ -18415,7 +18415,7 @@
     ],
     "type": "js",
     "modulePath": "xiaohongshu/user.js",
-    "sourceFile": "xiaohongshu/user.js",
+    "sourceFile": "xiaohongshu\\user.js",
     "navigateBefore": false
   },
   {
@@ -18450,7 +18450,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoyuzhou/download.js",
-    "sourceFile": "xiaoyuzhou/download.js"
+    "sourceFile": "xiaoyuzhou\\download.js"
   },
   {
     "site": "xiaoyuzhou",
@@ -18479,7 +18479,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoyuzhou/episode.js",
-    "sourceFile": "xiaoyuzhou/episode.js"
+    "sourceFile": "xiaoyuzhou\\episode.js"
   },
   {
     "site": "xiaoyuzhou",
@@ -18507,7 +18507,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoyuzhou/podcast.js",
-    "sourceFile": "xiaoyuzhou/podcast.js"
+    "sourceFile": "xiaoyuzhou\\podcast.js"
   },
   {
     "site": "xiaoyuzhou",
@@ -18541,7 +18541,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoyuzhou/podcast-episodes.js",
-    "sourceFile": "xiaoyuzhou/podcast-episodes.js"
+    "sourceFile": "xiaoyuzhou\\podcast-episodes.js"
   },
   {
     "site": "xiaoyuzhou",
@@ -18590,7 +18590,7 @@
     ],
     "type": "js",
     "modulePath": "xiaoyuzhou/transcript.js",
-    "sourceFile": "xiaoyuzhou/transcript.js"
+    "sourceFile": "xiaoyuzhou\\transcript.js"
   },
   {
     "site": "xueqiu",
@@ -18626,7 +18626,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/comments.js",
-    "sourceFile": "xueqiu/comments.js",
+    "sourceFile": "xueqiu\\comments.js",
     "navigateBefore": false
   },
   {
@@ -18666,7 +18666,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/earnings-date.js",
-    "sourceFile": "xueqiu/earnings-date.js",
+    "sourceFile": "xueqiu\\earnings-date.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18701,7 +18701,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/feed.js",
-    "sourceFile": "xueqiu/feed.js",
+    "sourceFile": "xueqiu\\feed.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18733,7 +18733,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/fund-holdings.js",
-    "sourceFile": "xueqiu/fund-holdings.js",
+    "sourceFile": "xueqiu\\fund-holdings.js",
     "navigateBefore": "https://danjuanfunds.com/my-money"
   },
   {
@@ -18753,7 +18753,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/fund-snapshot.js",
-    "sourceFile": "xueqiu/fund-snapshot.js",
+    "sourceFile": "xueqiu\\fund-snapshot.js",
     "navigateBefore": "https://danjuanfunds.com/my-money"
   },
   {
@@ -18771,7 +18771,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/groups.js",
-    "sourceFile": "xueqiu/groups.js",
+    "sourceFile": "xueqiu\\groups.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18799,7 +18799,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/hot.js",
-    "sourceFile": "xueqiu/hot.js",
+    "sourceFile": "xueqiu\\hot.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18835,7 +18835,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/hot-stock.js",
-    "sourceFile": "xueqiu/hot-stock.js",
+    "sourceFile": "xueqiu\\hot-stock.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18871,7 +18871,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/kline.js",
-    "sourceFile": "xueqiu/kline.js",
+    "sourceFile": "xueqiu\\kline.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18907,7 +18907,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/search.js",
-    "sourceFile": "xueqiu/search.js",
+    "sourceFile": "xueqiu\\search.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18935,7 +18935,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/stock.js",
-    "sourceFile": "xueqiu/stock.js",
+    "sourceFile": "xueqiu\\stock.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -18969,7 +18969,7 @@
     ],
     "type": "js",
     "modulePath": "xueqiu/watchlist.js",
-    "sourceFile": "xueqiu/watchlist.js",
+    "sourceFile": "xueqiu\\watchlist.js",
     "navigateBefore": "https://xueqiu.com"
   },
   {
@@ -19002,7 +19002,7 @@
     ],
     "type": "js",
     "modulePath": "yahoo-finance/quote.js",
-    "sourceFile": "yahoo-finance/quote.js",
+    "sourceFile": "yahoo-finance\\quote.js",
     "navigateBefore": "https://finance.yahoo.com"
   },
   {
@@ -19050,7 +19050,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/background.js",
-    "sourceFile": "yollomi/background.js",
+    "sourceFile": "yollomi\\background.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19110,7 +19110,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/edit.js",
-    "sourceFile": "yollomi/edit.js",
+    "sourceFile": "yollomi\\edit.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19156,7 +19156,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/face-swap.js",
-    "sourceFile": "yollomi/face-swap.js",
+    "sourceFile": "yollomi\\face-swap.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19225,7 +19225,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/generate.js",
-    "sourceFile": "yollomi/generate.js",
+    "sourceFile": "yollomi\\generate.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19257,7 +19257,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/models.js",
-    "sourceFile": "yollomi/models.js"
+    "sourceFile": "yollomi\\models.js"
   },
   {
     "site": "yollomi",
@@ -19304,7 +19304,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/object-remover.js",
-    "sourceFile": "yollomi/object-remover.js",
+    "sourceFile": "yollomi\\object-remover.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19345,7 +19345,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/remove-bg.js",
-    "sourceFile": "yollomi/remove-bg.js",
+    "sourceFile": "yollomi\\remove-bg.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19386,7 +19386,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/restore.js",
-    "sourceFile": "yollomi/restore.js",
+    "sourceFile": "yollomi\\restore.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19444,7 +19444,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/try-on.js",
-    "sourceFile": "yollomi/try-on.js",
+    "sourceFile": "yollomi\\try-on.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19471,7 +19471,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/upload.js",
-    "sourceFile": "yollomi/upload.js",
+    "sourceFile": "yollomi\\upload.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19524,7 +19524,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/upscale.js",
-    "sourceFile": "yollomi/upscale.js",
+    "sourceFile": "yollomi\\upscale.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19593,7 +19593,7 @@
     ],
     "type": "js",
     "modulePath": "yollomi/video.js",
-    "sourceFile": "yollomi/video.js",
+    "sourceFile": "yollomi\\video.js",
     "navigateBefore": "https://yollomi.com"
   },
   {
@@ -19625,7 +19625,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/channel.js",
-    "sourceFile": "youtube/channel.js",
+    "sourceFile": "youtube\\channel.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19661,7 +19661,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/comments.js",
-    "sourceFile": "youtube/comments.js",
+    "sourceFile": "youtube\\comments.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19691,7 +19691,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/feed.js",
-    "sourceFile": "youtube/feed.js",
+    "sourceFile": "youtube\\feed.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19720,7 +19720,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/history.js",
-    "sourceFile": "youtube/history.js",
+    "sourceFile": "youtube\\history.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19745,7 +19745,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/like.js",
-    "sourceFile": "youtube/like.js",
+    "sourceFile": "youtube\\like.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19782,7 +19782,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/playlist.js",
-    "sourceFile": "youtube/playlist.js",
+    "sourceFile": "youtube\\playlist.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19840,7 +19840,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/search.js",
-    "sourceFile": "youtube/search.js",
+    "sourceFile": "youtube\\search.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19865,7 +19865,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/subscribe.js",
-    "sourceFile": "youtube/subscribe.js",
+    "sourceFile": "youtube\\subscribe.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19893,7 +19893,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/subscriptions.js",
-    "sourceFile": "youtube/subscriptions.js",
+    "sourceFile": "youtube\\subscriptions.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19927,7 +19927,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/transcript.js",
-    "sourceFile": "youtube/transcript.js",
+    "sourceFile": "youtube\\transcript.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19952,7 +19952,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/unlike.js",
-    "sourceFile": "youtube/unlike.js",
+    "sourceFile": "youtube\\unlike.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -19977,7 +19977,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/unsubscribe.js",
-    "sourceFile": "youtube/unsubscribe.js",
+    "sourceFile": "youtube\\unsubscribe.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -20002,7 +20002,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/video.js",
-    "sourceFile": "youtube/video.js",
+    "sourceFile": "youtube\\video.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -20032,7 +20032,7 @@
     ],
     "type": "js",
     "modulePath": "youtube/watch-later.js",
-    "sourceFile": "youtube/watch-later.js",
+    "sourceFile": "youtube\\watch-later.js",
     "navigateBefore": "https://www.youtube.com"
   },
   {
@@ -20079,7 +20079,7 @@
     "timeout": 180,
     "type": "js",
     "modulePath": "yuanbao/ask.js",
-    "sourceFile": "yuanbao/ask.js",
+    "sourceFile": "yuanbao\\ask.js",
     "navigateBefore": false
   },
   {
@@ -20096,7 +20096,7 @@
     ],
     "type": "js",
     "modulePath": "yuanbao/new.js",
-    "sourceFile": "yuanbao/new.js",
+    "sourceFile": "yuanbao\\new.js",
     "navigateBefore": false
   },
   {
@@ -20146,7 +20146,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/answer.js",
-    "sourceFile": "zhihu/answer.js",
+    "sourceFile": "zhihu\\answer.js",
     "navigateBefore": true
   },
   {
@@ -20196,7 +20196,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/comment.js",
-    "sourceFile": "zhihu/comment.js",
+    "sourceFile": "zhihu\\comment.js",
     "navigateBefore": true
   },
   {
@@ -20237,7 +20237,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/download.js",
-    "sourceFile": "zhihu/download.js",
+    "sourceFile": "zhihu\\download.js",
     "navigateBefore": "https://zhuanlan.zhihu.com"
   },
   {
@@ -20285,7 +20285,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/favorite.js",
-    "sourceFile": "zhihu/favorite.js",
+    "sourceFile": "zhihu\\favorite.js",
     "navigateBefore": true
   },
   {
@@ -20319,7 +20319,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/follow.js",
-    "sourceFile": "zhihu/follow.js",
+    "sourceFile": "zhihu\\follow.js",
     "navigateBefore": true
   },
   {
@@ -20346,7 +20346,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/hot.js",
-    "sourceFile": "zhihu/hot.js",
+    "sourceFile": "zhihu\\hot.js",
     "navigateBefore": "https://www.zhihu.com"
   },
   {
@@ -20380,7 +20380,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/like.js",
-    "sourceFile": "zhihu/like.js",
+    "sourceFile": "zhihu\\like.js",
     "navigateBefore": true
   },
   {
@@ -20414,7 +20414,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/question.js",
-    "sourceFile": "zhihu/question.js",
+    "sourceFile": "zhihu\\question.js",
     "navigateBefore": "https://www.zhihu.com"
   },
   {
@@ -20450,7 +20450,7 @@
     ],
     "type": "js",
     "modulePath": "zhihu/search.js",
-    "sourceFile": "zhihu/search.js",
+    "sourceFile": "zhihu\\search.js",
     "navigateBefore": "https://www.zhihu.com"
   },
   {
@@ -20480,7 +20480,7 @@
     ],
     "type": "js",
     "modulePath": "zsxq/dynamics.js",
-    "sourceFile": "zsxq/dynamics.js",
+    "sourceFile": "zsxq\\dynamics.js",
     "navigateBefore": "https://wx.zsxq.com"
   },
   {
@@ -20510,7 +20510,7 @@
     ],
     "type": "js",
     "modulePath": "zsxq/groups.js",
-    "sourceFile": "zsxq/groups.js",
+    "sourceFile": "zsxq\\groups.js",
     "navigateBefore": "https://wx.zsxq.com"
   },
   {
@@ -20554,7 +20554,7 @@
     ],
     "type": "js",
     "modulePath": "zsxq/search.js",
-    "sourceFile": "zsxq/search.js",
+    "sourceFile": "zsxq\\search.js",
     "navigateBefore": "https://wx.zsxq.com"
   },
   {
@@ -20598,7 +20598,7 @@
     ],
     "type": "js",
     "modulePath": "zsxq/topic.js",
-    "sourceFile": "zsxq/topic.js",
+    "sourceFile": "zsxq\\topic.js",
     "navigateBefore": "https://wx.zsxq.com"
   },
   {
@@ -20635,7 +20635,7 @@
     ],
     "type": "js",
     "modulePath": "zsxq/topics.js",
-    "sourceFile": "zsxq/topics.js",
+    "sourceFile": "zsxq\\topics.js",
     "navigateBefore": "https://wx.zsxq.com"
   }
 ]
