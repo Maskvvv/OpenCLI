@@ -19,7 +19,7 @@
 | `opencli xiaohongshu creator-notes-summary` | Combined note list + detail analytics summary |
 | `opencli xiaohongshu creator-profile` | Creator account info (followers, growth level) |
 | `opencli xiaohongshu creator-stats` | Creator data overview (views, likes, collects, trends) |
-| `opencli xiaohongshu pgyexcel` | Export interested Pugongying invite creators to an Excel-friendly CSV |
+| `opencli xiaohongshu pgycsv` | Export interested Pugongying invite creators to an Excel-friendly CSV |
 
 ## Usage Examples
 
@@ -44,7 +44,7 @@ opencli xiaohongshu download "https://xhslink.com/..."
 opencli xiaohongshu download <note-id or url>
 
 # Export Pugongying interested invite creators to CSV
-opencli xiaohongshu pgyexcel --start-page 1 --end-page 3 --output ./xiaohongshu-pgy-creators.csv
+opencli xiaohongshu pgycsv --start-page 1 --end-page 3 --output ./xiaohongshu-pgy-creators.csv
 ```
 
 > Note: `note` and `comments` now require a full signed note URL with `xsec_token`. `download` accepts either a signed note URL or an `xhslink` short link. Bare note IDs are no longer reliable on xiaohongshu.

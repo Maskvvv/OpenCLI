@@ -12,12 +12,12 @@ import {
     parseCreatorProfileFromDomData,
     rowsToCsv,
     writeCsv,
-} from './pgyexcel.js';
-import './pgyexcel.js';
+} from './pgycsv.js';
+import './pgycsv.js';
 
-describe('xiaohongshu pgyexcel', () => {
+describe('xiaohongshu pgycsv', () => {
     it('registers the command with expected args and navigation hardening', () => {
-        const cmd = getRegistry().get('xiaohongshu/pgyexcel');
+        const cmd = getRegistry().get('xiaohongshu/pgycsv');
         expect(cmd).toBeDefined();
         expect(cmd.navigateBefore).toBe(false);
         expect(cmd.columns).toEqual(['status', 'rows', 'output', 'pages']);
@@ -59,7 +59,7 @@ describe('xiaohongshu pgyexcel', () => {
     });
 
     it('writes CSV files to nested output paths', () => {
-        const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'opencli-pgyexcel-'));
+        const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'opencli-pgycsv-'));
         const output = path.join(tempDir, 'nested', 'pgy.csv');
         const resolved = writeCsv(output, [{
             '联系方式': 'wx',

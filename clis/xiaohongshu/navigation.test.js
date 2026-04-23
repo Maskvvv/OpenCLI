@@ -11,7 +11,7 @@ import './creator-note-detail.js';
 import './creator-notes-summary.js';
 import './creator-profile.js';
 import './creator-stats.js';
-import './pgyexcel.js';
+import './pgycsv.js';
 
 describe('xiaohongshu navigateBefore hardening', () => {
     const expectedFalse = [
@@ -26,7 +26,7 @@ describe('xiaohongshu navigateBefore hardening', () => {
         'xiaohongshu/creator-notes-summary',
         'xiaohongshu/creator-profile',
         'xiaohongshu/creator-stats',
-        'xiaohongshu/pgyexcel',
+        'xiaohongshu/pgycsv',
     ];
     it.each(expectedFalse)('%s sets navigateBefore=false', (name) => {
         const cmd = getRegistry().get(name);

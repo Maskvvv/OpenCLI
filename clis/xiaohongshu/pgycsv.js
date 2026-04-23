@@ -162,8 +162,18 @@ async function ensurePgyReady(page) {
         throw new AuthRequiredError('pgy.xiaohongshu.com', 'Pugongying invite list requires login');
     }
     if (status !== 'ready') {
-        throw new EmptyResultError('xiaohongshu/pgyexcel', 'Pugongying invite list did not load expected controls');
+        throw new EmptyResultError('xiaohongshu/pgycsv', 'Pugongying invite list did not load expected controls');
     }
+}
+
+async function refreshInitialInviteListPage(page, delayBounds) {
+    await page.evaluate(`() => {
+      location.reload();
+      return true;
+    }`);
+    await humanPause(page, delayBounds, 1.5);
+    await ensurePgyReady(page);
+    await humanPause(page, delayBounds, 0.8);
 }
 
 async function clickText(page, labels, options = {}) {
@@ -396,7 +406,7 @@ async function gotoListPageNumber(page, pageNum, delayBounds) {
         if (!currentPage || currentPage === pageNum)
             return;
     }
-    throw new EmptyResultError('xiaohongshu/pgyexcel', `Could not navigate to page ${pageNum}`);
+    throw new EmptyResultError('xiaohongshu/pgycsv', `Could not navigate to page ${pageNum}`);
 }
 
 async function clickVisibleListPageNumber(page, pageNum) {
@@ -578,7 +588,7 @@ async function gotoListPageNumberLegacy(page, pageNum, delayBounds) {
         })()
       `);
             if (!inputOk)
-                throw new EmptyResultError('xiaohongshu/pgyexcel', `Could not navigate to page ${pageNum}`);
+                throw new EmptyResultError('xiaohongshu/pgycsv', `Could not navigate to page ${pageNum}`);
             break;
         }
         await humanPause(page, delayBounds, 1.2);
@@ -653,7 +663,7 @@ async function fetchInterestedInvites(page, pageNum) {
     })()
   `);
     if (!result?.ok) {
-        throw new EmptyResultError('xiaohongshu/pgyexcel', `Could not load interested invite list: ${result?.message || result?.status || 'unknown error'}`);
+        throw new EmptyResultError('xiaohongshu/pgycsv', `Could not load interested invite list: ${result?.message || result?.status || 'unknown error'}`);
     }
     return (result.invites || []).filter((item) => item.kolId && Number(item.kolIntention) === 1);
 }
@@ -1027,7 +1037,7 @@ async function waitForPgyDetail(page, previousUrl) {
     })()
   `);
     if (!ok) {
-        throw new EmptyResultError('xiaohongshu/pgyexcel', 'Creator Pugongying detail page did not load expected profile fields');
+        throw new EmptyResultError('xiaohongshu/pgycsv', 'Creator Pugongying detail page did not load expected profile fields');
     }
 }
 
@@ -1123,7 +1133,7 @@ async function collectCurrentPage(page, delayBounds, pageNum) {
     return results;
 }
 
-export async function runPgyExcelExport(page, kwargs) {
+export async function runPgyCsvExport(page, kwargs) {
     const { startPage, endPage } = normalizePageRange(kwargs);
     const delayBounds = clampDelayBounds(kwargs['min-delay'], kwargs['max-delay']);
     const output = String(kwargs.output || './xiaohongshu-pgy-creators.csv');
@@ -1132,6 +1142,7 @@ export async function runPgyExcelExport(page, kwargs) {
     await page.goto(PGY_INVITE_LIST_URL);
     await humanPause(page, delayBounds, 1.2);
     await ensurePgyReady(page);
+    await refreshInitialInviteListPage(page, delayBounds);
     await applyInterestedInviteFilter(page, delayBounds);
     await waitForInviteTable(page);
     await gotoListPageNumber(page, startPage, delayBounds);
@@ -1165,7 +1176,7 @@ export async function runPgyExcelExport(page, kwargs) {
 
 cli({
     site: 'xiaohongshu',
-    name: 'pgyexcel',
+    name: 'pgycsv',
     description: '导出蒲公英感兴趣邀约博主资料为 Excel 可打开的 CSV',
     domain: 'pgy.xiaohongshu.com',
     strategy: Strategy.COOKIE,
@@ -1185,10 +1196,10 @@ cli({
         clampDelayBounds(kwargs['min-delay'], kwargs['max-delay']);
     },
     func: async (page, kwargs) => {
-        const result = await runPgyExcelExport(page, kwargs);
+        const result = await runPgyCsvExport(page, kwargs);
         if (result.rows.length === 0) {
             const sample = result.debug?.samples?.join(' || ') || 'no visible table row sample';
-            throw new EmptyResultError('xiaohongshu/pgyexcel', `No interested invite creators were exported from the selected pages. Table sample: ${sample}`);
+            throw new EmptyResultError('xiaohongshu/pgycsv', `No interested invite creators were exported from the selected pages. Table sample: ${sample}`);
         }
         return [{
             status: 'exported',

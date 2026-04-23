@@ -18244,7 +18244,7 @@
   },
   {
     "site": "xiaohongshu",
-    "name": "pgyexcel",
+    "name": "pgycsv",
     "description": "导出蒲公英感兴趣邀约博主资料为 Excel 可打开的 CSV",
     "domain": "pgy.xiaohongshu.com",
     "strategy": "cookie",
@@ -18293,8 +18293,8 @@
     ],
     "timeout": 900,
     "type": "js",
-    "modulePath": "xiaohongshu/pgyexcel.js",
-    "sourceFile": "xiaohongshu\\pgyexcel.js",
+    "modulePath": "xiaohongshu/pgycsv.js",
+    "sourceFile": "xiaohongshu\\pgycsv.js",
     "navigateBefore": false
   },
   {
