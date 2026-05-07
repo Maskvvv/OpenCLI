@@ -27,3 +27,4 @@ autoresearch/results/
 autoresearch-results.tsv
 *.csv
 release/
+.trae
